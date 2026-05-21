@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atty. Alper Germen | Law Office</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --font-serif: 'Cormorant Garamond', Georgia, "Times New Roman", serif;
+      --font-sans: 'Inter', "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --ink: #f8f8f2;
+      --muted: rgba(255, 255, 255, .78);
+      --line: rgba(255, 255, 255, .18);
+      --panel: rgba(255, 255, 255, .10);
+      --edge: #c79062;
+      --gold: #9f7346;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 18%, rgba(21, 87, 91, .34), transparent 32%),
+        radial-gradient(circle at 84% 6%, rgba(128, 82, 43, .22), transparent 26%),
+        #111;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page { min-height: 100vh; padding: 7px; background: #0b0b0b; }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 14px);
+      overflow: hidden;
+      border: 2px solid var(--edge);
+      border-radius: 17px;
+      isolation: isolate;
+      background:
+        linear-gradient(90deg, rgba(4, 5, 5, .96) 0%, rgba(5, 6, 6, .82) 38%, rgba(6, 6, 6, .24) 67%, rgba(6, 6, 6, .06) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, .28) 0%, rgba(0, 0, 0, .02) 39%, rgba(0, 0, 0, .82) 100%),
+        url("https://images.pexels.com/photos/10320855/pexels-photo-10320855.jpeg?auto=compress&cs=tinysrgb&w=2200") 83% 52% / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 22% 12%, rgba(21, 94, 99, .28), transparent 29%),
+        linear-gradient(90deg, rgba(0, 0, 0, .32), transparent 64%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 32%;
+      z-index: -1;
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .74));
+      pointer-events: none;
+    }
+
+    .nav {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 32px 48px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: max-content;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: .01em;
+      color: #fff;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .55);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .brand-mark svg { width: 18px; height: 18px; }
+
+    .brand-text { display: flex; flex-direction: column; }
+
+    .brand-sub {
+      font-size: 9px;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: .48;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      color: rgba(255, 255, 255, .88);
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .01em;
+    }
+
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      color: #fff;
+      margin-left: 14px;
+      flex-shrink: 0;
+    }
+
+    .lang-switch {
+      margin-left: auto;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .lang-flag {
+      display: flex;
+      align-items: center;
+      opacity: .86;
+      border-radius: 3px;
+      overflow: hidden;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .lang-flag img { display: block; width: 30px; height: auto; border-radius: 3px; }
+    .lang-flag:hover { opacity: 1; transform: scale(1.1); }
+
+    .mobile-lang { margin-top: 28px; }
+
+    .mobile-lang .mlang-flag {
+      display: flex;
+      align-items: center;
+      opacity: .88;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .mobile-lang .mlang-flag img { display: block; width: 52px; height: auto; border-radius: 5px; }
+    .mobile-lang .mlang-flag:hover { opacity: 1; transform: scale(1.08); }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(8, 8, 8, .97);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+
+    .mobile-menu a {
+      color: rgba(255, 255, 255, .65);
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 8vw, 40px);
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1;
+      transition: color .2s ease;
+    }
+
+    .mobile-menu a:hover, .mobile-menu a.active { color: #fff; }
+
+    .menu-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, .5);
+      font-size: 28px;
+      cursor: pointer;
+      padding: 8px;
+      line-height: 1;
+      transition: color .2s;
+    }
+
+    .menu-close:hover { color: #fff; }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: min(680px, calc(100% - 80px));
+      padding: clamp(80px, 14vh, 140px) 0 120px 48px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 20px;
+      color: rgba(255, 255, 255, .62);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: rgba(255, 255, 255, .5);
+      flex-shrink: 0;
+    }
+
+    h1 {
+      max-width: 640px;
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: clamp(52px, 6vw, 84px);
+      line-height: .96;
+      font-weight: 500;
+      letter-spacing: -.03em;
+      font-style: italic;
+    }
+
+    .proofs {
+      display: grid;
+      gap: 11px;
+      margin: 36px 0 36px 4px;
+      padding: 0;
+      color: rgba(255, 255, 255, .7);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: .005em;
+      list-style: none;
+    }
+
+    .proofs li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .proofs li::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--edge);
+      flex-shrink: 0;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .2);
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      letter-spacing: .01em;
+      backdrop-filter: blur(14px);
+      cursor: pointer;
+      transition: background .2s ease, border-color .2s ease;
+    }
+
+    .btn.primary {
+      color: #121212;
+      background: #fff;
+      border-color: #fff;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .2);
+    }
+
+    .btn.primary:hover { background: #f0ece6; }
+
+    .btn.secondary {
+      color: rgba(255, 255, 255, .8);
+      background: var(--panel);
+    }
+
+    .btn.secondary:hover {
+      background: rgba(255, 255, 255, .16);
+      border-color: rgba(255, 255, 255, .32);
+    }
+
+    .bottom-bar {
+      position: absolute;
+      left: 48px;
+      right: 48px;
+      bottom: 28px;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .5);
+      font-size: 11px;
+      letter-spacing: .02em;
+    }
+
+    .bottom-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bottom-note::before {
+      content: "";
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--edge);
+    }
+
+    .float-contact {
+      position: fixed;
+      bottom: 30px;
+      right: 26px;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .float-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .32);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 7px 24px rgba(0, 0, 0, .4);
+    }
+
+    .float-btn svg { width: 22px; height: 22px; }
+    .float-btn.phone { background: #b8844e; }
+    .float-btn.whatsapp { background: #25D366; }
+
+    .hero-panel {
+      transition: opacity .35s ease, transform .35s ease;
+    }
+
+    .hero-panel.hidden {
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .content-wrap { position: relative; }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px 32px;
+      margin: 32px 0 36px;
+    }
+
+    .process-num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--edge);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .process-name {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(28px, 3.4vw, 46px);
+      letter-spacing: -.03em;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .process-desc {
+      color: rgba(255, 255, 255, .6);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .kurumsal-section {
+      background: #f5f0e8;
+      color: #1a1a1a;
+      padding: 96px clamp(24px, 7vw, 108px);
+    }
+
+    .kurumsal-inner {
+      display: grid;
+      grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+      gap: 72px;
+      align-items: start;
+    }
+
+    .kurumsal-photo { position: sticky; top: 32px; }
+
+    .kurumsal-photo img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 12px;
+      border: 2px solid var(--edge);
+      display: block;
+    }
+
+    .kurumsal-text .section-heading { margin-top: 0; }
+    .kurumsal-text .section-copy { margin-top: 20px; }
+
+    .facts { display: grid; gap: 10px; margin-top: 36px; }
+
+    .fact {
+      padding: 20px 22px;
+      border: 1px solid rgba(26, 26, 26, .1);
+      background: rgba(255, 255, 255, .58);
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    }
+
+    .fact strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .fact span {
+      color: rgba(26, 26, 26, .68);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .detail-overlay {
+      position: fixed;
+      inset: 7px;
+      z-index: 160;
+      border: 2px solid var(--edge);
+      border-radius: 17px;
+      background: #f5f0e8;
+      color: #1a1a1a;
+      overflow-y: auto;
+      transform: translateX(110%);
+      transition: transform 0.55s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+
+    .detail-overlay.visible { transform: translateX(0); }
+
+    .detail-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #f5f0e8;
+      border-bottom: 1px solid rgba(26,26,26,.08);
+      padding: 16px clamp(24px, 7vw, 108px);
+    }
+
+    .detail-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a1a;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      color: #f5f0e8;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 9px 18px;
+      transition: background .2s;
+    }
+
+    .detail-back:hover { background: #333; }
+
+    .detail-body { padding: 64px clamp(24px, 7vw, 108px) 80px; max-width: 900px; }
+
+    .detail-kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .detail-kicker::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    .detail-heading {
+      margin: 0 0 24px;
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: .97;
+      letter-spacing: -.04em;
+      font-weight: 500;
+      color: #141414;
+    }
+
+    .detail-desc { margin: 0 0 48px; color: rgba(26,26,26,.78); font-size: 16px; line-height: 1.8; }
+
+    .detail-steps { display: grid; gap: 16px; }
+
+    .detail-step {
+      display: flex;
+      gap: 20px;
+      padding: 22px 24px;
+      background: #fff;
+      border: 1px solid rgba(26,26,26,.1);
+      border-radius: 12px;
+    }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #141414;
+      color: #f5f0e8;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-title { display: block; font-size: 15px; font-weight: 600; color: #141414; margin-bottom: 6px; letter-spacing: -.01em; }
+    .step-desc { margin: 0; color: rgba(26,26,26,.68); font-size: 14px; line-height: 1.65; }
+
+    .card-cta {
+      margin-top: 18px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    @media (max-width: 640px) {
+      .detail-overlay { inset: 0; border-radius: 0; border-width: 0; }
+      .detail-body { padding: 48px 20px 64px; }
+    }
+
+    .services-overlay {
+      position: fixed;
+      inset: 7px;
+      z-index: 150;
+      border: 2px solid var(--edge);
+      border-radius: 17px;
+      background: #f5f0e8;
+      color: #1a1a1a;
+      overflow-y: auto;
+      transform: translateX(110%);
+      transition: transform 0.55s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+
+    .services-overlay.visible { transform: translateX(0); }
+
+    .overlay-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #f5f0e8;
+      border-bottom: 1px solid rgba(26, 26, 26, .08);
+      padding: 16px clamp(24px, 7vw, 108px);
+    }
+
+    .overlay-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a1a;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      color: #f5f0e8;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      padding: 9px 18px;
+      transition: background .2s;
+    }
+
+    .overlay-back:hover { background: #333; }
+
+    .overlay-body { padding: 72px clamp(24px, 7vw, 108px) 80px; }
+
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    .section-heading {
+      max-width: 820px;
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4.8vw, 66px);
+      line-height: .97;
+      letter-spacing: -.04em;
+      font-weight: 500;
+      color: #141414;
+    }
+
+    .section-copy {
+      max-width: 680px;
+      margin: 26px 0 0;
+      color: rgba(26, 26, 26, .82);
+      font-size: 16px;
+      line-height: 1.78;
+      letter-spacing: -.01em;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 44px;
+    }
+
+    .service-card {
+      padding: 24px 26px;
+      min-height: 220px;
+      border: 1px solid rgba(26, 26, 26, .14);
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+      transition: box-shadow .2s ease, transform .2s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card ul { flex: 1; }
+
+    .service-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,.11);
+      transform: translateY(-2px);
+    }
+
+    .service-card h3 {
+      margin: 0 0 14px;
+      font-family: var(--font-serif);
+      font-size: 24px;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      font-weight: 600;
+      color: #0d0d0d;
+    }
+
+    .service-card ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: rgba(26, 26, 26, .78);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .service-card ul li { display: flex; align-items: flex-start; gap: 8px; }
+
+    .service-card ul li::before {
+      content: "";
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .overlay-cta { margin-top: 44px; display: flex; align-items: center; gap: 16px; }
+
+    .btn-dark {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: #141414;
+      color: #f5f0e8;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      letter-spacing: .01em;
+      border: none;
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+
+    .btn-dark:hover { background: #2a2a2a; }
+
+    @media (max-width: 980px) {
+      .nav { padding: 26px 32px 0; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .content { width: min(640px, calc(100% - 48px)); padding-left: 32px; }
+      .bottom-bar { left: 32px; right: 32px; }
+      .kurumsal-inner { grid-template-columns: 1fr; gap: 40px; }
+      .kurumsal-photo { position: static; max-width: 320px; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .services-overlay { inset: 5px; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 5px; }
+      .hero {
+        min-height: calc(100vh - 10px);
+        border-radius: 14px;
+        background:
+          linear-gradient(90deg, rgba(4, 5, 5, .96) 0%, rgba(5, 6, 6, .82) 54%, rgba(6, 6, 6, .38) 100%),
+          linear-gradient(180deg, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .02) 46%, rgba(0, 0, 0, .84) 100%),
+          url("https://images.pexels.com/photos/10320855/pexels-photo-10320855.jpeg?auto=compress&cs=tinysrgb&w=1400") 72% 50% / cover no-repeat;
+      }
+      .nav { padding: 20px 20px 0; }
+      .brand { font-size: 17px; }
+      .content { width: calc(100% - 32px); padding: 88px 0 126px 20px; }
+      h1 { font-size: clamp(44px, 13vw, 60px); }
+      .bottom-bar { left: 20px; right: 20px; bottom: 22px; }
+      .kurumsal-section { padding: 64px 20px; }
+      .kurumsal-photo { max-width: 100%; }
+      .services-overlay { inset: 0; border-radius: 0; border-width: 0; }
+      .overlay-body { padding: 48px 20px 64px; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-label="Alper Germen law office main area">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="/en/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 4v16M7 7h10M5 20h14M8 7l-4 7h8L8 7Zm8 0-4 7h8l-4-7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>Alper Germen</span>
+            <span class="brand-sub">Law Office &amp; Antalya</span>
+          </span>
+        </a>
+
+        <div class="nav-links" aria-label="Page links">
+          <a href="/en/" class="active">Home</a>
+          <a href="/en/alanlar">Practice Areas</a>
+          <a href="/en/sss">FAQ</a>
+          <a href="/en/yazilar">Articles</a>
+          <a href="/en/iletisim">Contact</a>
+        </div>
+        <div class="lang-switch">
+          <a class="lang-flag" href="/" title="Türkçeye geç"><img src="../assets/flag-tr.svg" alt="Türkçe"></a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+
+      <div class="content">
+        <div class="content-wrap">
+          <div id="hero-default" class="hero-panel">
+            <p class="eyebrow">Trusted legal support for progress</p>
+            <h1>Powerful legal support that defends your rights with clarity</h1>
+            <ul class="proofs" aria-label="Service features">
+              <li>Expert legal consultation</li>
+              <li>Proven case management discipline</li>
+              <li>Transparent and accessible service</li>
+            </ul>
+          </div>
+
+          <div id="hero-process" class="hero-panel hidden" aria-hidden="true">
+            <p class="eyebrow">How We Work</p>
+            <div class="process-steps">
+              <div class="process-item">
+                <div class="process-num">01</div>
+                <div class="process-name">Initial Review</div>
+                <div class="process-desc">Documents, deadlines and legal risks are evaluated in the first stage.</div>
+              </div>
+              <div class="process-item">
+                <div class="process-num">02</div>
+                <div class="process-name">Strategy</div>
+                <div class="process-desc">A viable plan is developed for litigation, application, mediation or contract path.</div>
+              </div>
+              <div class="process-item">
+                <div class="process-num">03</div>
+                <div class="process-name">Follow-up</div>
+                <div class="process-desc">Petitions, hearings, enforcement and administrative proceedings are regularly monitored.</div>
+              </div>
+              <div class="process-item">
+                <div class="process-num">04</div>
+                <div class="process-name">Reporting</div>
+                <div class="process-desc">Significant developments in the case are communicated to the client in clear terms.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="/en/iletisim">Book Appointment</a>
+          <button class="btn secondary" id="services-btn">View Services</button>
+          <button class="btn secondary" id="process-btn">How It Works</button>
+        </div>
+      </div>
+
+      <div class="bottom-bar" aria-hidden="true">
+        <span class="bottom-note">Transparent and reliable legal service</span>
+      </div>
+    </section>
+  </main>
+
+  <section class="kurumsal-section">
+    <div class="kurumsal-inner">
+      <div class="kurumsal-photo">
+        <img src="/assets/avukat.png" alt="Atty. Alper Germen" />
+      </div>
+      <div class="kurumsal-text">
+        <div class="section-kicker">About</div>
+        <h2 class="section-heading">Clear strategy, regular updates and rights-focused representation.</h2>
+        <p class="section-copy">Atty. Alper Germen provides legal representation and consultation services in the areas of family, employment, real estate, criminal, administrative, enforcement, consumer, commercial and immigration law under the Antalya Bar Association. For each case, he first clarifies the true need of the dispute, then creates a viable roadmap.</p>
+        <p class="section-copy">His working approach is built on transparent fees, regular case updates, quick accessibility and ensuring the client clearly understands the legal risks.</p>
+        <div class="facts">
+          <div class="fact">
+            <strong>Bar Association</strong>
+            <span>Independent legal practice registered with the Antalya Bar Association.</span>
+          </div>
+          <div class="fact">
+            <strong>Approach</strong>
+            <span>Initial assessment, strategy setup, case and application follow-up.</span>
+          </div>
+          <div class="fact">
+            <strong>Consultation</strong>
+            <span>In-person, phone and online consultation options.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="services-overlay" id="services-overlay" aria-label="Practice areas panel" role="dialog">
+    <div class="overlay-header">
+      <button class="overlay-back" id="overlay-back" aria-label="Go back">← Back</button>
+    </div>
+    <div class="overlay-body">
+      <div class="section-kicker">Practice Areas</div>
+      <h2 class="section-heading">Our areas of practice</h2>
+      <p class="section-copy">Representation and consultation appropriate to the nature of the case is provided in the areas of family, employment, real estate, criminal, administrative, enforcement, consumer, commercial and immigration law.</p>
+
+      <div class="services-grid">
+        <article class="service-card" data-key="ceza">
+          <h3>Criminal Law</h3>
+          <ul>
+            <li>Serious felony and misdemeanor cases</li>
+            <li>Investigation, testimony and objection to detention</li>
+            <li>Cybercrime and criminal proceedings after traffic accidents</li>
+          </ul>
+          <span class="card-cta">Details →</span>
+        </article>
+        <article class="service-card" data-key="is">
+          <h3>Employment Law</h3>
+          <ul>
+            <li>Severance and notice pay claims</li>
+            <li>Reinstatement, overtime and employment receivables</li>
+            <li>Workplace harassment and service determination disputes</li>
+          </ul>
+          <span class="card-cta">Details →</span>
+        </article>
+        <article class="service-card" data-key="gayrimenkul">
+          <h3>Real Estate &amp; Tenancy Law</h3>
+          <ul>
+            <li>Eviction, rent determination and adaptation cases</li>
+            <li>Title deed cancellation and registration cases</li>
+            <li>Dissolution of co-ownership and construction contracts</li>
+          </ul>
+          <span class="card-cta">Details →</span>
+        </article>
+        <article class="service-card" data-key="aile">
+          <h3>Family Law</h3>
+          <ul>
+            <li>Contested and uncontested divorce cases</li>
+            <li>Alimony, custody and property division proceedings</li>
+            <li>Recognition, enforcement and broken engagement compensation</li>
+          </ul>
+          <span class="card-cta">Details →</span>
+        </article>
+        <article class="service-card" data-key="idare">
+          <h3>Administrative Law</h3>
+          <ul>
+            <li>Annulment and full remedy lawsuits</li>
+            <li>Disputes involving civil servants</li>
+            <li>Expropriation, municipality and zoning cases</li>
+          </ul>
+          <span class="card-cta">Details →</span>
+        </article>
+        <article class="service-card" data-key="icra">
+          <h3>Enforcement &amp; Bankruptcy Law</h3>
+          <ul>
+            <li>Judgment-based and non-judgment enforcement proceedings</li>
+            <li>Precautionary attachment, check and promissory note proceedings</li>
+            <li>Cancellation of objection, objection to debt and attachment</li>
+          </ul>
+          <span class="card-cta">Details →</span>
+        </article>
+        <article class="service-card" data-key="tuketici">
+          <h3>Consumer Law</h3>
+          <ul>
+            <li>Consumer court and arbitration committee proceedings</li>
+            <li>Vehicle depreciation claims</li>
+            <li>Defective goods and service disputes</li>
+          </ul>
+          <span class="card-cta">Details →</span>
+        </article>
+        <article class="service-card" data-key="ticaret">
+          <h3>Commercial Law</h3>
+          <ul>
+            <li>Company formation and commercial contracts</li>
+            <li>Partnership disputes</li>
+            <li>Commercial litigation and ongoing corporate consultation</li>
+          </ul>
+          <span class="card-cta">Details →</span>
+        </article>
+        <article class="service-card" data-key="yabancilar">
+          <h3>Immigration Law</h3>
+          <ul>
+            <li>Residence and work permit applications</li>
+            <li>Turkish citizenship application procedures</li>
+            <li>Deportation order cancellation and recognition-enforcement</li>
+          </ul>
+          <span class="card-cta">Details →</span>
+        </article>
+      </div>
+
+      <div class="overlay-cta">
+        <a class="btn-dark" href="/en/iletisim">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-overlay" id="detail-overlay" role="dialog">
+    <div class="detail-header">
+      <button class="detail-back" id="detail-back">← Back</button>
+    </div>
+    <div class="detail-body" id="detail-body"></div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="menu-close" id="menu-close" aria-label="Close">✕</button>
+    <a href="/en/" class="active">Home</a>
+    <a href="/en/alanlar">Practice Areas</a>
+    <a href="/en/sss">FAQ</a>
+    <a href="/en/yazilar">Articles</a>
+    <a href="/en/iletisim">Contact</a>
+    <div class="mobile-lang">
+      <a class="mlang-flag" href="/" title="Türkçeye geç"><img src="../assets/flag-tr.svg" alt="Türkçe"></a>
+    </div>
+  </div>
+
+  <div class="float-contact" aria-label="Quick contact">
+    <a class="float-btn phone" href="tel:+905537727601" aria-label="Call by phone">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+    <a class="float-btn whatsapp" href="https://wa.me/905537727601" target="_blank" rel="noopener" aria-label="Message on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <script>
+    const hbg = document.getElementById('hamburger');
+    const mmenu = document.getElementById('mobile-menu');
+    function closeMenu() { hbg.classList.remove('open'); mmenu.classList.remove('open'); document.body.style.overflow = ''; }
+    hbg.addEventListener('click', () => { const o = mmenu.classList.toggle('open'); hbg.classList.toggle('open', o); document.body.style.overflow = o ? 'hidden' : ''; });
+    document.getElementById('menu-close').addEventListener('click', closeMenu);
+    mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    const overlay = document.getElementById('services-overlay');
+    document.getElementById('services-btn').addEventListener('click', () => {
+      showDefault();
+      overlay.classList.add('visible');
+      overlay.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('overlay-back').addEventListener('click', () => {
+      overlay.classList.remove('visible');
+      document.body.style.overflow = '';
+    });
+
+    const heroDefault = document.getElementById('hero-default');
+    const heroProcess = document.getElementById('hero-process');
+    const processBtn = document.getElementById('process-btn');
+    let processVisible = false;
+
+    function showDefault() {
+      processVisible = false;
+      heroProcess.classList.add('hidden');
+      heroProcess.setAttribute('aria-hidden', 'true');
+      heroDefault.classList.remove('hidden');
+      heroDefault.removeAttribute('aria-hidden');
+      processBtn.textContent = 'How It Works';
+    }
+
+    processBtn.addEventListener('click', () => {
+      if (!processVisible) {
+        processVisible = true;
+        heroDefault.classList.add('hidden');
+        heroDefault.setAttribute('aria-hidden', 'true');
+        heroProcess.classList.remove('hidden');
+        heroProcess.removeAttribute('aria-hidden');
+        processBtn.textContent = '← Back';
+      } else {
+        showDefault();
+      }
+    });
+
+    const detailOverlay = document.getElementById('detail-overlay');
+    const detailBody = document.getElementById('detail-body');
+
+    const specialtyData = {
+      aile: {
+        kicker: 'Family Law',
+        heading: 'What is a Family Law Attorney?',
+        desc: 'A family law attorney provides legal support to parties in disputes arising from family relationships such as marriage, divorce, custody, alimony and property division. Family cases are not limited to the dissolution of marriage; they also cover child custody, alimony, dissolution of the matrimonial property regime and compensation.',
+        steps: [
+          { title: 'Preparation of divorce petition', desc: 'Preparation of a complete petition in accordance with the legal strategy of the case and submission to the court.' },
+          { title: 'Collection and presentation of evidence', desc: 'Professional compilation of evidence that will determine the course of the case and presentation in court.' },
+          { title: 'Preparation of alimony and compensation claims', desc: 'Determination and follow-up of alimony and compensation claims appropriate to the client\'s rights.' },
+          { title: 'Custody and personal relationship arrangements', desc: 'Making custody and family member relationship arrangements in the best interests of the child.' }
+        ]
+      },
+      is: {
+        kicker: 'Employment Law',
+        heading: 'What is an Employment Law Attorney?',
+        desc: 'An employment law attorney provides legal support in disputes arising from employer-employee relationships. They offer consultation and litigation services to both employees and employers on severance and notice pay, reinstatement, overtime wages, workplace harassment and social security disputes.',
+        steps: [
+          { title: 'Calculation of service period and claims', desc: 'Calculation and claim of severance pay, notice pay and employment receivables in accordance with legislation.' },
+          { title: 'Filing a reinstatement lawsuit', desc: 'Filing and conducting a lawsuit for reinstatement or compensation in the event of unjust termination.' },
+          { title: 'Managing the mediation process', desc: 'Professional conduct of negotiations on behalf of the client in mandatory mediation proceedings.' },
+          { title: 'Follow-up of social security disputes', desc: 'Follow-up of cases related to SGK premium debts, service determination and informal employment.' }
+        ]
+      },
+      gayrimenkul: {
+        kicker: 'Real Estate & Tenancy Law',
+        heading: 'What is a Real Estate Attorney?',
+        desc: 'A real estate and tenancy law attorney provides consultation and litigation services in legal disputes related to immovable properties. Title deed cancellation and registration, eviction, rent determination, dissolution of co-ownership and disputes from construction contracts are the main topics of this field.',
+        steps: [
+          { title: 'Filing title deed cancellation and registration lawsuit', desc: 'Filing a cancellation lawsuit against an erroneous or wrongful title deed and following up registration proceedings.' },
+          { title: 'Tenant eviction and rent determination lawsuit', desc: 'Filing and conducting a lawsuit for eviction of tenant or determination of rent amount.' },
+          { title: 'Condominium and site management disputes', desc: 'Resolution of legal issues arising from apartment and residential complex management.' },
+          { title: 'Preparation of construction and contracting agreements', desc: 'Preparation of contracts that protect the rights of the parties and dispute management.' }
+        ]
+      },
+      ceza: {
+        kicker: 'Criminal Law',
+        heading: 'What is a Criminal Defense Attorney?',
+        desc: 'A criminal defense attorney protects the legal rights of individuals facing criminal charges during investigation and prosecution stages. They provide defense services throughout the entire criminal proceedings, from the suspect or accused giving testimony to objecting to detention, from the trial process to the appeal stage.',
+        steps: [
+          { title: 'Representation during testimony and interrogation', desc: 'Management of the testimony process while protecting the client\'s rights at law enforcement and prosecutor stage.' },
+          { title: 'Objection to detention and judicial control decisions', desc: 'Preparation of objection petitions against unjust detention or judicial control decisions.' },
+          { title: 'Preparation of trial defense', desc: 'Strategic conduct of evidence evaluation, witness examination and court defense.' },
+          { title: 'Appeal and legal remedy applications', desc: 'Preparation of appeal and Supreme Court applications against first-instance court decisions.' }
+        ]
+      },
+      idare: {
+        kicker: 'Administrative Law',
+        heading: 'What is an Administrative Law Attorney?',
+        desc: 'An administrative law attorney provides legal support to individuals and institutions in disputes with public administration. Annulment of administrative acts, full remedy lawsuits, expropriation, zoning disputes and cases related to civil servants are the fundamental topics of this field.',
+        steps: [
+          { title: 'Filing lawsuit for annulment of administrative act', desc: 'Filing a lawsuit in administrative court for annulment of unlawful administrative decisions.' },
+          { title: 'Full remedy lawsuit and compensation claim', desc: 'Filing a full remedy lawsuit for compensation of damages arising from the administration\'s actions or transactions.' },
+          { title: 'Expropriation price determination', desc: 'Objection to expropriation decisions and conduct of price increase lawsuits.' },
+          { title: 'Resolution of zoning and permit disputes', desc: 'Follow-up of cases arising from zoning plan changes and permit cancellations.' }
+        ]
+      },
+      icra: {
+        kicker: 'Enforcement & Bankruptcy Law',
+        heading: 'What is an Enforcement & Bankruptcy Attorney?',
+        desc: 'An enforcement and bankruptcy law attorney provides legal support on behalf of creditors or debtors in debt collection and bankruptcy proceedings. They serve across a wide range from judgment-based and non-judgment enforcement to precautionary attachment, from check-promissory note follow-up to concordat.',
+        steps: [
+          { title: 'Initiating enforcement proceedings', desc: 'Initiating and managing non-judgment or judgment-based enforcement proceedings for debt collection.' },
+          { title: 'Obtaining precautionary attachment order', desc: 'Applying to court for precautionary attachment order to prevent the debtor from concealing assets.' },
+          { title: 'Cancellation and removal of objection', desc: 'Filing a cancellation lawsuit or applying for removal of objection against the debtor\'s objection to enforcement.' },
+          { title: 'Follow-up of bankruptcy and concordat proceedings', desc: 'Legal management of the company\'s or individual\'s bankruptcy or concordat proceedings.' }
+        ]
+      },
+      tuketici: {
+        kicker: 'Consumer Law',
+        heading: 'What is a Consumer Law Attorney?',
+        desc: 'A consumer law attorney protects the rights of consumers in disputes arising from goods and services they purchase. Defective products, unfair contract terms, vehicle depreciation and consumer court processes are the main topics of this field.',
+        steps: [
+          { title: 'Application to consumer arbitration committee', desc: 'Preparation and follow-up of the application to the consumer arbitration committee according to the amount of the dispute.' },
+          { title: 'Filing lawsuit in consumer court', desc: 'Filing a lawsuit in consumer court against the arbitration committee decision or directly.' },
+          { title: 'Defective goods and service refund/compensation claim', desc: 'Conducting refund, replacement or compensation claims due to defective product or service.' },
+          { title: 'Vehicle depreciation calculation and application', desc: 'Calculation of vehicle depreciation after traffic accident and claiming against insurance.' }
+        ]
+      },
+      ticaret: {
+        kicker: 'Commercial Law',
+        heading: 'What is a Commercial Law Attorney?',
+        desc: 'A commercial law attorney provides consultation and litigation services in legal disputes arising from companies, commercial relations and business partnerships. Company formation, preparation of commercial contracts, partnership disputes and commercial litigation follow-up are among the fundamental topics of this field.',
+        steps: [
+          { title: 'Company formation and contract preparation', desc: 'Legal preparation of articles of association and commercial contracts appropriate to the type of company.' },
+          { title: 'Resolution of partnership disputes', desc: 'Resolution of disputes between partners through negotiation or litigation.' },
+          { title: 'Commercial debt collection', desc: 'Collection of company receivables through enforcement or litigation.' },
+          { title: 'Ongoing legal consultation', desc: 'Evaluation and management of legal risks related to the company\'s daily commercial activities.' }
+        ]
+      },
+      yabancilar: {
+        kicker: 'Immigration Law',
+        heading: 'What is an Immigration Law Attorney?',
+        desc: 'An immigration law attorney provides legal support to foreign nationals living or wishing to live in Turkey on matters such as residence permits, work permits, citizenship applications and deportation. International protection claims and recognition of foreign court decisions are also within the scope of this field.',
+        steps: [
+          { title: 'Preparation of residence and work permit applications', desc: 'Complete preparation and follow-up of necessary applications to obtain legal status in Turkey.' },
+          { title: 'Turkish citizenship application', desc: 'Preparation of ordinary or exceptional citizenship applications and management of the process.' },
+          { title: 'Objection to deportation decision', desc: 'Filing an objection lawsuit in administrative court against the deportation decision.' },
+          { title: 'Recognition and enforcement lawsuits', desc: 'Filing a lawsuit to make foreign court and arbitration decisions valid in Turkey.' }
+        ]
+      }
+    };
+
+    function openDetail(key) {
+      const d = specialtyData[key];
+      if (!d) return;
+      detailBody.innerHTML = `
+        <div class="detail-kicker">${d.kicker}</div>
+        <h2 class="detail-heading">${d.heading}</h2>
+        <p class="detail-desc">${d.desc}</p>
+        <div class="detail-steps">
+          ${d.steps.map((s, i) => `
+            <div class="detail-step">
+              <div class="step-num">${i + 1}</div>
+              <div>
+                <strong class="step-title">${s.title}</strong>
+                <p class="step-desc">${s.desc}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>`;
+      detailOverlay.scrollTop = 0;
+      detailOverlay.classList.add('visible');
+    }
+
+    document.getElementById('detail-back').addEventListener('click', () => {
+      detailOverlay.classList.remove('visible');
+    });
+
+    document.querySelectorAll('.services-overlay .service-card[data-key]').forEach(card => {
+      card.addEventListener('click', () => openDetail(card.dataset.key));
+    });
+  </script>
+</body>
+</html>
