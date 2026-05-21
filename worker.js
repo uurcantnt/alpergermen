@@ -62,6 +62,12 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
 </urlset>`;
 
+const ROBOTS = `User-agent: *
+Allow: /
+
+Sitemap: https://alpergermen.av.tr/sitemap.xml
+`;
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -71,6 +77,15 @@ export default {
         headers: {
           "content-type": "application/xml; charset=utf-8",
           "cache-control": "public, max-age=3600"
+        }
+      });
+    }
+
+    if (url.pathname === "/robots.txt") {
+      return new Response(ROBOTS, {
+        headers: {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=86400"
         }
       });
     }
