@@ -348,6 +348,31 @@
     .float-btn.phone { background: #b8844e; }
     .float-btn.whatsapp { background: #25D366; }
 
+    .branch-block { margin-top: 64px; }
+    .branch-block:first-child { margin-top: 44px; }
+
+    .branch-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 2.6vw, 36px);
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -.03em;
+      color: #141414;
+    }
+
+    .branch-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(26, 26, 26, .12);
+    }
+
+    .branch-block .articles-grid { margin-top: 16px; }
+
     @media (max-width: 980px) {
       .site-nav { padding: 16px 28px; }
       .nav-links { display: none; }
@@ -400,37 +425,158 @@
           <h1 class="section-heading">Hukuki makaleler</h1>
           <p class="section-copy">Aile, iş, gayrimenkul, ceza, idare, icra ve yabancılar hukuku alanlarında güncel hukuki değerlendirmeler.</p>
 
-          <div class="articles-grid">
-            <a class="article-card" href="https://www.hukukihaber.net/yargitay-kararlari-cercevesinde-bosanma-davalarinda-af-sayilan-ve-sayilmayan-haller-1" target="_blank" rel="noopener">
-              <small>Aile Hukuku</small>
-              <h3>Boşanma davalarında af sayılan haller</h3>
-              <p>Yargıtay kararları ışığında eşin kusurlu davranışını bilmesine rağmen evlilik birliğini sürdürme iradesinin sonuçları.</p>
-            </a>
-            <a class="article-card" href="https://www.hukukihaber.net/turk-medeni-kanunu-m-194-kapsaminda-aile-konutu-uzerinde-yapilan-tasarruf-islemleri" target="_blank" rel="noopener">
-              <small>Aile Hukuku</small>
-              <h3>Aile konutu üzerinde tasarruf işlemleri</h3>
-              <p>TMK m.194 kapsamında aile konutunun devri, ipoteği ve kira sözleşmesinin feshi için eş rızası.</p>
-            </a>
-            <a class="article-card" href="https://www.hukukihaber.net/is-sozlesmelerinde-cezai-sart-aleyna-yilmaz" target="_blank" rel="noopener">
-              <small>İş Hukuku</small>
-              <h3>İş sözleşmelerinde cezai şart</h3>
-              <p>İş sözleşmelerinde karşılıklılık ilkesi ve yalnızca işçi aleyhine düzenlenen cezai şartların geçerliliği.</p>
-            </a>
-            <a class="article-card" href="https://www.hukukihaber.net/kira-bedelinin-tespiti-davasinda-talep-sonuc-islah-edilebilir-mi" target="_blank" rel="noopener">
-              <small>Gayrimenkul Hukuku</small>
-              <h3>Kira bedelinin tespiti davasında ıslah</h3>
-              <p>Kira tespit davalarında talep sonucunun artırılması ve dava öncesi emsal kira analizinin önemi.</p>
-            </a>
-            <a class="article-card" href="https://dergipark.org.tr/tr/search?q=%22ihtiyati+haciz%22" target="_blank" rel="noopener">
-              <small>İcra ve İflas Hukuku</small>
-              <h3>İhtiyati haciz kararlarına itiraz</h3>
-              <p>Haksız veya eksik evrakla alınan ihtiyati haciz kararlarına karşı izlenecek kısa süreli itiraz yolları.</p>
-            </a>
-            <a class="article-card" href="https://dergipark.org.tr/tr/search?q=%22s%C4%B1n%C4%B1r+d%C4%B1%C5%9F%C4%B1+karar%C4%B1%22" target="_blank" rel="noopener">
-              <small>Yabancılar Hukuku</small>
-              <h3>Sınır dışı kararları ve itiraz yolları</h3>
-              <p>Göç İdaresi tarafından verilen deport kararlarına karşı idari yargıda başvuru süreci.</p>
-            </a>
+          <!-- Aile Hukuku -->
+          <div class="branch-block">
+            <div class="branch-label">Aile Hukuku</div>
+            <div class="articles-grid">
+              <a class="article-card" href="https://www.hukukihaber.net/yargitay-kararlari-cercevesinde-bosanma-davalarinda-af-sayilan-ve-sayilmayan-haller-1" target="_blank" rel="noopener">
+                <small>Aile Hukuku</small>
+                <h3>Boşanma davalarında af sayılan haller</h3>
+                <p>Yargıtay kararları ışığında eşin kusurlu davranışını bilmesine rağmen evlilik birliğini sürdürme iradesinin sonuçları.</p>
+              </a>
+              <a class="article-card" href="https://www.hukukihaber.net/turk-medeni-kanunu-m-194-kapsaminda-aile-konutu-uzerinde-yapilan-tasarruf-islemleri" target="_blank" rel="noopener">
+                <small>Aile Hukuku</small>
+                <h3>Aile konutu üzerinde tasarruf işlemleri</h3>
+                <p>TMK m.194 kapsamında aile konutunun devri, ipoteği ve kira sözleşmesinin feshi için eş rızası.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=velayet+%C3%BCst%C3%BCn+yarar" target="_blank" rel="noopener">
+                <small>Aile Hukuku</small>
+                <h3>Velayet davalarında çocuğun üstün yararı</h3>
+                <p>Velayet kararlarında çocuğun yaşı, gelişimi ve ebeveyn koşullarının mahkemece değerlendirilme ölçütleri.</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- İş Hukuku -->
+          <div class="branch-block">
+            <div class="branch-label">İş Hukuku</div>
+            <div class="articles-grid">
+              <a class="article-card" href="https://www.hukukihaber.net/is-sozlesmelerinde-cezai-sart-aleyna-yilmaz" target="_blank" rel="noopener">
+                <small>İş Hukuku</small>
+                <h3>İş sözleşmelerinde cezai şart</h3>
+                <p>İş sözleşmelerinde karşılıklılık ilkesi ve yalnızca işçi aleyhine düzenlenen cezai şartların geçerliliği.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=i%C5%9Fe+iade+fesih+bildirimi" target="_blank" rel="noopener">
+                <small>İş Hukuku</small>
+                <h3>İşe iade davasında fesih bildiriminin şekli şartları</h3>
+                <p>Yazılı bildirim zorunluluğu, fesih gerekçesinin somutlaştırılması ve bu eksikliklerin dava sonucuna etkisi.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=k%C4%B1dem+tazminat%C4%B1+%C3%BCcret+hesap" target="_blank" rel="noopener">
+                <small>İş Hukuku</small>
+                <h3>Kıdem tazminatında esas ücretin kapsamı</h3>
+                <p>Sürekli ödeme niteliğindeki yan ödemelerin esas ücrete dahil edilmesine ilişkin Yargıtay kriterleri.</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Gayrimenkul Hukuku -->
+          <div class="branch-block">
+            <div class="branch-label">Gayrimenkul ve Kira Hukuku</div>
+            <div class="articles-grid">
+              <a class="article-card" href="https://www.hukukihaber.net/kira-bedelinin-tespiti-davasinda-talep-sonuc-islah-edilebilir-mi" target="_blank" rel="noopener">
+                <small>Gayrimenkul Hukuku</small>
+                <h3>Kira bedelinin tespiti davasında ıslah</h3>
+                <p>Kira tespit davalarında talep sonucunun artırılması ve dava öncesi emsal kira analizinin önemi.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=tapu+iptal+tescil+zaman a%C5%9F%C4%B1m%C4%B1" target="_blank" rel="noopener">
+                <small>Gayrimenkul Hukuku</small>
+                <h3>Tapu iptali ve tescil davalarında zamanaşımı</h3>
+                <p>Muvazaalı satışlar ile inançlı işlemlere dayanan tapu iptal davalarında dava hakkının zamanla sınırlandırılması.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=kat+kar%C5%9F%C4%B1l%C4%B1%C4%9F%C4%B1+in%C5%9Faat+s%C3%B6zle%C5%9Fmesi" target="_blank" rel="noopener">
+                <small>Gayrimenkul Hukuku</small>
+                <h3>Kat karşılığı inşaat sözleşmesinde arsa sahibinin temerrüdü</h3>
+                <p>Arsa sahibinin teslim yükümlülüğünü yerine getirmemesi hâlinde müteahhidin seçimlik hakları.</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Ceza Hukuku -->
+          <div class="branch-block">
+            <div class="branch-label">Ceza Hukuku</div>
+            <div class="articles-grid">
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=haks%C4%B1z+tahrik+indirimi+TCK" target="_blank" rel="noopener">
+                <small>Ceza Hukuku</small>
+                <h3>Haksız tahrik indiriminin uygulanma koşulları</h3>
+                <p>TCK m.29 kapsamında tahriki doğuran eylemin haksızlığı, orantılılık ve Yargıtay'ın güncel yorumu.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=bili%C5%9Fim+su%C3%A7+dijital+delil" target="_blank" rel="noopener">
+                <small>Ceza Hukuku</small>
+                <h3>Bilişim suçlarında dijital delil ve hukuka uygunluk</h3>
+                <p>Cihaz incelemesi, log kayıtları ve sosyal medya verilerinin delil değeri ile elde edilme usulünün önemi.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=etkin+pi%C5%9Fmanl%C4%B1k+uyu%C5%9Fturucu+TCK" target="_blank" rel="noopener">
+                <small>Ceza Hukuku</small>
+                <h3>Uyuşturucu suçlarında etkin pişmanlık</h3>
+                <p>TCK m.192 uyarınca gönüllü vazgeçme, yetkililere bildirme ve katkının ceza indirimini doğurma koşulları.</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- İdare Hukuku -->
+          <div class="branch-block">
+            <div class="branch-label">İdare Hukuku</div>
+            <div class="articles-grid">
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=y%C3%BCr%C3%BCtmenin+durdurulmas%C4%B1+ko%C5%9Ful" target="_blank" rel="noopener">
+                <small>İdare Hukuku</small>
+                <h3>İptal davalarında yürütmenin durdurulması</h3>
+                <p>İdare mahkemelerinin YD kararı verebilmesi için aranan açık hukuka aykırılık ve telafisi güç zarar koşulları.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=kamula%C5%9Ft%C4%B1rmas%C4%B1z+el+koyma+tazminat" target="_blank" rel="noopener">
+                <small>İdare Hukuku</small>
+                <h3>Kamulaştırmasız el koymada bedel tespiti</h3>
+                <p>Fiili el koyma hâlinde mülk sahibinin bedel tespiti davası, kademeli faiz ve mevduat faizinin uygulanması.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=disiplin+cezas%C4%B1+iptal+davas%C4%B1" target="_blank" rel="noopener">
+                <small>İdare Hukuku</small>
+                <h3>Disiplin cezalarına karşı idari yargı yolları</h3>
+                <p>Kamu görevlilerine verilen disiplin cezalarının iptali için başvuru süreleri ve yargısal denetimin sınırları.</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- İcra Hukuku -->
+          <div class="branch-block">
+            <div class="branch-label">İcra ve İflas Hukuku</div>
+            <div class="articles-grid">
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=%22ihtiyati+haciz%22" target="_blank" rel="noopener">
+                <small>İcra Hukuku</small>
+                <h3>İhtiyati haciz kararlarına itiraz</h3>
+                <p>Haksız veya eksik evrakla alınan ihtiyati haciz kararlarına karşı izlenecek kısa süreli itiraz yolları.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=menfi+tespit+inkar+tazminat%C4%B1" target="_blank" rel="noopener">
+                <small>İcra Hukuku</small>
+                <h3>Menfi tespit davasında takibin iptali ve tazminat</h3>
+                <p>Borçlunun haksız icra takibine karşı %20 inkâr tazminatı isteme hakkı ve davanın açılma zamanlaması.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=icra+zaman a%C5%9F%C4%B1m%C4%B1+kambiyo" target="_blank" rel="noopener">
+                <small>İcra Hukuku</small>
+                <h3>Kambiyo takibinde zamanaşımı def'i</h3>
+                <p>Çek ve bonoya dayalı kambiyo senetleri takibinde zamanaşımının re'sen gözetilme sınırları ve itiraz usulü.</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Yabancılar Hukuku -->
+          <div class="branch-block">
+            <div class="branch-label">Yabancılar Hukuku</div>
+            <div class="articles-grid">
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=%22s%C4%B1n%C4%B1r+d%C4%B1%C5%9F%C4%B1+karar%C4%B1%22" target="_blank" rel="noopener">
+                <small>Yabancılar Hukuku</small>
+                <h3>Sınır dışı kararları ve itiraz yolları</h3>
+                <p>Göç İdaresi tarafından verilen deport kararlarına karşı idari yargıda başvuru süreci.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=oturma+izni+iptali+itiraz" target="_blank" rel="noopener">
+                <small>Yabancılar Hukuku</small>
+                <h3>Oturma izni iptalinde idari itiraz süreci</h3>
+                <p>Kısa dönem ve aile ikamet izinlerinin iptalinde bildirim zorunluluğu, itiraz süreleri ve yargı yolu.</p>
+              </a>
+              <a class="article-card" href="https://dergipark.org.tr/tr/search?q=yabanc%C4%B1+ta%C5%9F%C4%B1nmaz+edinme" target="_blank" rel="noopener">
+                <small>Yabancılar Hukuku</small>
+                <h3>Yabancıların taşınmaz edinmesinde yasal kısıtlar</h3>
+                <p>Mütekabiliyet ilkesi, askeri yasak bölgeler ve izin gerektiren alanlarda tapu tescili süreci.</p>
+              </a>
+            </div>
           </div>
         </section>
       </div>
