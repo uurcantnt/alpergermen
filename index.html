@@ -4,24 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Av. Alper Germen | Hukuk Bürosu</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
     :root {
+      --font-serif: 'Cormorant Garamond', Georgia, "Times New Roman", serif;
+      --font-sans: 'Inter', "Helvetica Neue", Helvetica, Arial, sans-serif;
       --ink: #f8f8f2;
       --muted: rgba(255, 255, 255, .78);
-      --faint: rgba(255, 255, 255, .46);
       --line: rgba(255, 255, 255, .18);
-      --panel: rgba(255, 255, 255, .12);
+      --panel: rgba(255, 255, 255, .10);
       --edge: #c79062;
-      --black: #060606;
+      --gold: #9f7346;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -31,21 +32,16 @@
         radial-gradient(circle at 18% 18%, rgba(21, 87, 91, .34), transparent 32%),
         radial-gradient(circle at 84% 6%, rgba(128, 82, 43, .22), transparent 26%),
         #111;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      letter-spacing: -.02em;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    .page {
-      min-height: 100vh;
-      padding: 7px;
-      background: #0b0b0b;
-    }
+    .page { min-height: 100vh; padding: 7px; background: #0b0b0b; }
 
+    /* ── Hero ── */
     .hero {
       position: relative;
       min-height: calc(100vh - 14px);
@@ -54,8 +50,8 @@
       border-radius: 17px;
       isolation: isolate;
       background:
-        linear-gradient(90deg, rgba(4, 5, 5, .93) 0%, rgba(5, 6, 6, .78) 38%, rgba(6, 6, 6, .23) 67%, rgba(6, 6, 6, .06) 100%),
-        linear-gradient(180deg, rgba(0, 0, 0, .32) 0%, rgba(0, 0, 0, .02) 39%, rgba(0, 0, 0, .78) 100%),
+        linear-gradient(90deg, rgba(4, 5, 5, .96) 0%, rgba(5, 6, 6, .82) 38%, rgba(6, 6, 6, .24) 67%, rgba(6, 6, 6, .06) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, .28) 0%, rgba(0, 0, 0, .02) 39%, rgba(0, 0, 0, .82) 100%),
         url("https://images.pexels.com/photos/10320855/pexels-photo-10320855.jpeg?auto=compress&cs=tinysrgb&w=2200") 83% 52% / cover no-repeat;
     }
 
@@ -65,9 +61,8 @@
       inset: 0;
       z-index: -1;
       background:
-        radial-gradient(circle at 22% 12%, rgba(21, 94, 99, .34), transparent 29%),
-        linear-gradient(90deg, rgba(0, 0, 0, .38), transparent 64%),
-        rgba(0, 0, 0, .04);
+        radial-gradient(circle at 22% 12%, rgba(21, 94, 99, .28), transparent 29%),
+        linear-gradient(90deg, rgba(0, 0, 0, .32), transparent 64%);
       pointer-events: none;
     }
 
@@ -77,176 +72,311 @@
       inset: auto 0 0;
       height: 32%;
       z-index: -1;
-      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .72));
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .74));
       pointer-events: none;
     }
 
+    /* ── Nav ── */
     .nav {
       position: relative;
       z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      display: flex;
       align-items: center;
       gap: 28px;
-      padding: 30px 45px 0;
-      font-size: 12px;
+      padding: 32px 48px 0;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       width: max-content;
-      font-weight: 700;
-      letter-spacing: -.03em;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: .01em;
+      color: #fff;
     }
 
     .brand-mark {
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(255, 255, 255, .66);
+      border: 1px solid rgba(255, 255, 255, .55);
       border-radius: 50%;
-      color: #fff;
+      flex-shrink: 0;
     }
 
-    .brand-mark svg {
-      width: 15px;
-      height: 15px;
+    .brand-mark svg { width: 18px; height: 18px; }
+
+    .brand-text { display: flex; flex-direction: column; }
+
+    .brand-sub {
+      font-size: 9px;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: .48;
+      margin-top: 2px;
     }
 
     .nav-links {
+      flex: 1;
       display: flex;
       align-items: center;
-      gap: 42px;
-      color: rgba(255, 255, 255, .86);
+      justify-content: center;
+      gap: 36px;
+      color: rgba(255, 255, 255, .88);
       white-space: nowrap;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .01em;
     }
 
-    .nav-links a {
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      color: #fff;
+      margin-left: 14px;
+      flex-shrink: 0;
+    }
+
+    .lang-switch {
+      margin-left: auto;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .lang-flag {
+      display: flex;
+      align-items: center;
+      opacity: .86;
+      border-radius: 3px;
+      overflow: hidden;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .lang-flag img { display: block; width: 30px; height: auto; border-radius: 3px; }
+    .lang-flag:hover { opacity: 1; transform: scale(1.1); }
+
+    .mobile-lang { margin-top: 28px; }
+
+    .mobile-lang .mlang-flag {
+      display: flex;
+      align-items: center;
+      opacity: .88;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .mobile-lang .mlang-flag img { display: block; width: 52px; height: auto; border-radius: 5px; }
+    .mobile-lang .mlang-flag:hover { opacity: 1; transform: scale(1.08); }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* ── Mobile menu ── */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(8, 8, 8, .97);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+
+    .mobile-menu a {
+      color: rgba(255, 255, 255, .65);
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 8vw, 40px);
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1;
       transition: color .2s ease;
     }
 
-    .nav-links a:hover {
-      color: #fff;
+    .mobile-menu a:hover, .mobile-menu a.active { color: #fff; }
+
+    .menu-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, .5);
+      font-size: 28px;
+      cursor: pointer;
+      padding: 8px;
+      line-height: 1;
+      transition: color .2s;
     }
 
-    .start {
-      justify-self: end;
-      display: inline-flex;
-      min-height: 45px;
-      align-items: center;
-      justify-content: center;
-      padding: 0 25px;
-      border-radius: 999px;
-      color: #151515;
-      background: #fff;
-      box-shadow: 0 14px 34px rgba(0, 0, 0, .24);
-      font-weight: 700;
-      letter-spacing: -.035em;
-    }
+    .menu-close:hover { color: #fff; }
 
+    /* ── Hero content ── */
     .content {
       position: relative;
       z-index: 1;
-      width: min(670px, calc(100% - 80px));
-      padding: clamp(72px, 13vh, 132px) 0 120px 45px;
+      width: min(680px, calc(100% - 80px));
+      padding: clamp(80px, 14vh, 140px) 0 120px 48px;
     }
 
     .eyebrow {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: -.02em;
+      gap: 10px;
+      margin: 0 0 20px;
+      color: rgba(255, 255, 255, .62);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
     }
 
     .eyebrow::before {
       content: "";
-      width: 29px;
+      width: 28px;
       height: 1px;
-      background: rgba(255, 255, 255, .72);
+      background: rgba(255, 255, 255, .5);
+      flex-shrink: 0;
     }
 
     h1 {
-      max-width: 620px;
+      max-width: 640px;
       margin: 0;
-      font-size: clamp(46px, 5.42vw, 72px);
-      line-height: .99;
+      font-family: var(--font-serif);
+      font-size: clamp(52px, 6vw, 84px);
+      line-height: .96;
       font-weight: 500;
-      letter-spacing: -.084em;
+      letter-spacing: -.03em;
+      font-style: italic;
     }
 
     .proofs {
       display: grid;
-      gap: 13px;
-      margin: 34px 0 34px 8px;
+      gap: 11px;
+      margin: 36px 0 36px 4px;
       padding: 0;
-      color: rgba(255, 255, 255, .85);
+      color: rgba(255, 255, 255, .7);
       font-size: 13px;
-      line-height: 1.1;
-      letter-spacing: -.02em;
-      list-style-position: inside;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: .005em;
+      list-style: none;
+    }
+
+    .proofs li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .proofs li::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--edge);
+      flex-shrink: 0;
     }
 
     .actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-flex;
-      min-height: 41px;
+      min-height: 42px;
       align-items: center;
       justify-content: center;
-      padding: 0 20px;
+      padding: 0 22px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, .22);
+      border: 1px solid rgba(255, 255, 255, .2);
       font-size: 12px;
-      font-weight: 800;
-      letter-spacing: -.03em;
-      backdrop-filter: blur(12px);
+      font-weight: 600;
+      font-family: var(--font-sans);
+      letter-spacing: .01em;
+      backdrop-filter: blur(14px);
+      cursor: pointer;
+      transition: background .2s ease, border-color .2s ease;
     }
 
     .btn.primary {
       color: #121212;
       background: #fff;
       border-color: #fff;
-      box-shadow: 0 14px 30px rgba(0, 0, 0, .22);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .2);
     }
 
+    .btn.primary:hover { background: #f0ece6; }
+
     .btn.secondary {
-      color: rgba(255, 255, 255, .74);
+      color: rgba(255, 255, 255, .8);
       background: var(--panel);
     }
 
+    .btn.secondary:hover {
+      background: rgba(255, 255, 255, .16);
+      border-color: rgba(255, 255, 255, .32);
+    }
+
+    /* ── Bottom bar ── */
     .bottom-bar {
       position: absolute;
-      left: 45px;
-      right: 45px;
-      bottom: 29px;
+      left: 48px;
+      right: 48px;
+      bottom: 28px;
       z-index: 2;
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
       gap: 24px;
-      padding-top: 19px;
-      border-top: 1px solid var(--line);
-      color: rgba(255, 255, 255, .72);
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .5);
       font-size: 11px;
-      letter-spacing: -.02em;
+      letter-spacing: .02em;
     }
 
     .bottom-note {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
     }
 
     .bottom-note::before {
@@ -254,681 +384,1009 @@
       width: 3px;
       height: 3px;
       border-radius: 50%;
-      background: currentColor;
+      background: var(--edge);
     }
 
-    .scroll {
-      display: grid;
-      justify-items: center;
-      gap: 7px;
-      color: rgba(255, 255, 255, .75);
-      font-size: 10px;
-    }
-
-    .scroll span:last-child {
-      font-size: 18px;
-      line-height: 1;
-      animation: drop 1.5s infinite ease-in-out;
-    }
-
-    .below {
-      color: #161616;
-      background: #f6f1ea;
-    }
-
-    .site-section {
-      padding: 92px clamp(22px, 7vw, 104px);
-      border-top: 1px solid rgba(20, 20, 20, .08);
-    }
-
-    .site-section.dark {
-      color: #f7f0e6;
-      background: #11100e;
-      border-top-color: rgba(255, 255, 255, .08);
-    }
-
-    .section-kicker {
+    /* ── Floating contact ── */
+    .float-contact {
+      position: fixed;
+      bottom: 30px;
+      right: 26px;
+      z-index: 200;
       display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
-      color: #9f7346;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+      flex-direction: column;
+      gap: 11px;
     }
 
-    .section-kicker::before {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: currentColor;
-    }
-
-    .section-heading {
-      max-width: 850px;
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(34px, 5vw, 70px);
-      line-height: .98;
-      letter-spacing: -.055em;
-      font-weight: 500;
-    }
-
-    .section-copy {
-      max-width: 740px;
-      margin: 22px 0 0;
-      color: rgba(22, 22, 22, .72);
-      font-size: 17px;
-      line-height: 1.75;
-      letter-spacing: -.025em;
-    }
-
-    .dark .section-copy {
-      color: rgba(247, 240, 230, .72);
-    }
-
-    .intro-grid {
+    .float-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(280px, .72fr);
-      gap: 54px;
+      place-items: center;
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .32);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 7px 24px rgba(0, 0, 0, .4);
+    }
+
+    .float-btn svg { width: 22px; height: 22px; }
+    .float-btn.phone { background: #b8844e; }
+    .float-btn.whatsapp { background: #25D366; }
+
+    /* ── Hero panel swap ── */
+    .hero-panel {
+      transition: opacity .35s ease, transform .35s ease;
+    }
+
+    .hero-panel.hidden {
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .content-wrap {
+      position: relative;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px 32px;
+      margin: 32px 0 36px;
+    }
+
+    .process-item {}
+
+    .process-num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--edge);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .process-name {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(28px, 3.4vw, 46px);
+      letter-spacing: -.03em;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .process-desc {
+      color: rgba(255, 255, 255, .6);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* ── Kurumsal section ── */
+    .kurumsal-section {
+      background: #f5f0e8;
+      color: #1a1a1a;
+      padding: 96px clamp(24px, 7vw, 108px);
+    }
+
+    .kurumsal-inner {
+      display: grid;
+      grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+      gap: 72px;
       align-items: start;
+    }
+
+    .kurumsal-photo {
+      position: sticky;
+      top: 32px;
+    }
+
+    .kurumsal-photo img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 12px;
+      border: 2px solid var(--edge);
+      display: block;
+    }
+
+    .kurumsal-text .section-heading {
+      margin-top: 0;
+    }
+
+    .kurumsal-text .section-copy {
+      margin-top: 20px;
     }
 
     .facts {
       display: grid;
-      gap: 12px;
-      margin-top: 8px;
+      gap: 10px;
+      margin-top: 36px;
     }
 
     .fact {
-      padding: 22px;
-      border: 1px solid rgba(22, 22, 22, .12);
-      background: rgba(255, 255, 255, .42);
-      border-radius: 8px;
+      padding: 20px 22px;
+      border: 1px solid rgba(26, 26, 26, .1);
+      background: rgba(255, 255, 255, .58);
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
     }
 
     .fact strong {
       display: block;
       margin-bottom: 6px;
-      font-size: 13px;
-      letter-spacing: .08em;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      color: #9f7346;
+      color: var(--gold);
     }
 
     .fact span {
-      color: rgba(22, 22, 22, .72);
-      line-height: 1.55;
+      color: rgba(26, 26, 26, .68);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── Detail overlay (above services overlay) ── */
+    .detail-overlay {
+      position: fixed;
+      inset: 7px;
+      z-index: 160;
+      border: 2px solid var(--edge);
+      border-radius: 17px;
+      background: #f5f0e8;
+      color: #1a1a1a;
+      overflow-y: auto;
+      transform: translateX(110%);
+      transition: transform 0.55s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+
+    .detail-overlay.visible { transform: translateX(0); }
+
+    .detail-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #f5f0e8;
+      border-bottom: 1px solid rgba(26,26,26,.08);
+      padding: 16px clamp(24px, 7vw, 108px);
+    }
+
+    .detail-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a1a;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      color: #f5f0e8;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 9px 18px;
+      transition: background .2s;
+    }
+
+    .detail-back:hover { background: #333; }
+
+    .detail-body {
+      padding: 64px clamp(24px, 7vw, 108px) 80px;
+      max-width: 900px;
+    }
+
+    .detail-kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .detail-kicker::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    .detail-heading {
+      margin: 0 0 24px;
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: .97;
+      letter-spacing: -.04em;
+      font-weight: 500;
+      color: #141414;
+    }
+
+    .detail-desc {
+      margin: 0 0 48px;
+      color: rgba(26,26,26,.78);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .detail-steps { display: grid; gap: 16px; }
+
+    .detail-step {
+      display: flex;
+      gap: 20px;
+      padding: 22px 24px;
+      background: #fff;
+      border: 1px solid rgba(26,26,26,.1);
+      border-radius: 12px;
+    }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #141414;
+      color: #f5f0e8;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: #141414;
+      margin-bottom: 6px;
+      letter-spacing: -.01em;
+    }
+
+    .step-desc {
+      margin: 0;
+      color: rgba(26,26,26,.68);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .card-cta {
+      margin-top: 18px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    @media (max-width: 640px) {
+      .detail-overlay { inset: 0; border-radius: 0; border-width: 0; }
+      .detail-body { padding: 48px 20px 64px; }
+    }
+
+    /* ── Services overlay (slides in from right) ── */
+    .services-overlay {
+      position: fixed;
+      inset: 7px;
+      z-index: 150;
+      border: 2px solid var(--edge);
+      border-radius: 17px;
+      background: #f5f0e8;
+      color: #1a1a1a;
+      overflow-y: auto;
+      transform: translateX(110%);
+      transition: transform 0.55s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+
+    .services-overlay.visible {
+      transform: translateX(0);
+    }
+
+    .overlay-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #f5f0e8;
+      border-bottom: 1px solid rgba(26, 26, 26, .08);
+      padding: 16px clamp(24px, 7vw, 108px);
+    }
+
+    .overlay-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a1a;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      color: #f5f0e8;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      padding: 9px 18px;
+      transition: background .2s;
+    }
+
+    .overlay-back:hover { background: #333; }
+
+    .overlay-body {
+      padding: 72px clamp(24px, 7vw, 108px) 80px;
+    }
+
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    .section-heading {
+      max-width: 820px;
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4.8vw, 66px);
+      line-height: .97;
+      letter-spacing: -.04em;
+      font-weight: 500;
+      color: #141414;
+    }
+
+    .section-copy {
+      max-width: 680px;
+      margin: 26px 0 0;
+      color: rgba(26, 26, 26, .82);
+      font-size: 16px;
+      line-height: 1.78;
+      letter-spacing: -.01em;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 42px;
-    }
-
-    .service-card,
-    .article-card,
-    .faq-item,
-    .contact-card {
-      border: 1px solid rgba(22, 22, 22, .12);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, .46);
+      gap: 14px;
+      margin-top: 44px;
     }
 
     .service-card {
-      padding: 25px;
-      min-height: 250px;
+      padding: 24px 26px;
+      min-height: 220px;
+      border: 1px solid rgba(26, 26, 26, .14);
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+      transition: box-shadow .2s ease, transform .2s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card ul { flex: 1; }
+
+    .service-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,.11);
+      transform: translateY(-2px);
     }
 
     .service-card h3 {
       margin: 0 0 14px;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-serif);
       font-size: 24px;
-      line-height: 1.05;
-      letter-spacing: -.045em;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      font-weight: 600;
+      color: #0d0d0d;
     }
 
     .service-card ul {
       display: grid;
-      gap: 9px;
-      margin: 0;
-      padding-left: 18px;
-      color: rgba(22, 22, 22, .72);
-      font-size: 14px;
-      line-height: 1.42;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 42px;
-    }
-
-    .process-step {
-      padding: 24px;
-      border: 1px solid rgba(255, 255, 255, .12);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, .045);
-    }
-
-    .process-step span {
-      display: inline-grid;
-      width: 34px;
-      height: 34px;
-      place-items: center;
-      margin-bottom: 22px;
-      border-radius: 50%;
-      color: #101010;
-      background: #f7f0e6;
-      font-weight: 800;
-    }
-
-    .process-step h3 {
-      margin: 0 0 9px;
-      font-size: 17px;
-      letter-spacing: -.035em;
-    }
-
-    .process-step p {
-      margin: 0;
-      color: rgba(247, 240, 230, .68);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .faq-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 42px;
-    }
-
-    .faq-item {
-      padding: 24px;
-    }
-
-    .faq-item h3 {
-      margin: 0 0 10px;
-      font-size: 17px;
-      letter-spacing: -.035em;
-    }
-
-    .faq-item p {
-      margin: 0;
-      color: rgba(22, 22, 22, .7);
-      line-height: 1.65;
-      font-size: 14px;
-    }
-
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 42px;
-    }
-
-    .article-card {
-      display: block;
-      padding: 24px;
-      transition: transform .18s ease, border-color .18s ease;
-    }
-
-    .article-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(159, 115, 70, .52);
-    }
-
-    .article-card small {
-      display: block;
-      margin-bottom: 14px;
-      color: #9f7346;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .article-card h3 {
-      margin: 0 0 10px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 22px;
-      line-height: 1.12;
-      letter-spacing: -.045em;
-    }
-
-    .article-card p {
-      margin: 0;
-      color: rgba(22, 22, 22, .68);
-      font-size: 14px;
-      line-height: 1.62;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-      gap: 18px;
-      margin-top: 42px;
-    }
-
-    .contact-card {
-      padding: 28px;
-    }
-
-    .contact-card h3 {
-      margin: 0 0 18px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-      letter-spacing: -.045em;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 15px;
+      gap: 8px;
       margin: 0;
       padding: 0;
       list-style: none;
-    }
-
-    .contact-list strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #9f7346;
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .contact-list span,
-    .contact-list a {
-      color: rgba(22, 22, 22, .76);
-      line-height: 1.52;
-    }
-
-    .payment-note {
-      margin-top: 22px;
-      padding: 18px;
-      border-radius: 8px;
-      color: #f7f0e6;
-      background: #11100e;
-      line-height: 1.6;
-    }
-
-    .footer {
-      padding: 28px clamp(22px, 7vw, 104px);
-      color: rgba(247, 240, 230, .66);
-      background: #0b0b0b;
+      color: rgba(26, 26, 26, .78);
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
-    @keyframes drop {
-      0%, 100% { transform: translateY(0); opacity: .55; }
-      50% { transform: translateY(6px); opacity: 1; }
+    .service-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
     }
 
+    .service-card ul li::before {
+      content: "";
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .overlay-cta {
+      margin-top: 44px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-dark {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: #141414;
+      color: #f5f0e8;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      letter-spacing: .01em;
+      border: none;
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+
+    .btn-dark:hover { background: #2a2a2a; }
+
+    /* ── Responsive ── */
     @media (max-width: 980px) {
-      .nav {
-        grid-template-columns: 1fr auto;
-      }
+      .nav { padding: 26px 32px 0; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .content { width: min(640px, calc(100% - 48px)); padding-left: 32px; }
+      .bottom-bar { left: 32px; right: 32px; }
+      .kurumsal-inner { grid-template-columns: 1fr; gap: 40px; }
+      .kurumsal-photo { position: static; max-width: 320px; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .services-overlay { inset: 5px; }
+    }
 
-      .nav-links {
-        display: none;
-      }
+    /* ── Top info bar ── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 10px 48px;
+      background: rgba(0, 0, 0, .45);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      flex-wrap: wrap;
+    }
 
-      .content {
-        width: min(650px, calc(100% - 42px));
-        padding-left: 26px;
-      }
+    .topbar-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, .68);
+      font-size: 12px;
+      letter-spacing: .02em;
+      white-space: nowrap;
+      transition: color .2s;
+    }
 
-      .bottom-bar {
-        left: 26px;
-        right: 26px;
-      }
+    .topbar-item:hover { color: rgba(255, 255, 255, .92); }
 
-      .intro-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid,
-      .articles-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .process-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    .topbar-item svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      color: var(--edge);
     }
 
     @media (max-width: 640px) {
-      .page {
-        padding: 5px;
-      }
+      .topbar { gap: 14px; padding: 10px 16px; justify-content: flex-start; }
+      .topbar-item { font-size: 11px; }
+    }
 
+    @media (max-width: 640px) {
+      .page { padding: 5px; }
       .hero {
         min-height: calc(100vh - 10px);
         border-radius: 14px;
         background:
-          linear-gradient(90deg, rgba(4, 5, 5, .93) 0%, rgba(5, 6, 6, .76) 54%, rgba(6, 6, 6, .36) 100%),
-          linear-gradient(180deg, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, .25) 46%, rgba(0, 0, 0, .82) 100%),
+          linear-gradient(90deg, rgba(4, 5, 5, .96) 0%, rgba(5, 6, 6, .82) 54%, rgba(6, 6, 6, .38) 100%),
+          linear-gradient(180deg, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .02) 46%, rgba(0, 0, 0, .84) 100%),
           url("https://images.pexels.com/photos/10320855/pexels-photo-10320855.jpeg?auto=compress&cs=tinysrgb&w=1400") 72% 50% / cover no-repeat;
       }
-
-      .nav {
-        padding: 20px 20px 0;
-        gap: 12px;
-      }
-
-      .brand {
-        font-size: 12px;
-      }
-
-      .start {
-        min-height: 38px;
-        padding: 0 15px;
-        font-size: 11px;
-      }
-
-      .content {
-        width: calc(100% - 28px);
-        padding: 86px 0 126px 20px;
-      }
-
-      h1 {
-        max-width: 390px;
-        font-size: clamp(42px, 13vw, 58px);
-      }
-
-      .proofs {
-        margin-top: 27px;
-      }
-
-      .bottom-bar {
-        left: 20px;
-        right: 20px;
-        bottom: 22px;
-      }
-
-      .site-section {
-        padding: 62px 20px;
-      }
-
-      .services-grid,
-      .articles-grid,
-      .faq-list,
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
+      .nav { padding: 20px 20px 0; }
+      .brand { font-size: 17px; }
+      .content { width: calc(100% - 32px); padding: 88px 0 126px 20px; }
+      h1 { font-size: clamp(44px, 13vw, 60px); }
+      .bottom-bar { left: 20px; right: 20px; bottom: 22px; }
+      .kurumsal-section { padding: 64px 20px; }
+      .kurumsal-photo { max-width: 100%; }
+      .services-overlay { inset: 0; border-radius: 0; border-width: 0; }
+      .overlay-body { padding: 48px 20px 64px; }
+      .services-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <section class="hero" aria-label="Alper Germen hukuk bürosu ana alanı">
+      <div class="topbar" aria-label="İletişim bilgileri">
+        <a class="topbar-item" href="https://maps.google.com/?q=Toros,+Atatürk+Blv.+No:52,+07070+Konyaaltı/Antalya" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          Toros, Atatürk Blv. No:52, 07070 Konyaaltı/Antalya
+        </a>
+        <a class="topbar-item" href="mailto:avalpergermen@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+          avalpergermen@gmail.com
+        </a>
+        <a class="topbar-item" href="tel:+905537727601">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.73 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.64 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.98-.98a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/>
+          </svg>
+          +90 553 772 76 01
+        </a>
+      </div>
       <nav class="nav" aria-label="Ana menü">
-        <a class="brand" href="#">
+        <a class="brand" href="/">
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M12 4v16M7 7h10M5 20h14M8 7l-4 7h8L8 7Zm8 0-4 7h8l-4-7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
-          <span>Alper Germen</span>
+          <span class="brand-text">
+            <span>Alper Germen</span>
+            <span class="brand-sub">Hukuk Bürosu &amp; Antalya</span>
+          </span>
         </a>
 
         <div class="nav-links" aria-label="Sayfa bağlantıları">
-          <a href="#">Ana Sayfa</a>
-          <a href="#kurumsal">Kurumsal</a>
-          <a href="#alanlar">Uzmanlık Alanları</a>
-          <a href="#sss">SSS</a>
-          <a href="#yazilar">Yazılar</a>
+          <a href="/" class="active">Ana Sayfa</a>
+          <a href="/alanlar">Uzmanlık Alanları</a>
+          <a href="/sss">SSS</a>
+          <a href="/yazilar">Yazılar</a>
+          <a href="/iletisim">İletişim</a>
         </div>
-
-        <a class="start" href="tel:+902422441066">Dosyanızı Başlatın</a>
+        <div class="lang-switch">
+          <a class="lang-flag" href="/en/" title="Switch to English"><img src="assets/flag-gb.svg" alt="English"></a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menüyü aç">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
 
       <div class="content">
-        <p class="eyebrow">İlerleme için güvenilir hukuki destek</p>
-        <h1>Haklarınızı açıklıkla savunan güçlü hukuki destek</h1>
+        <div class="content-wrap">
+          <!-- Varsayılan panel -->
+          <div id="hero-default" class="hero-panel">
+            <p class="eyebrow">İlerleme için güvenilir hukuki destek</p>
+            <h1>Haklarınızı açıklıkla savunan güçlü hukuki destek</h1>
+            <ul class="proofs" aria-label="Hizmet özellikleri">
+              <li>Uzman hukuki danışmanlık</li>
+              <li>Kanıtlanmış dava takibi disiplini</li>
+              <li>Şeffaf ve ulaşılabilir hizmet</li>
+            </ul>
+          </div>
 
-        <ul class="proofs" aria-label="Hizmet özellikleri">
-          <li>Uzman hukuki danışmanlık</li>
-          <li>Kanıtlanmış dava takibi disiplini</li>
-          <li>Şeffaf ve ulaşılabilir hizmet</li>
-        </ul>
+          <!-- Süreç paneli -->
+          <div id="hero-process" class="hero-panel hidden" aria-hidden="true">
+            <p class="eyebrow">Çalışma Şeklimiz</p>
+            <div class="process-steps">
+              <div class="process-item">
+                <div class="process-num">01</div>
+                <div class="process-name">Ön İnceleme</div>
+                <div class="process-desc">Belgeler, süreler ve hukuki riskler ilk aşamada değerlendirilir.</div>
+              </div>
+              <div class="process-item">
+                <div class="process-num">02</div>
+                <div class="process-name">Strateji</div>
+                <div class="process-desc">Dava, başvuru, arabuluculuk veya sözleşme yolu için uygulanabilir plan çıkarılır.</div>
+              </div>
+              <div class="process-item">
+                <div class="process-num">03</div>
+                <div class="process-name">Takip</div>
+                <div class="process-desc">Dilekçe, duruşma, icra ve idari başvuru süreçleri düzenli takip edilir.</div>
+              </div>
+              <div class="process-item">
+                <div class="process-num">04</div>
+                <div class="process-name">Bilgilendirme</div>
+                <div class="process-desc">Dosyadaki önemli gelişmeler anlaşılır biçimde müvekkile aktarılır.</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="actions">
-          <a class="btn primary" href="mailto:mucahitcelikav@gmail.com">Avukatla Görüş</a>
-          <a class="btn secondary" href="#alanlar">Hizmetleri İncele</a>
+          <a class="btn primary" href="/iletisim">Randevu Al</a>
+          <button class="btn secondary" id="services-btn">Hizmetleri İncele</button>
+          <button class="btn secondary" id="process-btn">Süreç Nasıl İşler</button>
         </div>
       </div>
 
       <div class="bottom-bar" aria-hidden="true">
         <span class="bottom-note">Şeffaf ve güvenilir hukuk hizmeti</span>
-        <span class="scroll">
-          <span>Keşfetmek için kaydır</span>
-          <span>↓</span>
-        </span>
       </div>
     </section>
-
-    <div class="below">
-      <section id="kurumsal" class="site-section">
-        <div class="intro-grid">
-          <div>
-            <div class="section-kicker">Kurumsal</div>
-            <h2 class="section-heading">Net strateji, düzenli bilgilendirme ve hak odaklı temsil.</h2>
-            <p class="section-copy">Av. Alper Germen, Antalya Barosu'na bağlı olarak aile, iş, gayrimenkul, ceza, idare, icra, tüketici, ticaret ve yabancılar hukuku alanlarında avukatlık ve danışmanlık hizmeti sunar. Her dosyada önce uyuşmazlığın gerçek ihtiyacını netleştirir, ardından uygulanabilir bir yol haritası oluşturur.</p>
-            <p class="section-copy">Çalışma yaklaşımı; şeffaf ücretlendirme, düzenli dosya bilgilendirmesi, hızlı erişim ve müvekkilin hukuki riskleri açıkça anlayabilmesi üzerine kuruludur.</p>
-          </div>
-
-          <div class="facts">
-            <div class="fact"><strong>Baro</strong><span>Antalya Barosu'na kayıtlı serbest avukatlık hizmeti.</span></div>
-            <div class="fact"><strong>Yaklaşım</strong><span>Ön değerlendirme, strateji kurulumu, dava ve başvuru takibi.</span></div>
-            <div class="fact"><strong>Danışmanlık</strong><span>Yüz yüze, telefon ve çevrim içi görüşme seçenekleri.</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="alanlar" class="site-section">
-        <div class="section-kicker">Hizmet Alanları</div>
-        <h2 class="section-heading">Çalışma alanları</h2>
-        <p class="section-copy">Aile, iş, gayrimenkul, ceza, idare, icra, tüketici, ticaret ve yabancılar hukuku başlıklarında dosyanın niteliğine uygun temsil ve danışmanlık sunulur.</p>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <h3>Aile Hukuku</h3>
-            <ul>
-              <li>Çekişmeli ve anlaşmalı boşanma davaları</li>
-              <li>Nafaka, velayet ve mal paylaşımı süreçleri</li>
-              <li>Tanıma, tenfiz ve nişan bozma tazminatı</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <h3>İş Hukuku</h3>
-            <ul>
-              <li>Kıdem ve ihbar tazminatı davaları</li>
-              <li>İşe iade, fazla mesai ve işçilik alacakları</li>
-              <li>Mobbing ve hizmet tespiti uyuşmazlıkları</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <h3>Gayrimenkul ve Kira Hukuku</h3>
-            <ul>
-              <li>Tahliye, kira tespit ve uyarlama davaları</li>
-              <li>Tapu iptal ve tescil davaları</li>
-              <li>Ortaklığın giderilmesi ve inşaat sözleşmeleri</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <h3>Ceza Hukuku</h3>
-            <ul>
-              <li>Ağır ceza ve asliye ceza davaları</li>
-              <li>Soruşturma, ifade ve tutuklamaya itiraz</li>
-              <li>Bilişim suçları ve trafik kazası sonrası ceza süreçleri</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <h3>İdare Hukuku</h3>
-            <ul>
-              <li>İptal ve tam yargı davaları</li>
-              <li>Kamu görevlileriyle ilgili uyuşmazlıklar</li>
-              <li>Kamulaştırma, belediye ve imar davaları</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <h3>İcra ve İflas Hukuku</h3>
-            <ul>
-              <li>İlamlı ve ilamsız icra takipleri</li>
-              <li>İhtiyati haciz, çek ve senet takipleri</li>
-              <li>İtirazın iptali, borca ve hacze itiraz</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <h3>Tüketici Hukuku</h3>
-            <ul>
-              <li>Tüketici mahkemesi ve hakem heyeti süreçleri</li>
-              <li>Araç değer kaybı başvuruları</li>
-              <li>Ayıplı mal ve hizmet uyuşmazlıkları</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <h3>Ticaret Hukuku</h3>
-            <ul>
-              <li>Şirket kuruluşu ve ticari sözleşmeler</li>
-              <li>Ortaklık anlaşmazlıkları</li>
-              <li>Ticari dava ve sürekli şirket danışmanlığı</li>
-            </ul>
-          </article>
-          <article class="service-card">
-            <h3>Yabancılar Hukuku</h3>
-            <ul>
-              <li>İkamet ve çalışma izni başvuruları</li>
-              <li>Türk vatandaşlığı başvuru işlemleri</li>
-              <li>Deport kararının iptali ve tanıma-tenfiz</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="calisma" class="site-section dark">
-        <div class="section-kicker">Çalışma Şeklimiz</div>
-        <h2 class="section-heading">Dosya takibi sade, ölçülebilir ve erişilebilir ilerler.</h2>
-        <p class="section-copy">Hukuki süreçlerde belirsizlik en büyük yüktür. Bu nedenle dosyalar, ilk görüşmeden sonuç aşamasına kadar açık bir plan ve düzenli bilgilendirme ile yürütülür.</p>
-
-        <div class="process-grid">
-          <div class="process-step"><span>1</span><h3>Ön İnceleme</h3><p>Belgeler, süreler ve hukuki riskler ilk aşamada değerlendirilir.</p></div>
-          <div class="process-step"><span>2</span><h3>Strateji</h3><p>Dava, başvuru, arabuluculuk veya sözleşme yolu için uygulanabilir plan çıkarılır.</p></div>
-          <div class="process-step"><span>3</span><h3>Takip</h3><p>Dilekçe, duruşma, icra ve idari başvuru süreçleri düzenli takip edilir.</p></div>
-          <div class="process-step"><span>4</span><h3>Bilgilendirme</h3><p>Dosyadaki önemli gelişmeler anlaşılır biçimde müvekkile aktarılır.</p></div>
-        </div>
-      </section>
-
-      <section id="sss" class="site-section">
-        <div class="section-kicker">Sıkça Sorulan Sorular</div>
-        <h2 class="section-heading">Hukuki sorularınıza kısa cevaplar</h2>
-
-        <div class="faq-list">
-          <article class="faq-item">
-            <h3>Antalya'da boşanma davası nasıl açılır?</h3>
-            <p>Boşanma davası, eşlerden birinin yerleşim yerindeki Aile Mahkemesi'nde açılır. Anlaşmalı boşanma için en az bir yıllık evlilik ve protokol gerekir; çekişmeli davalarda kusur, nafaka, velayet, mal paylaşımı ve tazminat talepleri ayrıca değerlendirilir.</p>
-          </article>
-          <article class="faq-item">
-            <h3>Ceza davalarında avukat tutmak zorunlu mudur?</h3>
-            <p>Her dosyada zorunlu değildir; ancak alt sınırı beş yıldan fazla hapis cezası gerektiren suçlarda ve bazı özel durumlarda müdafi atanması zorunludur. Savunmanın soruşturma aşamasından itibaren kurulması kritik önem taşır.</p>
-          </article>
-          <article class="faq-item">
-            <h3>Avukatlık ücreti neye göre belirlenir?</h3>
-            <p>Ücretler, Türkiye Barolar Birliği tarafından yayımlanan Avukatlık Asgari Ücret Tarifesi'nin altında kalmamak üzere dosyanın türü, kapsamı, süresi ve iş yüküne göre yazılı sözleşmeyle belirlenir.</p>
-          </article>
-          <article class="faq-item">
-            <h3>Online hukuki danışmanlık veriliyor mu?</h3>
-            <p>Evet. Dosya incelemesi gerektiren konularda belgeler dijital olarak iletilebilir; görüşmeler telefon veya video konferans üzerinden yapılabilir.</p>
-          </article>
-          <article class="faq-item">
-            <h3>Yabancılar Türkiye'de gayrimenkul satın alabilir mi?</h3>
-            <p>Evet, belirli sınırlamalarla mümkündür. Askeri yasak bölgeler, yüzölçümü sınırları ve vatandaşlık başvurusu gibi konularda işlem öncesi hukuki kontrol yapılması gerekir.</p>
-          </article>
-          <article class="faq-item">
-            <h3>İcra takibinde süreler neden önemlidir?</h3>
-            <p>İcra ve haciz süreçlerinde itiraz, ödeme emri, ihtiyati haciz ve dava süreleri hak kaybına yol açabilecek kadar kısadır. Tebligat geldiğinde hızlı değerlendirme yapılmalıdır.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="yazilar" class="site-section">
-        <div class="section-kicker">Güncel İçerikler</div>
-        <h2 class="section-heading">Hukuki makaleler</h2>
-        <p class="section-copy">Aile, iş, gayrimenkul, ceza, idare, icra ve yabancılar hukuku alanlarında güncel hukuki değerlendirmeler.</p>
-
-        <div class="articles-grid">
-          <a class="article-card" href="https://www.hukukihaber.net/yargitay-kararlari-cercevesinde-bosanma-davalarinda-af-sayilan-ve-sayilmayan-haller-1" target="_blank" rel="noopener">
-            <small>Aile Hukuku</small>
-            <h3>Boşanma davalarında af sayılan haller</h3>
-            <p>Yargıtay kararları ışığında eşin kusurlu davranışını bilmesine rağmen evlilik birliğini sürdürme iradesinin sonuçları.</p>
-          </a>
-          <a class="article-card" href="https://www.hukukihaber.net/turk-medeni-kanunu-m-194-kapsaminda-aile-konutu-uzerinde-yapilan-tasarruf-islemleri" target="_blank" rel="noopener">
-            <small>Aile Hukuku</small>
-            <h3>Aile konutu üzerinde tasarruf işlemleri</h3>
-            <p>TMK m.194 kapsamında aile konutunun devri, ipoteği ve kira sözleşmesinin feshi için eş rızası.</p>
-          </a>
-          <a class="article-card" href="https://www.hukukihaber.net/is-sozlesmelerinde-cezai-sart-aleyna-yilmaz" target="_blank" rel="noopener">
-            <small>İş Hukuku</small>
-            <h3>İş sözleşmelerinde cezai şart</h3>
-            <p>İş sözleşmelerinde karşılıklılık ilkesi ve yalnızca işçi aleyhine düzenlenen cezai şartların geçerliliği.</p>
-          </a>
-          <a class="article-card" href="https://www.hukukihaber.net/kira-bedelinin-tespiti-davasinda-talep-sonuc-islah-edilebilir-mi" target="_blank" rel="noopener">
-            <small>Gayrimenkul Hukuku</small>
-            <h3>Kira bedelinin tespiti davasında ıslah</h3>
-            <p>Kira tespit davalarında talep sonucunun artırılması ve dava öncesi emsal kira analizinin önemi.</p>
-          </a>
-          <a class="article-card" href="https://dergipark.org.tr/tr/search?q=%22ihtiyati+haciz%22" target="_blank" rel="noopener">
-            <small>İcra ve İflas Hukuku</small>
-            <h3>İhtiyati haciz kararlarına itiraz</h3>
-            <p>Haksız veya eksik evrakla alınan ihtiyati haciz kararlarına karşı izlenecek kısa süreli itiraz yolları.</p>
-          </a>
-          <a class="article-card" href="https://dergipark.org.tr/tr/search?q=%22s%C4%B1n%C4%B1r+d%C4%B1%C5%9F%C4%B1+karar%C4%B1%22" target="_blank" rel="noopener">
-            <small>Yabancılar Hukuku</small>
-            <h3>Sınır dışı kararları ve itiraz yolları</h3>
-            <p>Göç İdaresi tarafından verilen deport kararlarına karşı idari yargıda başvuru süreci.</p>
-          </a>
-        </div>
-      </section>
-
-      <section id="iletisim" class="site-section">
-        <div class="section-kicker">İletişim</div>
-        <h2 class="section-heading">Randevu ve danışmanlık</h2>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>İletişim bilgileri</h3>
-            <ul class="contact-list">
-              <li><strong>Sabit Telefon</strong><a href="tel:+902422441066">(0242) 244 10 66</a></li>
-              <li><strong>Cep / WhatsApp</strong><a href="tel:+905070096194">+90 507 009 61 94</a></li>
-              <li><strong>E-posta</strong><a href="mailto:mucahitcelikav@gmail.com">mucahitcelikav@gmail.com</a></li>
-              <li><strong>Adres</strong><span>Toros, Atatürk Blv. Başak Apt No:11 Kat:4 No:52, 07070 Konyaaltı / Antalya</span></li>
-            </ul>
-          </div>
-
-          <div class="contact-card">
-            <h3>Çalışma saatleri</h3>
-            <ul class="contact-list">
-              <li><strong>Pazartesi - Cuma</strong><span>09:00 - 18:00</span></li>
-              <li><strong>Cumartesi</strong><span>Randevuyla</span></li>
-              <li><strong>Pazar</strong><span>Kapalı</span></li>
-            </ul>
-            <div class="payment-note">Türkiye Barolar Birliği onaylı sanal POS altyapısı ile güvenli ödeme seçeneği ayrıca sunulabilir.</div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="footer">
-        ©2024 Avukat Alper Germen. Bu sitede yer alan bilgiler genel bilgilendirme niteliğindedir; dosyanıza özel hukuki değerlendirme için randevu alınız.
-      </footer>
-    </div>
   </main>
+
+  <!-- Kurumsal section -->
+  <section class="kurumsal-section">
+    <div class="kurumsal-inner">
+      <div class="kurumsal-photo">
+        <img src="assets/avukat.png" alt="Av. Alper Germen" />
+      </div>
+      <div class="kurumsal-text">
+        <div class="section-kicker">Kurumsal</div>
+        <h2 class="section-heading">Net strateji, düzenli bilgilendirme ve hak odaklı temsil.</h2>
+        <p class="section-copy">Av. Alper Germen, Antalya Barosu'na bağlı olarak aile, iş, gayrimenkul, ceza, idare, icra, tüketici, ticaret ve yabancılar hukuku alanlarında avukatlık ve danışmanlık hizmeti sunar. Her dosyada önce uyuşmazlığın gerçek ihtiyacını netleştirir, ardından uygulanabilir bir yol haritası oluşturur.</p>
+        <p class="section-copy">Çalışma yaklaşımı; şeffaf ücretlendirme, düzenli dosya bilgilendirmesi, hızlı erişim ve müvekkilin hukuki riskleri açıkça anlayabilmesi üzerine kuruludur.</p>
+        <div class="facts">
+          <div class="fact">
+            <strong>Baro</strong>
+            <span>Antalya Barosu'na kayıtlı serbest avukatlık hizmeti.</span>
+          </div>
+          <div class="fact">
+            <strong>Yaklaşım</strong>
+            <span>Ön değerlendirme, strateji kurulumu, dava ve başvuru takibi.</span>
+          </div>
+          <div class="fact">
+            <strong>Danışmanlık</strong>
+            <span>Yüz yüze, telefon ve çevrim içi görüşme seçenekleri.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services overlay — slides in from right -->
+  <div class="services-overlay" id="services-overlay" aria-label="Uzmanlık alanları paneli" role="dialog">
+    <div class="overlay-header">
+      <button class="overlay-back" id="overlay-back" aria-label="Geri dön">
+        ← Geri dön
+      </button>
+    </div>
+    <div class="overlay-body">
+      <div class="section-kicker">Hizmet Alanları</div>
+      <h2 class="section-heading">Hizmet verdiğimiz alanlar</h2>
+      <p class="section-copy">Aile, iş, gayrimenkul, ceza, idare, icra, tüketici, ticaret ve yabancılar hukuku başlıklarında dosyanın niteliğine uygun temsil ve danışmanlık sunulur.</p>
+
+      <div class="services-grid">
+        <article class="service-card" data-key="ceza">
+          <h3>Ceza Hukuku</h3>
+          <ul>
+            <li>Ağır ceza ve asliye ceza davaları</li>
+            <li>Soruşturma, ifade ve tutuklamaya itiraz</li>
+            <li>Bilişim suçları ve trafik kazası sonrası ceza süreçleri</li>
+          </ul>
+          <span class="card-cta">Detaylar →</span>
+        </article>
+        <article class="service-card" data-key="is">
+          <h3>İş Hukuku</h3>
+          <ul>
+            <li>Kıdem ve ihbar tazminatı davaları</li>
+            <li>İşe iade, fazla mesai ve işçilik alacakları</li>
+            <li>Mobbing ve hizmet tespiti uyuşmazlıkları</li>
+          </ul>
+          <span class="card-cta">Detaylar →</span>
+        </article>
+        <article class="service-card" data-key="gayrimenkul">
+          <h3>Gayrimenkul ve Kira Hukuku</h3>
+          <ul>
+            <li>Tahliye, kira tespit ve uyarlama davaları</li>
+            <li>Tapu iptal ve tescil davaları</li>
+            <li>Ortaklığın giderilmesi ve inşaat sözleşmeleri</li>
+          </ul>
+          <span class="card-cta">Detaylar →</span>
+        </article>
+        <article class="service-card" data-key="aile">
+          <h3>Aile Hukuku</h3>
+          <ul>
+            <li>Çekişmeli ve anlaşmalı boşanma davaları</li>
+            <li>Nafaka, velayet ve mal paylaşımı süreçleri</li>
+            <li>Tanıma, tenfiz ve nişan bozma tazminatı</li>
+          </ul>
+          <span class="card-cta">Detaylar →</span>
+        </article>
+        <article class="service-card" data-key="idare">
+          <h3>İdare Hukuku</h3>
+          <ul>
+            <li>İptal ve tam yargı davaları</li>
+            <li>Kamu görevlileriyle ilgili uyuşmazlıklar</li>
+            <li>Kamulaştırma, belediye ve imar davaları</li>
+          </ul>
+          <span class="card-cta">Detaylar →</span>
+        </article>
+        <article class="service-card" data-key="icra">
+          <h3>İcra ve İflas Hukuku</h3>
+          <ul>
+            <li>İlamlı ve ilamsız icra takipleri</li>
+            <li>İhtiyati haciz, çek ve senet takipleri</li>
+            <li>İtirazın iptali, borca ve hacze itiraz</li>
+          </ul>
+          <span class="card-cta">Detaylar →</span>
+        </article>
+        <article class="service-card" data-key="tuketici">
+          <h3>Tüketici Hukuku</h3>
+          <ul>
+            <li>Tüketici mahkemesi ve hakem heyeti süreçleri</li>
+            <li>Araç değer kaybı başvuruları</li>
+            <li>Ayıplı mal ve hizmet uyuşmazlıkları</li>
+          </ul>
+          <span class="card-cta">Detaylar →</span>
+        </article>
+        <article class="service-card" data-key="ticaret">
+          <h3>Ticaret Hukuku</h3>
+          <ul>
+            <li>Şirket kuruluşu ve ticari sözleşmeler</li>
+            <li>Ortaklık anlaşmazlıkları</li>
+            <li>Ticari dava ve sürekli şirket danışmanlığı</li>
+          </ul>
+          <span class="card-cta">Detaylar →</span>
+        </article>
+        <article class="service-card" data-key="yabancilar">
+          <h3>Yabancılar Hukuku</h3>
+          <ul>
+            <li>İkamet ve çalışma izni başvuruları</li>
+            <li>Türk vatandaşlığı başvuru işlemleri</li>
+            <li>Deport kararının iptali ve tanıma-tenfiz</li>
+          </ul>
+          <span class="card-cta">Detaylar →</span>
+        </article>
+      </div>
+
+      <div class="overlay-cta">
+        <a class="btn-dark" href="/iletisim">Randevu Al</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail overlay — slides above services overlay -->
+  <div class="detail-overlay" id="detail-overlay" role="dialog">
+    <div class="detail-header">
+      <button class="detail-back" id="detail-back">← Geri dön</button>
+    </div>
+    <div class="detail-body" id="detail-body"></div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="menu-close" id="menu-close" aria-label="Kapat">✕</button>
+    <a href="/" class="active">Ana Sayfa</a>
+    <a href="/alanlar">Uzmanlık Alanları</a>
+    <a href="/sss">SSS</a>
+    <a href="/yazilar">Yazılar</a>
+    <a href="/iletisim">İletişim</a>
+    <div class="mobile-lang">
+      <a class="mlang-flag" href="/en/" title="Switch to English"><img src="assets/flag-gb.svg" alt="English"></a>
+    </div>
+  </div>
+
+  <div class="float-contact" aria-label="Hızlı iletişim">
+    <a class="float-btn phone" href="tel:+905537727601" aria-label="Telefon ile ara">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+    <a class="float-btn whatsapp" href="https://wa.me/905537727601" target="_blank" rel="noopener" aria-label="WhatsApp ile yaz">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <script>
+    // Hamburger menu
+    const hbg = document.getElementById('hamburger');
+    const mmenu = document.getElementById('mobile-menu');
+    function closeMenu() { hbg.classList.remove('open'); mmenu.classList.remove('open'); document.body.style.overflow = ''; }
+    hbg.addEventListener('click', () => { const o = mmenu.classList.toggle('open'); hbg.classList.toggle('open', o); document.body.style.overflow = o ? 'hidden' : ''; });
+    document.getElementById('menu-close').addEventListener('click', closeMenu);
+    mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    // Services overlay
+    const overlay = document.getElementById('services-overlay');
+    document.getElementById('services-btn').addEventListener('click', () => {
+      showDefault();
+      overlay.classList.add('visible');
+      overlay.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('overlay-back').addEventListener('click', () => {
+      overlay.classList.remove('visible');
+      document.body.style.overflow = '';
+    });
+
+    // Hero panel swap
+    const heroDefault = document.getElementById('hero-default');
+    const heroProcess = document.getElementById('hero-process');
+    const processBtn = document.getElementById('process-btn');
+    let processVisible = false;
+
+    function showDefault() {
+      processVisible = false;
+      heroProcess.classList.add('hidden');
+      heroProcess.setAttribute('aria-hidden', 'true');
+      heroDefault.classList.remove('hidden');
+      heroDefault.removeAttribute('aria-hidden');
+      processBtn.textContent = 'Süreç Nasıl İşler';
+    }
+
+    processBtn.addEventListener('click', () => {
+      if (!processVisible) {
+        processVisible = true;
+        heroDefault.classList.add('hidden');
+        heroDefault.setAttribute('aria-hidden', 'true');
+        heroProcess.classList.remove('hidden');
+        heroProcess.removeAttribute('aria-hidden');
+        processBtn.textContent = '← Geri dön';
+      } else {
+        showDefault();
+      }
+    });
+
+    // Detail overlay (above services overlay)
+    const detailOverlay = document.getElementById('detail-overlay');
+    const detailBody = document.getElementById('detail-body');
+
+    const specialtyData = {
+      aile: {
+        kicker: 'Aile Hukuku',
+        heading: 'Aile Hukuku Avukatı Nedir?',
+        desc: 'Aile hukuku avukatı, evlilik, boşanma, velayet, nafaka ve mal paylaşımı gibi aile ilişkilerinden doğan uyuşmazlıklarda taraflara hukuki destek sağlayan avukattır. Aile davaları yalnızca evlilik birliğinin sona erdirilmesiyle sınırlı değildir; çocuk velayeti, nafaka, mal rejimi tasfiyesi ve tazminat gibi birçok konuyu da kapsar.',
+        steps: [
+          { title: 'Boşanma dilekçesinin hazırlanması', desc: 'Davanın hukuki stratejisine uygun, eksiksiz dilekçe hazırlığı ve mahkemeye sunumu.' },
+          { title: 'Delillerin toplanması ve sunulması', desc: 'Davanın seyrini belirleyecek delillerin profesyonel olarak derlenmesi ve mahkemede sunulması.' },
+          { title: 'Nafaka ve tazminat taleplerinin hazırlanması', desc: 'Müvekkilin haklarına uygun nafaka ve tazminat taleplerinin belirlenmesi ve takibi.' },
+          { title: 'Velayet ve kişisel ilişki düzenlemeleri', desc: 'Çocuğun üstün yararı gözetilerek velayet ve aile bireyleriyle ilişki düzenlemelerinin yapılması.' }
+        ]
+      },
+      is: {
+        kicker: 'İş Hukuku',
+        heading: 'İş Hukuku Avukatı Nedir?',
+        desc: 'İş hukuku avukatı, işçi ve işveren arasındaki ilişkilerden doğan uyuşmazlıklarda hukuki destek sağlayan avukattır. Kıdem ve ihbar tazminatı, işe iade, fazla mesai alacakları, mobbing ve sosyal güvenlik uyuşmazlıkları gibi konularda hem işçilere hem işverenlere danışmanlık ve dava takibi hizmeti sunar.',
+        steps: [
+          { title: 'Hizmet süresi ve alacakların hesaplanması', desc: 'Kıdem, ihbar tazminatı ve işçilik alacaklarının mevzuata uygun hesaplanması ve talep edilmesi.' },
+          { title: 'İşe iade davası açılması', desc: 'Haksız fesih durumunda işe iade veya tazminat talebiyle dava açılması ve yürütülmesi.' },
+          { title: 'Arabuluculuk sürecinin yönetimi', desc: 'Zorunlu arabuluculuk sürecinde müvekkil adına müzakerelerin profesyonel olarak yürütülmesi.' },
+          { title: 'Sosyal güvenlik uyuşmazlıklarının takibi', desc: 'SGK prim borçları, hizmet tespiti ve kayıt dışı çalışmaya ilişkin davaların takibi.' }
+        ]
+      },
+      gayrimenkul: {
+        kicker: 'Gayrimenkul ve Kira Hukuku',
+        heading: 'Gayrimenkul Avukatı Nedir?',
+        desc: 'Gayrimenkul ve kira hukuku avukatı, taşınmazlara ilişkin hukuki uyuşmazlıklarda danışmanlık ve dava takibi hizmeti sunan avukattır. Tapu iptal ve tescil, tahliye, kira tespit, ortaklığın giderilmesi ve inşaat sözleşmelerinden doğan uyuşmazlıklar bu alanın başlıca konularındandır.',
+        steps: [
+          { title: 'Tapu iptal ve tescil davası açılması', desc: 'Hatalı veya haksız tapuya karşı iptal davası açılması ve tescil işlemlerinin takibi.' },
+          { title: 'Kira tahliyesi ve tespit davası', desc: 'Kiracının tahliyesi veya kira bedelinin tespiti için dava açılması ve yürütülmesi.' },
+          { title: 'Kat mülkiyeti ve site yönetimi uyuşmazlıkları', desc: 'Apartman ve site yönetiminden doğan hukuki sorunların çözümü.' },
+          { title: 'İnşaat ve müteahhitlik sözleşmelerinin hazırlanması', desc: 'Tarafların haklarını koruyacak sözleşmelerin hazırlanması ve uyuşmazlık yönetimi.' }
+        ]
+      },
+      ceza: {
+        kicker: 'Ceza Hukuku',
+        heading: 'Ceza Hukuku Avukatı Nedir?',
+        desc: 'Ceza hukuku avukatı, suç isnadıyla karşılaşan bireylerin soruşturma ve kovuşturma aşamalarında hukuki haklarını koruyan avukattır. Şüpheli veya sanığın ifade vermesinden tutukluluğa itiraz, duruşma sürecinden temyiz aşamasına kadar tüm ceza yargılaması boyunca savunma hizmeti sunar.',
+        steps: [
+          { title: 'İfade ve sorgu aşamasında temsil', desc: 'Kolluk ve savcılık aşamasında müvekkilin haklarını koruyarak ifade sürecinin yönetilmesi.' },
+          { title: 'Tutukluluk ve adli kontrol kararlarına itiraz', desc: 'Haksız tutuklama veya adli kontrol kararlarına karşı itiraz dilekçelerinin hazırlanması.' },
+          { title: 'Duruşma savunmasının hazırlanması', desc: 'Delillerin değerlendirilmesi, tanık dinlenmesi ve mahkeme savunmasının stratejik olarak yürütülmesi.' },
+          { title: 'Temyiz ve kanun yolu başvuruları', desc: 'İlk derece mahkemesi kararlarına karşı istinaf ve Yargıtay başvurularının hazırlanması.' }
+        ]
+      },
+      idare: {
+        kicker: 'İdare Hukuku',
+        heading: 'İdare Hukuku Avukatı Nedir?',
+        desc: 'İdare hukuku avukatı, bireylerin ve kurumların kamu idaresiyle yaşadığı uyuşmazlıklarda hukuki destek sağlayan avukattır. İdari işlemlerin iptali, tam yargı davaları, kamulaştırma, imar uyuşmazlıkları ve kamu görevlileriyle ilgili davalar bu alanın temel konularını oluşturur.',
+        steps: [
+          { title: 'İdari işlemin iptali için dava açılması', desc: 'Hukuka aykırı idari kararların iptali amacıyla idare mahkemesinde dava açılması.' },
+          { title: 'Tam yargı davası ve tazminat talebi', desc: 'İdarenin eylem veya işleminden doğan zararın tazmini için tam yargı davası açılması.' },
+          { title: 'Kamulaştırma bedel tespiti', desc: 'Kamulaştırma kararlarına itiraz ve bedel artırımı davalarının yürütülmesi.' },
+          { title: 'İmar ve ruhsat uyuşmazlıklarının çözümü', desc: 'İmar planı değişiklikleri ve ruhsat iptallerinden doğan davaların takibi.' }
+        ]
+      },
+      icra: {
+        kicker: 'İcra ve İflas Hukuku',
+        heading: 'İcra ve İflas Avukatı Nedir?',
+        desc: 'İcra ve iflas hukuku avukatı, alacak takibi, borç tahsilatı ve iflas süreçlerinde alacaklı veya borçlu adına hukuki destek sağlayan avukattır. İlamlı ve ilamsız icra takiplerinden ihtiyati hacze, çek-senet takiplerinden konkordatoya kadar geniş bir alanda hizmet sunar.',
+        steps: [
+          { title: 'İcra takibi başlatılması', desc: 'Alacağın tahsili için ilamsız veya ilamlı icra takibi başlatılması ve yönetilmesi.' },
+          { title: 'İhtiyati haciz kararı alınması', desc: 'Borçlunun mal kaçırmasını önlemek amacıyla ihtiyati haciz kararı için mahkemeye başvurulması.' },
+          { title: 'İtirazın iptali ve kaldırılması', desc: 'Borçlunun icra takibine itirazına karşı iptal davası veya itirazın kaldırılması yoluna başvurulması.' },
+          { title: 'İflas ve konkordato süreçlerinin takibi', desc: 'Şirketin ya da kişinin iflas veya konkordato sürecinin hukuki olarak yönetilmesi.' }
+        ]
+      },
+      tuketici: {
+        kicker: 'Tüketici Hukuku',
+        heading: 'Tüketici Hukuku Avukatı Nedir?',
+        desc: 'Tüketici hukuku avukatı, tüketicilerin satın aldıkları mal ve hizmetlerden kaynaklanan uyuşmazlıklarda haklarını koruyan avukattır. Ayıplı ürün, haksız sözleşme şartları, araç değer kaybı ve tüketici mahkemesi süreçleri bu alanın başlıca konularındandır.',
+        steps: [
+          { title: 'Tüketici hakem heyetine başvuru', desc: 'Uyuşmazlığın tutarına göre tüketici hakem heyetine başvurunun hazırlanması ve takibi.' },
+          { title: 'Tüketici mahkemesinde dava açılması', desc: 'Hakem heyeti kararına itiraz veya doğrudan tüketici mahkemesinde dava açılması.' },
+          { title: 'Ayıplı mal ve hizmet iade/tazminat talebi', desc: 'Ayıplı ürün veya hizmet nedeniyle iade, değişim ya da tazminat talebinin yürütülmesi.' },
+          { title: 'Araç değer kaybı hesaplama ve başvuru', desc: 'Trafik kazası sonrası oluşan araç değer kaybının hesaplanması ve sigortaya karşı talep edilmesi.' }
+        ]
+      },
+      ticaret: {
+        kicker: 'Ticaret Hukuku',
+        heading: 'Ticaret Hukuku Avukatı Nedir?',
+        desc: 'Ticaret hukuku avukatı, şirketler, ticari ilişkiler ve iş ortaklıklarından doğan hukuki uyuşmazlıklarda danışmanlık ve dava hizmeti sunan avukattır. Şirket kuruluşu, ticari sözleşmelerin hazırlanması, ortaklık anlaşmazlıkları ve ticari dava takibi bu alanın temel konuları arasında yer alır.',
+        steps: [
+          { title: 'Şirket kuruluşu ve sözleşmelerin hazırlanması', desc: 'Şirket türüne uygun ana sözleşme ve ticari sözleşmelerin hukuki olarak hazırlanması.' },
+          { title: 'Ortaklık uyuşmazlıklarının çözümü', desc: 'Ortaklar arasındaki anlaşmazlıkların müzakere veya dava yoluyla çözüme kavuşturulması.' },
+          { title: 'Ticari alacak takibi', desc: 'Şirketin alacaklarının icra veya dava yoluyla tahsil edilmesi.' },
+          { title: 'Sürekli hukuki danışmanlık', desc: 'Şirketin günlük ticari faaliyetlerine ilişkin hukuki risklerin değerlendirilmesi ve yönetilmesi.' }
+        ]
+      },
+      yabancilar: {
+        kicker: 'Yabancılar Hukuku',
+        heading: 'Yabancılar Hukuku Avukatı Nedir?',
+        desc: 'Yabancılar hukuku avukatı, Türkiye\'de yaşayan veya yaşamak isteyen yabancı uyruklu bireylerin oturma izni, çalışma izni, vatandaşlık başvuruları ve sınır dışı etme gibi konularda hukuki destek sağlayan avukattır. Uluslararası koruma talepleri ve yabancı mahkeme kararlarının tanınması da bu alanın kapsamındadır.',
+        steps: [
+          { title: 'İkamet ve çalışma izni başvurularının hazırlanması', desc: 'Türkiye\'de yasal statü kazanmak için gerekli başvuruların eksiksiz hazırlanması ve takibi.' },
+          { title: 'Türk vatandaşlığı başvurusu', desc: 'Olağan veya istisnai vatandaşlık başvurularının hazırlanması ve sürecin yönetilmesi.' },
+          { title: 'Sınır dışı (deport) kararına itiraz', desc: 'Sınır dışı etme kararına karşı idare mahkemesinde itiraz davası açılması.' },
+          { title: 'Tanıma ve tenfiz davaları', desc: 'Yabancı mahkeme ve tahkim kararlarının Türkiye\'de geçerli kılınması için dava açılması.' }
+        ]
+      }
+    };
+
+    function openDetail(key) {
+      const d = specialtyData[key];
+      if (!d) return;
+      detailBody.innerHTML = `
+        <div class="detail-kicker">${d.kicker}</div>
+        <h2 class="detail-heading">${d.heading}</h2>
+        <p class="detail-desc">${d.desc}</p>
+        <div class="detail-steps">
+          ${d.steps.map((s, i) => `
+            <div class="detail-step">
+              <div class="step-num">${i + 1}</div>
+              <div>
+                <strong class="step-title">${s.title}</strong>
+                <p class="step-desc">${s.desc}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>`;
+      detailOverlay.scrollTop = 0;
+      detailOverlay.classList.add('visible');
+    }
+
+    document.getElementById('detail-back').addEventListener('click', () => {
+      detailOverlay.classList.remove('visible');
+    });
+
+    document.querySelectorAll('.services-overlay .service-card[data-key]').forEach(card => {
+      card.addEventListener('click', () => openDetail(card.dataset.key));
+    });
+  </script>
 </body>
 </html>
