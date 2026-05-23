@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "alpergermen",
+  "name": "alpergermenav",
   "compatibility_date": "2026-05-19",
   "main": "worker.js",
   "assets": {
