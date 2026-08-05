@@ -183,6 +183,7 @@ const FAQS=[
         <span class="rev-stars">${stars(d.rating)}</span>
         <span class="rev-count">${d.total} ${lang==='en'?'Google reviews':'Google reviews'}</span>`;
     }
+    grid.dataset.count=d.reviews.length;
     d.reviews.forEach(r=>{
       const el=document.createElement('figure');
       el.className='rev';
