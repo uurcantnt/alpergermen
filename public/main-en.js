@@ -168,6 +168,40 @@ const FAQS=[
   });
 })();
 
+/* ───────────── google reviews ───────────── */
+(function(){
+  const sec=document.getElementById('reviews');
+  if(!sec)return;
+  const grid=sec.querySelector('.rev-grid');
+  const lang=document.documentElement.lang==='en'?'en':'tr';
+  const stars=n=>'★'.repeat(Math.round(n))+'☆'.repeat(5-Math.round(n));
+  fetch('/api/reviews?lang='+lang).then(r=>r.json()).then(d=>{
+    if(!d.reviews||!d.reviews.length)return;
+    const sum=sec.querySelector('.rev-sum');
+    if(sum&&d.rating){
+      sum.innerHTML=`<span class="rev-score">${d.rating.toFixed(1)}</span>
+        <span class="rev-stars">${stars(d.rating)}</span>
+        <span class="rev-count">${d.total} ${lang==='en'?'Google reviews':'Google reviews'}</span>`;
+    }
+    d.reviews.forEach(r=>{
+      const el=document.createElement('figure');
+      el.className='rev';
+      el.innerHTML=`<div class="rev-stars">${stars(r.rating)}</div>
+        <blockquote>${r.text.replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]))}</blockquote>
+        <figcaption><span class="rev-author"></span><span class="rev-when"></span></figcaption>`;
+      el.querySelector('.rev-author').textContent=r.author;
+      el.querySelector('.rev-when').textContent=r.when;
+      grid.appendChild(el);
+    });
+    if(d.mapsUrl){
+      const a=sec.querySelector('.rev-all');
+      if(a)a.href=d.mapsUrl;
+    }
+    sec.hidden=false;
+    sec.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+  }).catch(()=>{});
+})();
+
 /* ───────────── scroll reveal ───────────── */
 (function(){
   const els=document.querySelectorAll('.rv');
