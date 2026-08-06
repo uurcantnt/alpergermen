@@ -113,6 +113,10 @@ Başarısız yanıtlar 10 dakika, başarılı yanıtlar 24 saat önbellekte tutu
 Yani yeni bir yorum sitede en geç ertesi gün görünür; secret düzeltmesi ise
 en geç 10 dakikada etkisini gösterir.
 
+Kendi tarayıcınızda hemen görmek isterseniz sert yenileme yapın
+(<kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>) ya da gizli sekme açın —
+yanıtı daha önce almış bir tarayıcı süresi dolana kadar kendi kopyasını gösterir.
+
 ---
 
 ## Bilinen sınırlar

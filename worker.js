@@ -121,11 +121,15 @@ function ttlFor(payload) {
   return payload?.reviews?.length ? REVIEWS_TTL_OK : REVIEWS_TTL_FAIL;
 }
 
+/* cdn-cache-control olmadan Cloudflare edge'i bu yanıtı kendi varsayılan
+   süresiyle (4 saat) tutuyor ve kısa ömürlü hata yanıtlarını oraya çiviliyordu;
+   secret düzeltildikten sonra bile eski boş yanıt servis ediliyordu. */
 function reviewsResponse(body, ttl) {
   return new Response(body, {
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "cache-control": `public, max-age=${ttl}`
+      "cache-control": `public, max-age=${ttl}`,
+      "cdn-cache-control": `public, max-age=${ttl}`
     }
   });
 }
