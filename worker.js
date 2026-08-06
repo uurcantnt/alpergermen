@@ -68,12 +68,17 @@ Allow: /
 Sitemap: https://alpergermen.av.tr/sitemap.xml
 `;
 
-const REVIEWS_TTL = 21600;
+/* Google Places "reviews" alanı en pahalı SKU'yu (Enterprise + Atmosphere)
+   tetikler ve ayda yalnızca 1.000 çağrı ücretsizdir. Bu yüzden başarılı yanıt
+   uzun, başarısız yanıt kısa süre önbelleğe alınır — hatalı bir yapılandırma
+   her sayfa ziyaretinde Google'a çağrı yapılmasına yol açmasın. */
+const REVIEWS_TTL_OK = 86400;
+const REVIEWS_TTL_FAIL = 600;
 
 async function fetchReviews(env, lang) {
   const key = env.GOOGLE_PLACES_API_KEY;
   const placeId = env.GOOGLE_PLACE_ID;
-  if (!key || !placeId) return {reviews: []};
+  if (!key || !placeId) return {reviews: [], error: "missing_config"};
 
   const endpoint =
     `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}` +
@@ -86,23 +91,90 @@ async function fetchReviews(env, lang) {
         "rating,userRatingCount,googleMapsUri,reviews.rating,reviews.text,reviews.relativePublishTimeDescription,reviews.authorAttribution"
     }
   });
-  if (!res.ok) return {reviews: []};
+  /* Durum kodu teşhis için döndürülür; Google'ın hata gövdesi anahtar
+     parçası içerebildiğinden dışarı sızdırılmaz. */
+  if (!res.ok) return {reviews: [], error: `http_${res.status}`};
 
   const data = await res.json();
+  const reviews = (data.reviews || [])
+    .filter((r) => r.text?.text)
+    .map((r) => ({
+      rating: r.rating ?? 5,
+      text: r.text.text,
+      when: r.relativePublishTimeDescription ?? "",
+      author: r.authorAttribution?.displayName ?? "",
+      photo: r.authorAttribution?.photoUri ?? null
+    }));
+
   return {
     rating: data.rating ?? null,
     total: data.userRatingCount ?? 0,
     mapsUrl: data.googleMapsUri ?? null,
-    reviews: (data.reviews || [])
-      .filter((r) => r.text?.text)
-      .map((r) => ({
-        rating: r.rating ?? 5,
-        text: r.text.text,
-        when: r.relativePublishTimeDescription ?? "",
-        author: r.authorAttribution?.displayName ?? "",
-        photo: r.authorAttribution?.photoUri ?? null
-      }))
+    reviews,
+    ...(reviews.length ? {} : {error: "no_reviews"})
   };
+}
+
+/* Yorum taşımayan yanıtlar kısa ömürlüdür; yanlış yapılandırma tarayıcıda
+   bir gün boyunca çakılı kalmasın. */
+function ttlFor(payload) {
+  return payload?.reviews?.length ? REVIEWS_TTL_OK : REVIEWS_TTL_FAIL;
+}
+
+function reviewsResponse(body, ttl) {
+  return new Response(body, {
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "cache-control": `public, max-age=${ttl}`
+    }
+  });
+}
+
+function parsePayload(body) {
+  try {
+    return JSON.parse(body);
+  } catch {
+    return null;
+  }
+}
+
+async function handleReviews(request, env, ctx) {
+  const lang = new URL(request.url).searchParams.get("lang") === "en" ? "en" : "tr";
+  const cacheName = `reviews-${lang}`;
+  const kv = env.REVIEWS_KV;
+
+  /* KV bağlıysa önbellek tüm dünyada tektir. Değilse Cache API'ye düşülür;
+     o önbellek her Cloudflare lokasyonunda ayrı olduğundan aynı içerik için
+     Google'a lokasyon sayısı kadar çağrı gider. */
+  if (kv) {
+    const hit = await kv.get(cacheName);
+    const cached = hit && parsePayload(hit);
+    if (cached) return reviewsResponse(hit, ttlFor(cached));
+  }
+
+  const cacheKey = new Request(`https://cache.local/${cacheName}`);
+  if (!kv) {
+    const hit = await caches.default.match(cacheKey);
+    if (hit) return hit;
+  }
+
+  let payload;
+  try {
+    payload = await fetchReviews(env, lang);
+  } catch {
+    payload = {reviews: [], error: "fetch_failed"};
+  }
+
+  const body = JSON.stringify(payload);
+  const ttl = ttlFor(payload);
+  const response = reviewsResponse(body, ttl);
+
+  if (kv) {
+    ctx.waitUntil(kv.put(cacheName, body, {expirationTtl: ttl}));
+  } else {
+    ctx.waitUntil(caches.default.put(cacheKey, response.clone()));
+  }
+  return response;
 }
 
 export default {
@@ -110,28 +182,7 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/reviews") {
-      const lang = url.searchParams.get("lang") === "en" ? "en" : "tr";
-      const cacheKey = new Request(`https://cache.local/reviews-${lang}`, request);
-      const cache = caches.default;
-
-      const hit = await cache.match(cacheKey);
-      if (hit) return hit;
-
-      let payload;
-      try {
-        payload = await fetchReviews(env, lang);
-      } catch {
-        payload = {reviews: []};
-      }
-
-      const response = new Response(JSON.stringify(payload), {
-        headers: {
-          "content-type": "application/json; charset=utf-8",
-          "cache-control": `public, max-age=${REVIEWS_TTL}`
-        }
-      });
-      if (payload.reviews.length) ctx.waitUntil(cache.put(cacheKey, response.clone()));
-      return response;
+      return handleReviews(request, env, ctx);
     }
 
     if (url.pathname === "/sitemap.xml") {
