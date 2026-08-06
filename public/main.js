@@ -186,39 +186,63 @@ const FAQS=[
   });
 })();
 
-/* ───────────── google reviews ───────────── */
+/* ───────────── google reviews ─────────────
+   Yorumlar elle güncellenir; Google Places API'ye bağlı değildir (API'nin
+   yorum döndüren katmanı ücretlidir ve en fazla 5 yorum verir).
+   Yeni yorum eklemek için REVIEWS dizisine bir satır ekleyin —
+   ayrıntılı anlatım: docs/google-yorumlari.md */
+/* Profildeki 9 değerlendirmenin 6'sı yazılı; kalan 3'ü yalnızca yıldız
+   verdiği için kart üretmez. Özetteki sayı yine 9'u gösterir. */
+const REVIEW_SUMMARY={rating:5.0,total:9};
+const REVIEWS=[
+  {yildiz:5,kisi:'erdal yusuf serce',ne_zaman:'2 hafta önce',
+   metin:"Hukuki sürecimizin başından sonuna kadar gösterdiği profesyonel yaklaşım, derin bilgi birikimi ve detaylara verdikleri önem sayesinde kendimizi çok güvende hissettik. Sadece bir avukat değil, aynı zamanda çok iyi birer yol gösterici oldu. Emekleri ve ilgileri için sonsuz teşekkürler. Kesinlikle tavsiye ederim."},
+  {yildiz:5,kisi:'Mehmet Said Özbey',ne_zaman:'2 hafta önce',
+   metin:"4 yıldır aile avukatımız olarak devam etmekte. Bize çok yardımcı oldu. Bilgi birikimi sayesinde çözmekte zorlandığı bir dosya yok. İyi ki karşılaşmışız. Herkese tavsiye ederim."},
+  {yildiz:5,kisi:'Enes Yıldız',ne_zaman:'2 hafta önce',
+   metin:"Antalya'da uzun süredir alamadığım borcumun tahsili konusunda çok yardımcı oldu. Alper Bey oldukça deneyimli bir avukat, gönül rahatlığıyla kendisiyle çalışabilirsiniz."},
+  {yildiz:5,kisi:'',ne_zaman:'2 hafta önce',
+   metin:"Alanında bilgili, dava süreçlerine hakim, her daim ulaşılabilir bir avukat. Herkese tavsiye ederim"},
+  {yildiz:5,kisi:'Selim Kağan Bulut',ne_zaman:'3 hafta önce',
+   metin:"İşinde deneyimli, hukuki süreçlere hakim, Antalya ve çevresindeki en iyi avukatlık bürosu."},
+  {yildiz:5,kisi:'Utku Yaylagul',ne_zaman:'2 hafta önce',
+   metin:"En iyisi mi bilmiyorum ama çok iyi."}
+];
+
+const GOOGLE_REVIEWS_URL='https://www.google.com/maps?cid=7733764520542568322';
+
 (function(){
   const sec=document.getElementById('reviews');
-  if(!sec)return;
+  if(!sec||!REVIEWS.length)return;
   const grid=sec.querySelector('.rev-grid');
-  const lang=document.documentElement.lang==='en'?'en':'tr';
   const stars=n=>'★'.repeat(Math.round(n))+'☆'.repeat(5-Math.round(n));
-  fetch('/api/reviews?lang='+lang).then(r=>r.json()).then(d=>{
-    if(!d.reviews||!d.reviews.length)return;
-    const sum=sec.querySelector('.rev-sum');
-    if(sum&&d.rating){
-      sum.innerHTML=`<span class="rev-score">${d.rating.toFixed(1)}</span>
-        <span class="rev-stars">${stars(d.rating)}</span>
-        <span class="rev-count">${d.total} ${lang==='en'?'Google reviews':'Google değerlendirmesi'}</span>`;
-    }
-    grid.dataset.count=d.reviews.length;
-    d.reviews.forEach(r=>{
-      const el=document.createElement('figure');
-      el.className='rev';
-      el.innerHTML=`<div class="rev-stars">${stars(r.rating)}</div>
-        <blockquote>${r.text.replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]))}</blockquote>
-        <figcaption><span class="rev-author"></span><span class="rev-when"></span></figcaption>`;
-      el.querySelector('.rev-author').textContent=r.author;
-      el.querySelector('.rev-when').textContent=r.when;
-      grid.appendChild(el);
-    });
-    if(d.mapsUrl){
-      const a=sec.querySelector('.rev-all');
-      if(a)a.href=d.mapsUrl;
-    }
-    sec.hidden=false;
-    sec.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
-  }).catch(()=>{});
+
+  const sum=sec.querySelector('.rev-sum');
+  if(sum&&REVIEW_SUMMARY.rating){
+    const adet=REVIEW_SUMMARY.total||REVIEWS.length;
+    sum.innerHTML=`<span class="rev-score">${REVIEW_SUMMARY.rating.toFixed(1)}</span>
+      <span class="rev-stars">${stars(REVIEW_SUMMARY.rating)}</span>
+      <span class="rev-count">${adet} Google değerlendirmesi</span>`;
+  }
+
+  grid.dataset.count=REVIEWS.length;
+  REVIEWS.forEach(r=>{
+    const el=document.createElement('figure');
+    el.className='rev';
+    el.innerHTML=`<div class="rev-stars">${stars(r.yildiz)}</div>
+      <blockquote></blockquote>
+      <figcaption><span class="rev-author"></span><span class="rev-when"></span></figcaption>`;
+    el.querySelector('blockquote').textContent=r.metin;
+    const yazar=el.querySelector('.rev-author');
+    /* Adı olmayan yorumda boş span satır yüksekliği kadar boşluk bırakıyordu. */
+    if(r.kisi)yazar.textContent=r.kisi;else yazar.remove();
+    el.querySelector('.rev-when').textContent=r.ne_zaman;
+    grid.appendChild(el);
+  });
+
+  sec.querySelectorAll('.rev-all').forEach(a=>{a.href=GOOGLE_REVIEWS_URL;});
+  sec.hidden=false;
+  sec.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
 })();
 
 /* ───────────── scroll reveal ───────────── */

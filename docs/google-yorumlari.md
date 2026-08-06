@@ -109,9 +109,20 @@ Sorun varsa yanıttaki `error` alanı sebebi söyler:
 | `no_reviews` | API çalışıyor, profilde yorum yok | Google profiline yorum gelmesini bekleyin |
 | `fetch_failed` | Google'a ulaşılamadı | Geçicidir, 10 dk sonra kendini dener |
 
-Başarısız yanıtlar 10 dakika, başarılı yanıtlar 24 saat önbellekte tutulur.
+Önbellek süreleri duruma göre değişir:
+
+| Durum | Süre | Neden |
+|-------|------|-------|
+| Yorum geldi | 24 saat | Yorumlar sık değişmez |
+| `no_reviews` | 6 saat | Bu da faturalanan başarılı bir çağrıdır; sık tekrarlanırsa kota tükenir |
+| Yapılandırma hatası | 10 dakika | Hatalı istekler faturalanmaz, düzeltmesi hızlı yansımalı |
+
 Yani yeni bir yorum sitede en geç ertesi gün görünür; secret düzeltmesi ise
 en geç 10 dakikada etkisini gösterir.
+
+Kendi tarayıcınızda hemen görmek isterseniz sert yenileme yapın
+(<kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>) ya da gizli sekme açın —
+yanıtı daha önce almış bir tarayıcı süresi dolana kadar kendi kopyasını gösterir.
 
 Kendi tarayıcınızda hemen görmek isterseniz sert yenileme yapın
 (<kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>) ya da gizli sekme açın —

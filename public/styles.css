@@ -405,6 +405,10 @@ body::after{
 .rev figcaption{margin-top:auto;padding-top:16px;display:flex;flex-direction:column;gap:3px;border-top:1px solid var(--line-soft);}
 .rev-author{font-size:13px;font-weight:600;color:var(--cream);}
 .rev-when{font-size:11.5px;letter-spacing:.05em;color:var(--cream-faint);}
+.rev-cta{margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:15px;}
+/* Google markası her zeminde renkli kalmalı; currentColor devralmaz. */
+.rev-cta .g-mark{width:16px;height:16px;}
+.rev-note{margin:0;font-size:12px;line-height:1.5;color:var(--cream-faint);text-align:center;}
 @media(max-width:980px){
   .rev-grid,.rev-grid[data-count]{grid-template-columns:repeat(2,1fr);}
   .rev-grid[data-count="5"] .rev:nth-child(n){grid-column:auto;}
