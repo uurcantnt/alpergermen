@@ -455,7 +455,9 @@ body::after{
 .ci-ico{width:38px;height:38px;border:1.5px solid var(--line);border-radius:50%;display:grid;place-items:center;flex-shrink:0;}
 .ci-ico svg{width:16px;height:16px;stroke:var(--gold);}
 .ci b{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);}
-.ci span,.ci a{display:block;font-size:15px;color:var(--cream);margin-top:4px;line-height:1.5;}
+/* .ci-ico de bir span; bu kural onu yakalayip display:grid'i ezdigi icin
+   ikon kutunun sol ust kosesine dusuyordu. Metin span'leriyle sinirlandirildi. */
+.ci span:not(.ci-ico),.ci a{display:block;font-size:15px;color:var(--cream);margin-top:4px;line-height:1.5;}
 .ci a:hover{color:var(--gold);}
 .contact-card{background:var(--bg-3);border:1px solid var(--gold);padding:clamp(28px,4vw,44px);border-radius:3px;}
 .contact-card .cc-k{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
