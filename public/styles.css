@@ -555,3 +555,8 @@ body::after{
 @media(max-width:820px){
   .lp-ilgili{grid-template-columns:1fr;}
 }
+
+/* 8 kartlık alan ızgarası: 3 sütunda son satırda boş hücre kalıyordu */
+.teaser-areas.dort{grid-template-columns:repeat(4,1fr);}
+@media(max-width:1180px){.teaser-areas.dort{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:620px){.teaser-areas.dort{grid-template-columns:1fr;}}

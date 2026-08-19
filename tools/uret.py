@@ -62,9 +62,15 @@ def sayfa(slug, v, lang):
         f'\n      </div>'
         for i, (s, c) in enumerate(v["sss"]))
 
+    # kart başlıkları SEO başlığı değil, doğal alan adı olsun
+    from icerik_tr import ALANLAR as _TR
+    from icerik_en import ALANLAR as _EN
+    _A = _TR if tr else _EN
     ilgili_html = "".join(
-        f'<a class="ta" href="{u if tr else "/en" + u}"><h4>{kacis(b)}</h4></a>'
-        for u, b in v["ilgili"])
+        f'<a class="ta" href="{u if tr else "/en" + u}">'
+        f'<h4>{kacis(_A[u.strip("/")]["kart"])}</h4>'
+        f'<p>{kacis(_A[u.strip("/")]["kart_ozet"])}</p></a>'
+        for u, _ in v["ilgili"])
 
     # --- JSON-LD ---
     kirilim = "Çalışma Alanları" if tr else "Practice Areas"

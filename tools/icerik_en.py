@@ -8,6 +8,8 @@ about outcome, duration or fees; objective and measured tone.
 ALANLAR = {}
 
 ALANLAR["antalya-bosanma-avukati"] = dict(
+    kart="Divorce and Family Law",
+    kart_ozet="Divorce, custody, maintenance and property regime",
     title="Divorce Lawyer in Antalya | Alper Germen",
     desc="Divorce, custody, alimony and matrimonial property cases in Antalya. Litigation and legal counsel from the law office in Konyaaltı. Get in touch. Ask us.",
     h1="Divorce Lawyer in Antalya",
@@ -76,6 +78,8 @@ ALANLAR["antalya-bosanma-avukati"] = dict(
 )
 
 ALANLAR["antalya-ceza-avukati"] = dict(
+    kart="Criminal Law",
+    kart_ozet="Defence during investigation and prosecution",
     title="Criminal Defence Lawyer in Antalya | Alper Germen",
     desc="Defence during investigation and prosecution in Antalya, objections to detention and appeal applications. Reach the law office in Konyaaltı. Get in touch.",
     h1="Criminal Defence Lawyer in Antalya",
@@ -146,6 +150,8 @@ ALANLAR["antalya-ceza-avukati"] = dict(
 )
 
 ALANLAR["antalya-is-hukuku-avukati"] = dict(
+    kart="Employment Law",
+    kart_ozet="Severance, reinstatement and employment claims",
     title="Employment Lawyer in Antalya | Alper Germen",
     desc="Severance and notice pay, reinstatement, overtime and employment receivable claims in Antalya, including mandatory mediation. Reach the office. Ask us.",
     h1="Employment Lawyer in Antalya",
@@ -217,6 +223,8 @@ ALANLAR["antalya-is-hukuku-avukati"] = dict(
 )
 
 ALANLAR["antalya-gayrimenkul-ve-kira-avukati"] = dict(
+    kart="Real Estate and Tenancy Law",
+    kart_ozet="Eviction, rent determination and title disputes",
     title="Real Estate & Tenancy Lawyer in Antalya | Alper Germen",
     desc="Eviction, rent determination, title deed cancellation and dissolution of co-ownership cases in Antalya, plus property purchase review. Book a meeting.",
     h1="Real Estate and Tenancy Lawyer in Antalya",
@@ -288,6 +296,8 @@ ALANLAR["antalya-gayrimenkul-ve-kira-avukati"] = dict(
 )
 
 ALANLAR["antalya-icra-avukati"] = dict(
+    kart="Enforcement and Bankruptcy Law",
+    kart_ozet="Proceedings, objections, attachment and sale",
     title="Enforcement Lawyer in Antalya | Alper Germen",
     desc="Enforcement proceedings, annulment of objection, negative declaratory actions and precautionary attachment in Antalya, for creditors and debtors. Ask us.",
     h1="Enforcement Lawyer in Antalya",
@@ -357,6 +367,8 @@ ALANLAR["antalya-icra-avukati"] = dict(
 )
 
 ALANLAR["antalya-miras-avukati"] = dict(
+    kart="Inheritance Law",
+    kart_ozet="Division, abatement, simulation and renunciation",
     title="Inheritance Lawyer in Antalya | Alper Germen",
     desc="Certificates of inheritance, division of estate, abatement, simulated transfers and renunciation in Antalya. Litigation and legal counsel provided. Ask us.",
     h1="Inheritance Lawyer in Antalya",
@@ -426,6 +438,8 @@ ALANLAR["antalya-miras-avukati"] = dict(
 )
 
 ALANLAR["antalya-ticaret-hukuku-avukati"] = dict(
+    kart="Commercial Law",
+    kart_ozet="Companies, commercial contracts and receivables",
     title="Commercial Lawyer in Antalya | Alper Germen",
     desc="Company formation, commercial contracts, shareholder disputes and collection of commercial receivables in Antalya. Legal counsel and litigation. Ask us.",
     h1="Commercial Lawyer in Antalya",
@@ -495,6 +509,8 @@ ALANLAR["antalya-ticaret-hukuku-avukati"] = dict(
 )
 
 ALANLAR["konyaalti-avukat"] = dict(
+    kart="The Konyaaltı Office",
+    kart_ozet="Location, how meetings work and appointments",
     title="Lawyer in Konyaaltı, Antalya | Alper Germen",
     desc="Legal counsel and litigation in Toros Neighbourhood, Konyaaltı: family, criminal, employment, real estate, enforcement, inheritance and commercial law.",
     h1="Lawyer in Konyaaltı",

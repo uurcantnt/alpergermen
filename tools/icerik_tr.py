@@ -9,6 +9,8 @@ veya yaygın bilinen madde numaralarıyla verilir.
 ALANLAR = {}
 
 ALANLAR["antalya-bosanma-avukati"] = dict(
+    kart="Boşanma ve Aile Hukuku",
+    kart_ozet="Boşanma, velayet, nafaka ve mal rejiminin tasfiyesi",
     title="Antalya Boşanma Avukatı | Av. Alper Germen",
     desc="Antalya'da boşanma, velayet, nafaka ve mal rejimi tasfiyesi davalarında dava takibi ve hukuki danışmanlık. Konyaaltı'ndaki hukuk bürosundan randevu alın.",
     h1="Antalya Boşanma Avukatı",
@@ -77,6 +79,8 @@ ALANLAR["antalya-bosanma-avukati"] = dict(
 )
 
 ALANLAR["antalya-ceza-avukati"] = dict(
+    kart="Ceza Hukuku",
+    kart_ozet="Soruşturma ve kovuşturma aşamasında savunma",
     title="Antalya Ceza Avukatı | Av. Alper Germen",
     desc="Antalya'da soruşturma ve kovuşturma aşamasında savunma, tutukluluğa itiraz ve istinaf başvuruları. Konyaaltı'ndaki hukuk bürosundan randevu alabilirsiniz.",
     h1="Antalya Ceza Avukatı",
@@ -147,6 +151,8 @@ ALANLAR["antalya-ceza-avukati"] = dict(
 )
 
 ALANLAR["antalya-is-hukuku-avukati"] = dict(
+    kart="İş Hukuku",
+    kart_ozet="Kıdem, ihbar, işe iade ve işçilik alacakları",
     title="Antalya İş Hukuku Avukatı | Av. Alper Germen",
     desc="Antalya'da kıdem ve ihbar tazminatı, işe iade, fazla mesai ve işçilik alacağı davaları ile arabuluculuk süreçlerinde hukuki destek. Randevu için arayın.",
     h1="Antalya İş Hukuku Avukatı",
@@ -218,6 +224,8 @@ ALANLAR["antalya-is-hukuku-avukati"] = dict(
 )
 
 ALANLAR["antalya-gayrimenkul-ve-kira-avukati"] = dict(
+    kart="Gayrimenkul ve Kira Hukuku",
+    kart_ozet="Tahliye, kira tespiti, tapu iptali ve tescil",
     title="Antalya Gayrimenkul ve Kira Avukatı | Alper Germen",
     desc="Antalya'da tahliye, kira tespiti, tapu iptali ve ortaklığın giderilmesi davaları ile taşınmaz alım satımında hukuki destek. Detaylı bilgi için arayın.",
     h1="Antalya Gayrimenkul ve Kira Avukatı",
@@ -289,6 +297,8 @@ ALANLAR["antalya-gayrimenkul-ve-kira-avukati"] = dict(
 )
 
 ALANLAR["antalya-icra-avukati"] = dict(
+    kart="İcra ve İflas Hukuku",
+    kart_ozet="Takip, itiraz, haciz ve satış süreçleri",
     title="Antalya İcra Avukatı | Av. Alper Germen",
     desc="Antalya'da icra takibi, itirazın iptali, menfi tespit ve ihtiyati haciz süreçlerinde alacaklı ve borçlu tarafına hukuki destek sağlanmaktadır. Bize ulaşın.",
     h1="Antalya İcra Avukatı",
@@ -365,6 +375,8 @@ ALANLAR["antalya-icra-avukati"] = dict(
 )
 
 ALANLAR["antalya-miras-avukati"] = dict(
+    kart="Miras Hukuku",
+    kart_ozet="Paylaşım, tenkis, muvazaa ve reddi miras",
     title="Antalya Miras Avukatı | Av. Alper Germen",
     desc="Antalya'da veraset ilamı, mirasın paylaşımı, tenkis, muris muvazaası ve reddi miras süreçlerinde dava takibi ve hukuki danışmanlık sağlanır. Randevu alın.",
     h1="Antalya Miras Avukatı",
@@ -441,6 +453,8 @@ ALANLAR["antalya-miras-avukati"] = dict(
 )
 
 ALANLAR["antalya-ticaret-hukuku-avukati"] = dict(
+    kart="Ticaret Hukuku",
+    kart_ozet="Şirketler, ticari sözleşmeler ve alacaklar",
     title="Antalya Ticaret Hukuku Avukatı | Alper Germen",
     desc="Antalya'da şirket kuruluşu, ticari sözleşmeler, ortaklık uyuşmazlıkları ve ticari alacak takibinde hukuki danışmanlık ve dava takibi yapılır. Randevu alın.",
     h1="Antalya Ticaret Hukuku Avukatı",
@@ -517,6 +531,8 @@ ALANLAR["antalya-ticaret-hukuku-avukati"] = dict(
 )
 
 ALANLAR["konyaalti-avukat"] = dict(
+    kart="Konyaaltı'ndaki Büro",
+    kart_ozet="Konum, görüşme süreci ve randevu bilgileri",
     title="Konyaaltı Avukat | Av. Alper Germen Hukuk Bürosu",
     desc="Konyaaltı Toros Mahallesi'nde avukatlık ve hukuki danışmanlık. Aile, ceza, iş, gayrimenkul, icra, miras ve ticaret hukukunda dava takibi. Randevu alın.",
     h1="Konyaaltı Avukat",
