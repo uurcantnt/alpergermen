@@ -560,3 +560,13 @@ body::after{
 .teaser-areas.dort{grid-template-columns:repeat(4,1fr);}
 @media(max-width:1180px){.teaser-areas.dort{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:620px){.teaser-areas.dort{grid-template-columns:1fr;}}
+
+/* ana sayfa: hizmet verilen ilçeler */
+.ilce-list{
+  list-style:none;display:flex;flex-wrap:wrap;gap:10px;
+  margin:22px 0 4px;padding:0;
+}
+.ilce-list li{
+  padding:9px 16px;border:1px solid var(--line);border-radius:2px;
+  background:var(--bg-2);font-size:13.5px;color:var(--cream-soft);
+}
