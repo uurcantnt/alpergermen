@@ -1,0 +1,591 @@
+# -*- coding: utf-8 -*-
+"""Hizmet alanı açılış sayfalarının Türkçe içeriği.
+
+Üslup kuralı: üstünlük/başarı iddiası, sonuç veya süre taahhüdü YOK.
+Edilgen ve ölçülü anlatım. Mevzuat atıfları yalnızca kanun adı düzeyinde
+veya yaygın bilinen madde numaralarıyla verilir.
+"""
+
+ALANLAR = {}
+
+ALANLAR["antalya-bosanma-avukati"] = dict(
+    title="Antalya Boşanma Avukatı | Av. Alper Germen",
+    desc="Antalya'da boşanma, velayet, nafaka ve mal rejimi tasfiyesi davalarında dava takibi ve hukuki danışmanlık. Konyaaltı'ndaki hukuk bürosundan randevu alın.",
+    h1="Antalya Boşanma Avukatı",
+    kicker="Aile Hukuku",
+    lead="Boşanma süreci yalnızca evlilik birliğinin sona ermesinden ibaret değildir; velayet, nafaka, mal rejiminin tasfiyesi ve tazminat talepleri aynı dosyada birlikte değerlendirilir. Antalya ve çevresinde bu süreçler, Antalya Barosu'na kayıtlı olarak yürütülmektedir.",
+    bolumler=[
+        ("Hizmetin kapsamı", [
+            "Aile hukuku alanında anlaşmalı ve çekişmeli boşanma davaları, velayet ve kişisel ilişki düzenlemeleri, iştirak ve yoksulluk nafakası talepleri, maddi ve manevi tazminat istemleri ile mal rejiminin tasfiyesine ilişkin davalar takip edilir.",
+            "Süreç Türk Medeni Kanunu hükümleri çerçevesinde yürütülür. Şiddet veya şiddet tehlikesi bulunan dosyalarda 6284 sayılı Ailenin Korunması ve Kadına Karşı Şiddetin Önlenmesine Dair Kanun kapsamında koruyucu ve önleyici tedbir başvuruları da gündeme gelir.",
+            "Yabancı mahkemelerce verilmiş boşanma kararlarının Türkiye'de hüküm doğurabilmesi için gereken tanıma ve tenfiz davaları da bu kapsamda değerlendirilir.",
+        ]),
+        ("Anlaşmalı ve çekişmeli boşanma", [
+            "Anlaşmalı boşanmada taraflar; velayet, nafaka, tazminat ve mal paylaşımı başlıklarının tamamında uzlaşır ve bu uzlaşma bir protokole bağlanır. Evliliğin en az bir yıl sürmüş olması, tarafların birlikte başvurması veya birinin davayı kabul etmesi ve hâkimin tarafları bizzat dinleyerek iradelerini serbestçe açıkladığına kanaat getirmesi aranır.",
+            "Çekişmeli boşanmada ise iddiaların delillerle ortaya konması gerekir. Tanık beyanları, mesaj ve arama kayıtları, banka hareketleri, sosyal medya içerikleri ve varsa adli rapor gibi deliller dosyanın seyrini belirler. Delillerin hukuka uygun biçimde elde edilmiş olması önem taşır.",
+        ]),
+        ("Nafaka ve tazminat talepleri", [
+            "Dava süresince geçerli olmak üzere tedbir nafakası istenebilir; bu talep çocuk için olduğu kadar ekonomik olarak zor duruma düşecek eş için de gündeme gelir. Kararın kesinleşmesinden sonra çocuk yönünden iştirak nafakası, eş yönünden ise koşulları varsa yoksulluk nafakası söz konusu olur.",
+            "Nafaka miktarı belirlenirken tarafların gelirleri, çocuğun yaşı ve ihtiyaçları ile hakkaniyet ölçütü birlikte değerlendirilir. Koşulların sonradan değişmesi hâlinde nafakanın artırılması veya azaltılması için ayrı dava açılabilir.",
+            "Boşanmaya sebep olan olaylar yüzünden kişilik hakkı zedelenen taraf manevi tazminat, mevcut veya beklenen menfaatleri zedelenen kusursuz ya da daha az kusurlu taraf maddi tazminat talep edebilir. Bu taleplerin dava dilekçesinde açıkça ileri sürülmesi gerekir.",
+        ]),
+        ("Süreç adımları", [
+            "Ön görüşmede olayın geçmişi, tarafların talepleri ve elde bulunan belgeler değerlendirilir; hangi dava türünün dosyaya uygun olduğu belirlenir.",
+            "Dava dilekçesi, talepler ve dayanılan vakıalar somutlaştırılarak hazırlanır ve yetkili aile mahkemesine sunulur.",
+            "Dava sırasında geçici velayet, tedbir nafakası ve varsa koruma tedbirleri için talepte bulunulur.",
+            "Delil listesi sunulur, tanıklar dinletilir; gerektiğinde bilirkişi incelemesi veya sosyal inceleme raporu talep edilir.",
+            "Karar sonrası istinaf ve temyiz yolları değerlendirilir; kesinleşen kararın nüfusa tescili takip edilir.",
+        ]),
+        ("Gereken belgeler", [
+            "Nüfus cüzdanı fotokopisi ve varsa evlilik cüzdanı örneği, tarafların ve çocukların kimlik bilgileri dosyanın temelini oluşturur.",
+            "Gelir durumunu gösteren belgeler (maaş bordrosu, SGK hizmet dökümü, vergi kaydı), nafaka ve tazminat taleplerinin hesaplanmasında kullanılır.",
+            "Mal rejimi tasfiyesi talep ediliyorsa tapu kayıtları, araç ruhsatları, banka hesap dökümleri ve varsa kredi sözleşmeleri istenir.",
+            "İddiaya dayanak oluşturan mesajlar, fotoğraflar, adli raporlar ve tanık bilgileri ilk görüşmeye getirilirse süreç daha hızlı planlanır.",
+        ]),
+        ("Süreler", [
+            "Boşanma davalarının ne kadar süreceği; dosyanın çekişmeli olup olmamasına, tanık sayısına, bilirkişi incelemesi gerekip gerekmediğine ve mahkemenin iş yüküne göre değişir. Bu nedenle önceden bir süre taahhüdünde bulunulamaz.",
+            "Buna karşılık bazı süreler kanunla belirlenmiştir. Kararın tebliğinden itibaren istinaf başvurusu için tanınan süre bunlardan biridir; bu sürelerin kaçırılması kararın kesinleşmesine yol açar.",
+            "Affa ilişkin iddialarda ve zina gibi özel boşanma sebeplerinde hak düşürücü süreler bulunur. Bu nedenle olayın öğrenilmesinden sonra vakit kaybedilmeden değerlendirme yapılması önerilir.",
+        ]),
+        ("Sık yapılan hatalar", [
+            "Delil toplanmadan dava açılması, iddiaların ispatsız kalmasına ve kusur değerlendirmesinin talep edilenden farklı sonuçlanmasına yol açabilir.",
+            "Anlaşmalı boşanma protokolünün eksik hazırlanması, ileride nafaka veya mal paylaşımı için ayrı davalar açılması sonucunu doğurabilir.",
+            "Mal rejimi tasfiyesi talebinin boşanma davasıyla birlikte gündeme getirilmemesi, sürecin uzamasına neden olabilir.",
+            "Hukuka aykırı yolla elde edilen kayıtların dosyaya sunulması, delilin değerlendirme dışı bırakılmasına ve ayrıca sorumluluk doğmasına yol açabilir.",
+            "Tebligatların takip edilmemesi, süre kaçırılmasının en sık görülen sebebidir.",
+        ]),
+    ],
+    sss=[
+        ("Antalya'da boşanma davası hangi mahkemede açılır?",
+         "Boşanma davası aile mahkemesinde görülür. Yetkili mahkeme, eşlerden birinin yerleşim yeri veya eşlerin davadan önce son defa altı aydan beri birlikte oturdukları yer mahkemesidir. Antalya'da ikamet eden taraflar için Antalya Aile Mahkemeleri yetkilidir."),
+        ("Anlaşmalı boşanma için hangi şartlar aranır?",
+         "Evliliğin en az bir yıl sürmüş olması, eşlerin birlikte başvurması veya bir eşin diğerinin davasını kabul etmesi ve hâkimin tarafları bizzat dinleyerek iradelerinin serbestçe açıklandığına kanaat getirmesi gerekir. Ayrıca velayet, nafaka, tazminat ve mal paylaşımını kapsayan bir protokolün hâkim tarafından uygun bulunması aranır."),
+        ("Boşanma davası ne kadar sürer?",
+         "Süre; davanın çekişmeli olup olmamasına, dinlenecek tanık sayısına, bilirkişi incelemesi gerekip gerekmediğine ve mahkemenin iş yüküne göre değişir. Dosyanın özelliklerine bakılmadan bir süre bildirilmesi mümkün değildir."),
+        ("Velayet neye göre belirlenir?",
+         "Velayette esas ölçüt çocuğun üstün yararıdır. Çocuğun yaşı, eğitim ve sağlık ihtiyaçları, ebeveynlerin bakım imkânları ve çocukla kurdukları ilişki değerlendirilir. Mahkeme gerektiğinde uzman incelemesi yaptırır ve idrak çağındaki çocuğun görüşünü alır."),
+        ("Şiddet varsa hangi adımlar atılabilir?",
+         "6284 sayılı Kanun kapsamında koruyucu ve önleyici tedbir kararı talep edilebilir. Bu başvuru, boşanma davasından bağımsız olarak da yapılabilir; kolluğa veya mülki amire başvurularak da tedbir istenebilir."),
+        ("Mal paylaşımı boşanma davasıyla birlikte mi görülür?",
+         "Mal rejiminin tasfiyesi ayrı bir davanın konusudur ve kural olarak boşanma kararının kesinleşmesi beklenir. Ancak talebin zamanında ileri sürülmesi ve delillerin birlikte planlanması, sürecin bütünlüklü yürütülmesini sağlar."),
+    ],
+    ilgili=[
+        ("/antalya-miras-avukati/", "Antalya Miras Avukatı"),
+        ("/antalya-gayrimenkul-ve-kira-avukati/", "Gayrimenkul ve Kira"),
+        ("/konyaalti-avukat/", "Konyaaltı Avukat"),
+    ],
+)
+
+ALANLAR["antalya-ceza-avukati"] = dict(
+    title="Antalya Ceza Avukatı | Av. Alper Germen",
+    desc="Antalya'da soruşturma ve kovuşturma aşamasında savunma, tutukluluğa itiraz ve istinaf başvuruları. Konyaaltı'ndaki hukuk bürosundan randevu alabilirsiniz.",
+    h1="Antalya Ceza Avukatı",
+    kicker="Ceza Hukuku",
+    lead="Ceza yargılamasında en kritik aşama, çoğu zaman dosyanın henüz başındaki soruşturma evresidir. İfade alınmadan önce dosyanın incelenmesi ve savunmanın planlanması, sonraki aşamaların tamamını etkiler. Antalya ve çevresinde şüpheli, sanık ve mağdur vekilliği hizmeti Antalya Barosu'na kayıtlı olarak yürütülmektedir.",
+    bolumler=[
+        ("Hizmetin kapsamı", [
+            "Soruşturma evresinde kolluk ve Cumhuriyet savcılığı aşamasında müdafilik, kovuşturma evresinde asliye ceza ve ağır ceza mahkemelerinde savunma, ayrıca mağdur ve katılan vekilliği hizmeti verilir.",
+            "Süreç 5237 sayılı Türk Ceza Kanunu ve 5271 sayılı Ceza Muhakemesi Kanunu hükümleri çerçevesinde yürütülür. Trafik kazalarından doğan taksirle yaralama ve ölüme neden olma dosyaları, bilişim suçları, mala karşı işlenen suçlar ile kişilere karşı işlenen suçlar bu kapsamda takip edilir.",
+            "Tutuklama, adli kontrol ve el koyma gibi koruma tedbirlerine karşı itiraz başvuruları hazırlanır; infaz aşamasına ilişkin talepler değerlendirilir.",
+        ]),
+        ("Soruşturma evresinde savunma", [
+            "İfade ve sorgu, dosyanın seyrini belirleyen ilk andır. Şüphelinin susma hakkı, müdafi yardımından yararlanma hakkı ve isnadı öğrenme hakkı bulunur. Bu hakların kullanılması, sonradan telafisi güç sonuçların önüne geçebilir.",
+            "Soruşturma dosyasında kısıtlama kararı bulunup bulunmadığı incelenir; kısıtlama yoksa dosya örneği alınarak isnadın dayanağı değerlendirilir. Lehe delillerin toplanması için savcılığa talepte bulunulabilir.",
+            "Gözaltı süresinin yasal sınırları aşılıp aşılmadığı, yakalama ve arama işlemlerinin usulüne uygun yapılıp yapılmadığı denetlenir. Hukuka aykırı yolla elde edilen deliller hükme esas alınamaz.",
+        ]),
+        ("Uzlaştırma ve alternatif yollar", [
+            "Kanunda sayılan bazı suçlarda soruşturma ve kovuşturma aşamasında uzlaştırma yoluna gidilir. Uzlaştırma, tarafların bir uzlaştırmacı eşliğinde anlaşmasına dayanır; anlaşma sağlanırsa kovuşturmaya yer olmadığına karar verilir veya dava düşer.",
+            "Uzlaştırma teklifinin kabul edilip edilmemesi, sonuçları anlaşılmadan verilecek bir karar olmamalıdır. Teklifin reddi hâlinde soruşturma olağan seyrinde devam eder.",
+            "Şartları bulunan bazı dosyalarda ise hükmün açıklanmasının geri bırakılması, seçenek yaptırıma çevirme veya erteleme gündeme gelebilir. Bu kurumların her biri farklı koşullara ve farklı sonuçlara bağlıdır; dosyaya göre ayrı ayrı değerlendirilir.",
+        ]),
+        ("Süreç adımları", [
+            "Dosya incelenerek isnat edilen fiil, dayanak deliller ve varsa koruma tedbirleri tespit edilir.",
+            "İfade veya sorgu aşamasında müdafi olarak hazır bulunulur; savunmanın kapsamı önceden planlanır.",
+            "Tutuklama veya adli kontrol kararı verilmişse süresi içinde itiraz dilekçesi hazırlanır.",
+            "İddianamenin kabulünden sonra duruşma savunması hazırlanır; tanık dinletilmesi, bilirkişi incelemesi ve keşif talepleri sunulur.",
+            "Karara karşı istinaf, koşulları varsa temyiz başvurusu yapılır; kesinleşen kararlarda infaza ilişkin talepler takip edilir.",
+        ]),
+        ("Gereken belgeler", [
+            "Varsa ifade tutanağı, yakalama ve gözaltı tutanakları ile tebliğ edilen belgeler ilk görüşmede önem taşır.",
+            "Soruşturma veya dosya numarası, dosyanın hangi birimde bulunduğunun tespiti için gereklidir.",
+            "Olaya ilişkin fotoğraf, kamera görüntüsü, mesaj ve arama kayıtları ile tanık bilgileri savunmanın planlanmasında kullanılır.",
+            "Trafik kazası dosyalarında kaza tespit tutanağı, alkol raporu ve varsa adli rapor; yaralanma bulunan dosyalarda hastane kayıtları istenir.",
+        ]),
+        ("Süreler", [
+            "Ceza yargılamasında süreler kesindir ve kaçırılması hak kaybına yol açar. Tutuklama kararına itiraz, kararın öğrenilmesinden itibaren kanunda belirtilen kısa süre içinde yapılmalıdır.",
+            "Kovuşturmaya yer olmadığına dair karara karşı itiraz ile hükme karşı istinaf başvurusu da süreye bağlıdır. Bu nedenle tebligatın alındığı tarih dosyada mutlaka kayıt altına alınmalıdır.",
+            "Şikâyete bağlı suçlarda, fiilin ve failin öğrenilmesinden itibaren işleyen şikâyet süresi bulunur. Bu süre geçtikten sonra soruşturma başlatılamaz.",
+            "Yargılamanın toplam süresi; dosyadaki sanık ve tanık sayısına, bilirkişi incelemesine ve mahkemenin iş yüküne göre değişir; önceden bir süre bildirilemez.",
+        ]),
+        ("Sık yapılan hatalar", [
+            "Müdafi hazır bulunmadan ifade verilmesi, savunmanın sonraki aşamalarda daraltılmasına yol açabilir.",
+            "İsnadın hukuki niteliği anlaşılmadan yapılan açıklamalar, dosyaya farklı bir yön verebilir.",
+            "İtiraz ve başvuru sürelerinin takip edilmemesi, esasa girilmeden başvurunun reddine neden olur.",
+            "Lehe delillerin toplanmasının talep edilmemesi, dosyanın eksik incelenmesi sonucunu doğurabilir.",
+            "Tebligat adresinin güncellenmemesi, kararların öğrenilmeden kesinleşmesine yol açabilir.",
+        ]),
+    ],
+    sss=[
+        ("Ceza davasında avukat bulundurmak zorunlu mudur?",
+         "Kural olarak zorunlu değildir. Ancak kanunda sayılan hâllerde, örneğin alt sınırı beş yıldan fazla hapis cezası gerektiren suçlarda, şüpheli veya sanığın çocuk ya da kendini savunamayacak durumda olduğu hâllerde mahkeme müdafi görevlendirir."),
+        ("İfadeye çağrıldım, ne yapmalıyım?",
+         "İfade öncesinde isnadın ne olduğunun öğrenilmesi ve dosyanın incelenmesi önerilir. Susma hakkı ile müdafi yardımından yararlanma hakkı bulunur. Bu hakların kullanılması hakkında bilgi alınmadan açıklama yapılmaması, sonraki aşamalar bakımından önem taşır."),
+        ("Tutuklama kararına itiraz edilebilir mi?",
+         "Evet. Tutuklama ve adli kontrol kararlarına karşı kanunda öngörülen süre içinde itiraz edilebilir. Ayrıca soruşturma ve kovuşturma sürerken tahliye talebinde bulunulması da mümkündür."),
+        ("Şikâyetten vazgeçilirse dava düşer mi?",
+         "Yalnızca şikâyete bağlı suçlarda vazgeçme davayı düşürür. Şikâyete bağlı olmayan suçlarda vazgeçme yargılamayı sona erdirmez; ancak dosyadaki delil durumunun değerlendirilmesinde etkili olabilir."),
+        ("Trafik kazası sonrası ceza soruşturması nasıl yürür?",
+         "Yaralanma veya ölüm bulunan kazalarda taksirle işlenen suçlar bakımından soruşturma başlatılır. Kaza tespit tutanağı, kamera görüntüleri ve adli raporlar değerlendirilir; kusur durumu çoğu zaman bilirkişi incelemesiyle belirlenir."),
+        ("Adli sicil kaydı ne zaman silinir?",
+         "Adli sicil kaydı, cezanın infazının tamamlanmasının ardından kanunda belirlenen koşullar gerçekleştiğinde arşiv kaydına alınır ve belirli sürelerin dolmasıyla silinebilir. Süreç, mahkûmiyetin türüne ve miktarına göre değişir."),
+    ],
+    ilgili=[
+        ("/antalya-icra-avukati/", "Antalya İcra Avukatı"),
+        ("/antalya-is-hukuku-avukati/", "Antalya İş Hukuku Avukatı"),
+        ("/konyaalti-avukat/", "Konyaaltı Avukat"),
+    ],
+)
+
+ALANLAR["antalya-is-hukuku-avukati"] = dict(
+    title="Antalya İş Hukuku Avukatı | Av. Alper Germen",
+    desc="Antalya'da kıdem ve ihbar tazminatı, işe iade, fazla mesai ve işçilik alacağı davaları ile arabuluculuk süreçlerinde hukuki destek. Randevu için arayın.",
+    h1="Antalya İş Hukuku Avukatı",
+    kicker="İş Hukuku",
+    lead="İş hukuku uyuşmazlıklarında sonucu belirleyen unsur çoğu zaman kayıtlardır: hizmet süresi, ücretin gerçek tutarı ve fesih bildiriminin nasıl yapıldığı. Antalya'da hem işçi hem işveren tarafına, 4857 sayılı İş Kanunu çerçevesinde danışmanlık ve dava takibi hizmeti verilmektedir.",
+    bolumler=[
+        ("Hizmetin kapsamı", [
+            "Kıdem ve ihbar tazminatı, fazla mesai, hafta tatili ve genel tatil ücretleri, yıllık izin alacağı, ulusal bayram ve resmî tatil ücretleri ile ücret alacaklarına ilişkin davalar takip edilir.",
+            "İş güvencesi kapsamındaki işçiler bakımından işe iade davaları, geçersiz feshin sonuçları ve boşta geçen süre ücreti değerlendirilir. İşveren tarafında ise fesih süreçlerinin mevzuata uygun yürütülmesi için danışmanlık sağlanır.",
+            "Hizmet tespiti, iş kazasından doğan maddi ve manevi tazminat talepleri ile sosyal güvenlik uyuşmazlıkları da bu kapsamda ele alınır. İşyerinde psikolojik tacize dayanan iddialar, delil durumu birlikte değerlendirilerek yürütülür.",
+        ]),
+        ("Zorunlu arabuluculuk", [
+            "İşçilik alacakları ile işe iade taleplerinde dava açılmadan önce arabulucuya başvurulması dava şartıdır. Arabuluculuk aşaması tamamlanmadan açılan dava, usulden reddedilir.",
+            "Arabuluculuk süreci 6325 sayılı Hukuk Uyuşmazlıklarında Arabuluculuk Kanunu ve 7036 sayılı İş Mahkemeleri Kanunu hükümlerine göre yürütülür. Görüşmelerde varılan anlaşma, ilam niteliğinde belge sayılır ve icraya konulabilir.",
+            "Anlaşma tutanağının kapsamı önem taşır. Tutanakta yer verilen alacak kalemleri bakımından sonradan dava açılamayacağından, hangi kalemlerin anlaşmaya dâhil edildiğinin açıkça belirtilmesi gerekir.",
+        ]),
+        ("Alacakların hesaplanması", [
+            "Kıdem tazminatı, giydirilmiş brüt ücret üzerinden hesaplanır. Ücrete ek olarak düzenli biçimde sağlanan yol, yemek ve ikramiye gibi ödemeler hesaba dâhil edilir; arızi nitelikteki ödemeler ise dışarıda bırakılır.",
+            "İhbar tazminatı, hizmet süresine göre belirlenen bildirim sürelerine karşılık gelir. Fazla mesai hesabında haftalık kırk beş saati aşan çalışma esas alınır ve zamlı ücret uygulanır.",
+            "Hesaplama yapılırken zamanaşımına uğrayan dönem ayrıca değerlendirilir. Yargılama sırasında hesap, çoğunlukla bilirkişi raporuyla somutlaştırılır; rapora karşı süresinde itiraz edilmesi önem taşır.",
+        ]),
+        ("Süreç adımları", [
+            "Hizmet süresi, ücret ve çalışma düzeni; SGK hizmet dökümü, bordro ve banka kayıtları üzerinden tespit edilir.",
+            "Alacak kalemleri hesaplanır; zamanaşımına uğramış dönem bulunup bulunmadığı incelenir.",
+            "Arabuluculuk başvurusu yapılır ve görüşmeler yürütülür.",
+            "Anlaşma sağlanamazsa dava açılır; tanık ve bilirkişi delilleri sunulur.",
+            "Karara karşı istinaf yolu değerlendirilir; kesinleşen alacak için icra takibi başlatılır.",
+        ]),
+        ("Gereken belgeler", [
+            "SGK hizmet dökümü ve işe giriş bildirgesi, hizmet süresinin tespiti bakımından temel belgelerdir.",
+            "Maaş bordroları ve ücretin ödendiği banka hesap hareketleri, gerçek ücretin belirlenmesinde kullanılır.",
+            "İş sözleşmesi, varsa işyeri yönetmeliği, görev tanımı ve puantaj kayıtları çalışma düzenini gösterir.",
+            "Fesih bildirimi, ihtarname, tutanak ve savunma istem yazıları feshin geçerliliği bakımından incelenir.",
+            "Fazla mesai iddiasında; giriş çıkış kayıtları, nöbet çizelgeleri ve tanık bilgileri önem taşır.",
+        ]),
+        ("Süreler", [
+            "İşe iade talebinde, fesih bildiriminin tebliğinden itibaren bir ay içinde arabulucuya başvurulması gerekir. Bu süre hak düşürücüdür ve kaçırılması hâlinde işe iade talebi ileri sürülemez.",
+            "Kıdem ve ihbar tazminatı ile yıllık izin ücreti alacakları bakımından beş yıllık zamanaşımı süresi uygulanır. Fazla mesai, hafta tatili ve genel tatil ücretleri de beş yıllık zamanaşımına tabidir.",
+            "Zamanaşımı, alacağın tamamını değil yalnızca süresi dolan dönemi etkiler; bu nedenle başvurunun gecikmesi alacak tutarını azaltabilir.",
+            "Dosyanın sonuçlanma süresi; bilirkişi incelemesine, tanık sayısına ve mahkemenin iş yüküne göre değişir ve önceden bildirilemez.",
+        ]),
+        ("Sık yapılan hatalar", [
+            "İbraname veya ödeme belgesinin içeriği okunmadan imzalanması, sonradan ileri sürülecek talepleri sınırlayabilir.",
+            "Ücretin bir kısmının elden ödendiği durumlarda buna ilişkin kayıt tutulmaması, gerçek ücretin ispatını güçleştirir.",
+            "İstifa dilekçesinin gerekçesiz verilmesi, kıdem tazminatı talebini olumsuz etkileyebilir.",
+            "Arabuluculuk tutanağının kapsamı okunmadan anlaşmaya varılması, dâhil edilen kalemler için dava yolunu kapatır.",
+            "Fesihten sonra uzun süre beklenmesi, zamanaşımı nedeniyle bazı alacakların talep edilememesine yol açar.",
+        ]),
+    ],
+    sss=[
+        ("Kıdem tazminatına hangi hâllerde hak kazanılır?",
+         "En az bir yıllık çalışma bulunması ve iş sözleşmesinin kanunda sayılan sebeplerden biriyle sona ermesi gerekir. İşverenin haklı sebep olmaksızın feshi, işçinin haklı sebeple feshi, askerlik, emeklilik ve kadın işçi bakımından evlilik nedeniyle fesih bu sebepler arasındadır."),
+        ("İşe iade davası kimler için açılabilir?",
+         "İş güvencesi kapsamında olmak gerekir. Bunun için işyerinde otuz veya daha fazla işçi çalışması, işçinin en az altı aylık kıdeminin bulunması ve belirsiz süreli iş sözleşmesiyle çalışıyor olması aranır."),
+        ("Arabuluculuğa başvurmadan dava açılabilir mi?",
+         "İşçilik alacakları ve işe iade taleplerinde arabuluculuk dava şartıdır. Bu aşama tamamlanmadan açılan dava usulden reddedilir. İş kazasından doğan maddi ve manevi tazminat talepleri ise bu zorunluluğun dışındadır."),
+        ("Fazla mesai nasıl ispatlanır?",
+         "Öncelikle işyeri kayıtları, giriş çıkış sistemleri ve puantaj belgeleri incelenir. Bu kayıtların bulunmadığı hâllerde tanık beyanlarına başvurulur. Yargılamada hesaplama çoğunlukla bilirkişi incelemesiyle yapılır."),
+        ("İşveren tarafında hangi konularda destek alınabilir?",
+         "Fesih sürecinin mevzuata uygun yürütülmesi, savunma isteme ve tutanak düzenleme usulleri, iş sözleşmesi ve işyeri yönetmeliği hazırlanması ile arabuluculuk görüşmelerinin yönetilmesi konularında danışmanlık sağlanır."),
+        ("İş kazası sonrası hangi talepler ileri sürülebilir?",
+         "Sürekli veya geçici iş göremezlik durumuna göre maddi tazminat, kişilik hakkı zedelenmesi hâlinde manevi tazminat talep edilebilir. Ayrıca kusur durumunun tespiti bakımından ceza soruşturması ve SGK süreçleri birlikte takip edilir."),
+    ],
+    ilgili=[
+        ("/antalya-icra-avukati/", "Antalya İcra Avukatı"),
+        ("/antalya-ticaret-hukuku-avukati/", "Ticaret Hukuku"),
+        ("/konyaalti-avukat/", "Konyaaltı Avukat"),
+    ],
+)
+
+ALANLAR["antalya-gayrimenkul-ve-kira-avukati"] = dict(
+    title="Antalya Gayrimenkul ve Kira Avukatı | Alper Germen",
+    desc="Antalya'da tahliye, kira tespiti, tapu iptali ve ortaklığın giderilmesi davaları ile taşınmaz alım satımında hukuki destek. Detaylı bilgi için arayın.",
+    h1="Antalya Gayrimenkul ve Kira Avukatı",
+    kicker="Gayrimenkul ve Kira Hukuku",
+    lead="Taşınmaz uyuşmazlıklarında tapu kaydı, sözleşme metni ve ödeme kayıtları belirleyicidir. Antalya'da kira ilişkilerinden doğan davalar ile mülkiyete ilişkin uyuşmazlıklarda dava takibi ve sözleşme öncesi inceleme hizmeti verilmektedir.",
+    bolumler=[
+        ("Hizmetin kapsamı", [
+            "Kiralananın tahliyesi, kira bedelinin tespiti ve uyarlanması, kira alacağının tahsili, tapu iptal ve tescil, ortaklığın giderilmesi, önalım ve el atmanın önlenmesi davaları takip edilir.",
+            "Kira ilişkileri 6098 sayılı Türk Borçlar Kanunu, mülkiyete ilişkin uyuşmazlıklar ise Türk Medeni Kanunu hükümleri çerçevesinde değerlendirilir. Kat mülkiyetinden doğan uyuşmazlıklarda 634 sayılı Kat Mülkiyeti Kanunu uygulanır.",
+            "Taşınmaz alım satımı öncesinde tapu kaydı, şerh ve beyanlar, imar durumu ile varsa ipotek ve haciz kayıtlarının incelenmesi yoluyla sözleşme öncesi risk değerlendirmesi yapılır.",
+        ]),
+        ("Tahliye sebepleri", [
+            "Kira sözleşmesinin sona erdirilmesi belirli sebeplere bağlıdır. Kiraya verenden kaynaklanan sebepler arasında konut veya işyeri ihtiyacı ile yeniden inşa ve imar amaçlı esaslı onarım bulunur. Yeni malik bakımından da edinme tarihinden itibaren belirli sürelere bağlı ihtiyaç sebebiyle tahliye gündeme gelebilir.",
+            "Kiracıdan kaynaklanan sebepler arasında kira bedelinin ödenmemesi nedeniyle iki haklı ihtar, tahliye taahhüdü ve kiralananın sözleşmeye aykırı kullanılması sayılabilir.",
+            "Kira bedelinin ödenmemesi hâlinde icra dairesi aracılığıyla tahliye talepli takip başlatılabilir; ödeme emrine süresinde itiraz edilmemesi veya borcun ödenmemesi durumunda tahliye istenebilir.",
+        ]),
+        ("Kira bedelinin tespiti ve artış", [
+            "Kira bedelinin yeniden belirlenmesi için açılan tespit davasında, taşınmazın konumu, yüzölçümü, yaşı ve çevredeki emsal kiralar dikkate alınır. Mahkeme genellikle bilirkişi incelemesi yaptırır ve hakkaniyet değerlendirmesi yapar.",
+            "Yeni dönem için kira bedelinin tespiti isteniyorsa, dönem başlangıcından belirli bir süre önce ihtar çekilmesi ya da davanın bu süre içinde açılması, kararın yeni dönem başından itibaren uygulanması bakımından önem taşır.",
+            "Uzun süreli kira ilişkilerinde, koşulların önemli ölçüde değişmesi hâlinde uyarlama talebi gündeme gelebilir. Bu talebin dayanağı somut ve ölçülebilir verilerle ortaya konmalıdır.",
+        ]),
+        ("Süreç adımları", [
+            "Tapu kaydı, sözleşme metni ve ödeme belgeleri incelenerek uyuşmazlığın hukuki niteliği belirlenir.",
+            "Gerekli hâllerde noter aracılığıyla ihtarname gönderilir; ihtarın içeriği ve tebliğ tarihi kayıt altına alınır.",
+            "Uyuşmazlığın türüne göre sulh hukuk veya asliye hukuk mahkemesinde dava açılır; kira ilişkisinden doğan bazı uyuşmazlıklarda dava öncesi arabuluculuk zorunluluğu bulunur.",
+            "Keşif, bilirkişi incelemesi ve tanık dinlenmesi talepleri sunulur.",
+            "Karara karşı kanun yolları değerlendirilir; kesinleşen kararın icrası takip edilir.",
+        ]),
+        ("Gereken belgeler", [
+            "Tapu senedi veya güncel tapu kayıt örneği, taşınmazın hukuki durumunu gösterir.",
+            "Kira sözleşmesi, varsa ekleri ve tahliye taahhüdü; kira ilişkisinin kapsamını belirler.",
+            "Kira ödemelerine ilişkin banka dekontları ve makbuzlar, ödeme iddiasının ispatında kullanılır.",
+            "Noter ihtarnameleri ve tebliğ şerhleri, süreye bağlı hakların kullanıldığını gösterir.",
+            "İmar durumu, yapı ruhsatı ve iskân belgesi ile varsa kat mülkiyeti yönetim planı incelenir.",
+        ]),
+        ("Süreler", [
+            "Konut ve çatılı işyeri kiralarında kiracının sözleşmeyi sona erdirmesi, sürenin bitiminden belirli bir süre önce bildirimde bulunulmasına bağlıdır. Bildirim yapılmazsa sözleşme kendiliğinden uzar.",
+            "Kiraya verenin ihtiyaç sebebiyle tahliye talebinde bulunabilmesi için kanunda öngörülen sürelere uyulması gerekir; taşınmazı sonradan edinen malik bakımından da ayrı süreler öngörülmüştür.",
+            "Önalım hakkının kullanılması hak düşürücü süreye bağlıdır; satışın bildirildiği tarihten itibaren bu sürenin geçmesiyle hak kullanılamaz.",
+            "Tapu iptali ve tescil davalarında sürenin işleyişi, dayanılan hukuki sebebe göre değişir. Bu nedenle her dosya için ayrı değerlendirme yapılması gerekir.",
+        ]),
+        ("Sık yapılan hatalar", [
+            "Kira ödemelerinin açıklama yazılmadan veya elden yapılması, hangi aya ait olduğunun ispatını güçleştirir.",
+            "Tahliye taahhüdünün sözleşmeyle aynı tarihte imzalanması, taahhüdün geçerliliği bakımından tartışma doğurur.",
+            "İhtarnamenin içeriğinin eksik düzenlenmesi, iki haklı ihtar şartının oluşmamasına yol açabilir.",
+            "Tapu devri öncesinde şerh, ipotek ve haciz kayıtlarının incelenmemesi, sonradan telafisi güç sonuçlar doğurabilir.",
+            "Kira tespit davasında emsal araştırması yapılmadan talepte bulunulması, davanın kısmen reddine neden olabilir.",
+        ]),
+    ],
+    sss=[
+        ("Kiracı hangi hâllerde tahliye edilebilir?",
+         "Kira bedelinin ödenmemesi nedeniyle bir kira yılı içinde iki haklı ihtar yapılması, geçerli bir tahliye taahhüdünün bulunması, kiralananın sözleşmeye aykırı kullanılması ile kiraya verenin veya yakınlarının konut ya da işyeri ihtiyacı bu sebepler arasındadır. Her sebep farklı usul ve süre şartına bağlıdır."),
+        ("Kira bedeli ne kadar artırılabilir?",
+         "Yenilenen kira dönemlerinde uygulanacak artış, kanunda öngörülen üst sınıra tabidir. Tarafların bu sınırın üzerinde anlaşması hâlinde dahi sınırı aşan kısım geçersiz sayılır. Beş yılı aşan kira ilişkilerinde ise bedel, dava yoluyla yeniden belirlenebilir."),
+        ("Tapu iptal ve tescil davası hangi hâllerde açılır?",
+         "Muvazaalı devir, inançlı işlem, vekâlet görevinin kötüye kullanılması, hukuki ehliyetsizlik ve mirastan mal kaçırma iddiası gibi sebeplerle açılabilir. Dava, taşınmazın bulunduğu yer mahkemesinde görülür."),
+        ("Ortaklığın giderilmesi davası nasıl sonuçlanır?",
+         "Mahkeme öncelikle taşınmazın aynen bölünmesinin mümkün olup olmadığını araştırır. Bölünme mümkün değilse satış yoluyla ortaklığın giderilmesine karar verilir ve satış bedeli paylar oranında dağıtılır."),
+        ("Yabancılar Antalya'da taşınmaz satın alabilir mi?",
+         "Kanuni sınırlamalar saklı kalmak üzere yabancı gerçek kişiler taşınmaz edinebilir. Askerî yasak bölge ve güvenlik bölgesi sorgusu ile ülke bazlı kısıtlamaların satın alma öncesinde incelenmesi gerekir."),
+        ("Kira uyuşmazlığında arabuluculuk zorunlu mu?",
+         "Kiralananın tahliyesi ve kira ilişkisinden doğan bazı uyuşmazlıklarda dava açılmadan önce arabulucuya başvurulması dava şartıdır. Başvuru yapılmadan açılan dava usulden reddedilir."),
+    ],
+    ilgili=[
+        ("/antalya-miras-avukati/", "Antalya Miras Avukatı"),
+        ("/antalya-icra-avukati/", "Antalya İcra Avukatı"),
+        ("/konyaalti-avukat/", "Konyaaltı Avukat"),
+    ],
+)
+
+ALANLAR["antalya-icra-avukati"] = dict(
+    title="Antalya İcra Avukatı | Av. Alper Germen",
+    desc="Antalya'da icra takibi, itirazın iptali, menfi tespit ve ihtiyati haciz süreçlerinde alacaklı ve borçlu tarafına hukuki destek sağlanmaktadır. Bize ulaşın.",
+    h1="Antalya İcra Avukatı",
+    kicker="İcra ve İflas Hukuku",
+    lead="İcra hukukunda süreler kısadır ve çoğu hak, tebligatın ardından işlemeye başlayan birkaç günlük süre içinde kullanılır. Antalya'da hem alacaklı hem borçlu tarafına, 2004 sayılı İcra ve İflas Kanunu çerçevesinde takip ve dava hizmeti verilmektedir.",
+    bolumler=[
+        ("Hizmetin kapsamı", [
+            "İlamsız ve ilamlı icra takipleri, kambiyo senetlerine özgü takip, kiralanan taşınmazların tahliyesine ilişkin takipler ile rehnin paraya çevrilmesi yoluyla takip başlatılır ve yürütülür.",
+            "Borçlu tarafında ise ödeme emrine itiraz, borca ve imzaya itiraz, menfi tespit ve istirdat davaları ile haczedilemezlik şikâyeti gibi başvurular hazırlanır.",
+            "İhtiyati haciz kararı alınması, hacizlerin uygulanması, kıymet takdiri ve satış aşamalarının takibi ile sıra cetveline itiraz süreçleri de bu kapsamda yürütülür.",
+        ]),
+        ("Takip türleri", [
+            "İlamsız takip, elinde mahkeme kararı bulunmayan alacaklının başvurduğu yoldur. Borçlu ödeme emrine süresi içinde itiraz ederse takip kendiliğinden durur; bu durumda alacaklının itirazın iptali veya kaldırılması yoluna gitmesi gerekir.",
+            "İlamlı takipte dayanak bir mahkeme kararı veya ilam niteliğinde belge bulunur. Bu takipte borca itiraz takibi durdurmaz; yalnızca icranın geri bırakılması kararı alınabilirse takip durur.",
+            "Çek, bono ve poliçeye dayalı kambiyo takibinde süreler daha kısadır ve itiraz kural olarak takibi durdurmaz. Bu nedenle kambiyo takiplerinde tebligatın ardından vakit kaybedilmemesi önem taşır.",
+        ]),
+        ("İtiraz ve dava yolları", [
+            "Ödeme emrine itiraz, tebliğden itibaren kanunda öngörülen kısa süre içinde icra dairesine yapılır. İtirazın gerekçesi ve kapsamı, sonraki aşamayı doğrudan etkiler; imzaya itirazın ayrıca ve açıkça belirtilmesi gerekir.",
+            "Alacaklı, itirazın iptali davası açarak veya elinde belge varsa itirazın kaldırılması yoluna başvurarak takibe devam edebilir. Bu davalarda haksız çıkan taraf aleyhine tazminata hükmedilmesi gündeme gelebilir.",
+            "Borçlu, borçlu olmadığının tespiti için menfi tespit davası açabilir. Borç ödendikten sonra açılan dava ise istirdat davası niteliğindedir. Menfi tespit davasında teminat karşılığında takibin durdurulması istenebilir.",
+        ]),
+        ("Haciz ve satış aşaması", [
+            "Takip kesinleştikten sonra borçlunun taşınır ve taşınmaz malları, banka hesapları, maaşı ve üçüncü kişilerdeki hak ve alacakları üzerine haciz uygulanabilir. Haczedilemeyecek mal ve haklar kanunda ayrıca sayılmıştır.",
+            "Haczedilen mallar için kıymet takdiri yapılır. Takdir edilen değere karşı süresi içinde şikâyet yoluna başvurulabilir; değerin gerçeği yansıtmaması satış bedelini doğrudan etkiler.",
+            "Satış, elektronik ortamda açık artırma yoluyla gerçekleştirilir. Satış bedeli, varsa rehin ve öncelikli alacaklar gözetilerek dağıtılır; birden fazla alacaklı bulunması hâlinde sıra cetveli düzenlenir ve bu cetvele itiraz edilebilir.",
+        ]),
+        ("Süreç adımları", [
+            "Alacağın dayanağı belgeler incelenir ve uygun takip türü belirlenir.",
+            "Yetkili icra dairesinde takip başlatılır; ödeme veya icra emri düzenlenerek borçluya tebliğ edilir.",
+            "İtiraz gelmesi hâlinde itirazın iptali veya kaldırılması yoluna başvurulur.",
+            "Takip kesinleştikten sonra haciz talep edilir; taşınır, taşınmaz ve üçüncü kişilerdeki hak ve alacaklar üzerine haciz uygulanır.",
+            "Kıymet takdiri ve satış aşamaları takip edilir; satış bedelinin paylaştırılması ve varsa sıra cetveline itiraz süreçleri yürütülür.",
+        ]),
+        ("Gereken belgeler", [
+            "Alacağın dayanağı olan sözleşme, fatura, çek, bono veya mahkeme ilamı takibin temelini oluşturur.",
+            "Borçlunun kimlik ve adres bilgileri ile biliniyorsa vergi numarası, takibin doğru kişiye yöneltilmesi için gereklidir.",
+            "Ödeme yapıldığı iddiasında; banka dekontları, makbuzlar ve ibra belgeleri incelenir.",
+            "Borçlu tarafında tebliğ zarfı ve tebliğ tarihi, itiraz süresinin hesaplanması bakımından önem taşır.",
+            "Kambiyo takiplerinde senet aslı ve varsa protesto evrakı dosyaya sunulur.",
+        ]),
+        ("Süreler", [
+            "İlamsız takipte ödeme emrine itiraz süresi, tebliğden itibaren yedi gündür. Bu süre geçtikten sonra itiraz edilemez ve takip kesinleşir.",
+            "Kambiyo senetlerine özgü takipte itiraz süresi beş gündür ve itiraz kural olarak takibi durdurmaz.",
+            "İtirazın iptali davası, itirazın tebliğinden itibaren bir yıl içinde açılmalıdır. Bu süre geçirilirse alacaklı genel hükümlere göre dava açmak zorunda kalır.",
+            "Haczedilen malların satışının belirli süreler içinde istenmesi gerekir; talep edilmezse haciz kalkar.",
+        ]),
+        ("Sık yapılan hatalar", [
+            "Tebligatın açılmaması veya adres değişikliğinin bildirilmemesi, itiraz süresinin farkında olunmadan geçmesine yol açar.",
+            "İtiraz dilekçesinde imzaya itirazın açıkça belirtilmemesi, imzanın kabul edilmiş sayılmasına neden olur.",
+            "Ödeme yapılırken açıklama yazılmaması, hangi borca mahsuben ödendiğinin ispatını güçleştirir.",
+            "Takibin yetkisiz icra dairesinde başlatılması, yetki itirazıyla karşılaşılmasına ve zaman kaybına yol açar.",
+            "Satış talebinin süresinde yapılmaması, uygulanan haczin düşmesine neden olur.",
+        ]),
+    ],
+    sss=[
+        ("Ödeme emrine itiraz süresi kaç gündür?",
+         "İlamsız takipte ödeme emrinin tebliğinden itibaren yedi gün içinde icra dairesine itiraz edilmesi gerekir. Kambiyo senetlerine özgü takipte bu süre beş gündür. Süre geçtikten sonra itiraz hakkı kullanılamaz."),
+        ("İtiraz edilirse takip durur mu?",
+         "İlamsız takipte süresinde yapılan itiraz takibi kendiliğinden durdurur. İlamlı takipte ve kambiyo takibinde ise itiraz kural olarak takibi durdurmaz; ayrıca icranın geri bırakılması kararı alınması gerekir."),
+        ("Maaş haczinde ne kadar kesinti yapılır?",
+         "Maaşın belirli bir oranından fazlası haczedilemez; nafaka alacakları bu sınırlamanın dışındadır. Ayrıca borçlunun ve ailesinin geçimi için zorunlu olan miktar haczedilemez."),
+        ("Menfi tespit davası ne işe yarar?",
+         "Borçlu olunmadığının tespiti için açılır. Dava sırasında teminat gösterilerek takibin durdurulması istenebilir. Borç ödendikten sonra açılması hâlinde dava istirdat davasına dönüşür."),
+        ("İhtiyati haciz hangi hâllerde istenir?",
+         "Borçlunun mal kaçırma ihtimali bulunduğunda veya alacak henüz muaccel olmasa dahi kanunda sayılan koşullar gerçekleştiğinde mahkemeden ihtiyati haciz kararı istenebilir. Karar için genellikle teminat yatırılması gerekir."),
+        ("Borçlu adres değiştirirse takip düşer mi?",
+         "Takip düşmez. Adres araştırması yapılarak tebligat yenilenir; koşulları varsa ilanen tebligat yoluna gidilebilir."),
+    ],
+    ilgili=[
+        ("/antalya-ticaret-hukuku-avukati/", "Ticaret Hukuku"),
+        ("/antalya-is-hukuku-avukati/", "Antalya İş Hukuku Avukatı"),
+        ("/antalya-gayrimenkul-ve-kira-avukati/", "Gayrimenkul ve Kira"),
+    ],
+)
+
+ALANLAR["antalya-miras-avukati"] = dict(
+    title="Antalya Miras Avukatı | Av. Alper Germen",
+    desc="Antalya'da veraset ilamı, mirasın paylaşımı, tenkis, muris muvazaası ve reddi miras süreçlerinde dava takibi ve hukuki danışmanlık sağlanır. Randevu alın.",
+    h1="Antalya Miras Avukatı",
+    kicker="Miras Hukuku",
+    lead="Miras uyuşmazlıkları çoğu zaman mirasbırakanın sağlığında yaptığı devirlerden doğar. Tapu kayıtlarının ve devir tarihlerinin incelenmesi, hangi davanın açılacağını belirler. Antalya'da miras hukukuna ilişkin dava takibi ve danışmanlık, Türk Medeni Kanunu çerçevesinde yürütülmektedir.",
+    bolumler=[
+        ("Hizmetin kapsamı", [
+            "Mirasçılık belgesinin alınması, mirasın paylaştırılması, tereke tespiti, tenkis, muris muvazaasına dayalı tapu iptali ve tescil, mirasın reddi ile vasiyetnamenin iptali davaları takip edilir.",
+            "Mirasçılar arasındaki paylaşım uyuşmazlıklarında öncelikle terekenin kapsamı belirlenir; taşınmazlar, banka hesapları, araçlar ve varsa şirket payları tespit edilir.",
+            "Yabancı unsurlu miras dosyalarında, yurt dışında bulunan malvarlığı ve yabancı mahkeme kararlarının Türkiye'de geçerliliği ayrıca değerlendirilir.",
+        ]),
+        ("Saklı pay ve tenkis", [
+            "Mirasbırakan, tasarruf özgürlüğüne sahip olmakla birlikte altsoyu, anne babası ve eşi bakımından kanunda belirlenen saklı payları ihlal edemez. Saklı payı zedelenen mirasçı tenkis davası açabilir.",
+            "Tenkis davasında, mirasbırakanın sağlığında yaptığı karşılıksız kazandırmalar ile ölüme bağlı tasarruflar birlikte değerlendirilir. Hesaplama tereke değeri üzerinden yapılır ve genellikle bilirkişi incelemesi gerektirir.",
+            "Mirasbırakanın mirasçıdan mal kaçırmak amacıyla yaptığı görünürdeki satışlar, muris muvazaası iddiasıyla dava konusu edilebilir. Bu davada devrin gerçek bedelinin ödenip ödenmediği ve tarafların ilişkisi incelenir.",
+        ]),
+        ("Mirasın reddi", [
+            "Mirasbırakanın borçlarının malvarlığından fazla olduğu hâllerde mirasın reddi gündeme gelir. Ret beyanı, sulh hukuk mahkemesine yapılır ve süreye bağlıdır.",
+            "Mirasbırakanın ölüm tarihinde borçlarının ödemeden aczi açıkça belli veya resmen tespit edilmişse, miras hükmen reddedilmiş sayılır. Bu durumda tespit davası açılması yoluna gidilebilir.",
+            "Reddin sonuçları geniştir; ret hâlinde miras payı diğer mirasçılara veya bir alt kuşağa geçer. Bu nedenle ret kararı, terekenin kapsamı incelenmeden verilmemelidir.",
+        ]),
+        ("Vasiyetname ve miras sözleşmesi", [
+            "Mirasbırakan, ölüme bağlı tasarrufla malvarlığının akıbetini belirleyebilir. Vasiyetname resmî şekilde, el yazısıyla veya sözlü olarak düzenlenebilir; her birinin geçerlilik koşulları farklıdır.",
+            "El yazılı vasiyetnamenin tamamının mirasbırakanın el yazısıyla yazılması, tarih içermesi ve imzalanması gerekir. Bu koşullardan birinin eksikliği iptal sebebi oluşturabilir.",
+            "Vasiyetnamenin iptali; ehliyetsizlik, irade sakatlığı, şekle aykırılık veya içeriğin hukuka aykırı olması sebeplerine dayanabilir. İptal davası süreye bağlıdır ve dava açılmadıkça vasiyetname geçerliliğini korur.",
+        ]),
+        ("Süreç adımları", [
+            "Mirasçılık belgesi noterden veya sulh hukuk mahkemesinden alınarak mirasçılar ve pay oranları belirlenir.",
+            "Tapu, banka ve trafik kayıtları üzerinden terekenin kapsamı tespit edilir; gerekirse tereke tespiti istenir.",
+            "Uyuşmazlığın niteliğine göre paylaşma, tenkis, tapu iptali ve tescil veya vasiyetnamenin iptali davası açılır.",
+            "Keşif, bilirkişi incelemesi ve tanık dinlenmesi talepleri sunulur; taşınmazların değeri tespit ettirilir.",
+            "Karara karşı kanun yolları değerlendirilir; kesinleşen kararın tapuda ve ilgili kurumlarda infazı takip edilir.",
+        ]),
+        ("Gereken belgeler", [
+            "Mirasbırakana ait ölüm belgesi ve nüfus kayıt örneği, mirasçılık ilişkisinin tespiti için gereklidir.",
+            "Mirasçılık belgesi (veraset ilamı), pay oranlarını gösterir.",
+            "Taşınmazlara ilişkin tapu kayıtları ile devir yapılmışsa akit tablosu ve devir tarihleri incelenir.",
+            "Banka hesap dökümleri, araç kayıtları ve varsa şirket ortaklık belgeleri terekenin kapsamını belirler.",
+            "Vasiyetname veya miras sözleşmesi bulunuyorsa aslı ya da onaylı örneği dosyaya sunulur.",
+        ]),
+        ("Süreler", [
+            "Mirasın reddi, yasal süre içinde yapılmalıdır. Bu süre kural olarak mirasçının mirasbırakanın ölümünü ve mirasçı olduğunu öğrendiği tarihten itibaren işler.",
+            "Tenkis davası, mirasçıların saklı paylarının zedelendiğini öğrendikleri tarihten başlayarak işleyen sürelere tabidir. Sürenin kaçırılması dava hakkının düşmesine yol açar.",
+            "Muris muvazaasına dayalı tapu iptali ve tescil davasında kural olarak zamanaşımı uygulanmaz; ancak delillerin zamanla ulaşılamaz hâle gelmesi riski bulunur.",
+            "Paylaşma davasının süresi; mirasçı sayısına, taşınmaz adedine ve bilirkişi incelemesine göre değişir ve önceden bildirilemez.",
+        ]),
+        ("Sık yapılan hatalar", [
+            "Terekenin kapsamı incelenmeden mirasın reddedilmesi, hak kaybına yol açabilir.",
+            "Mirasbırakanın sağlığında yaptığı devirlerin araştırılmaması, tenkis ve muvazaa iddialarının süresinde ileri sürülememesine neden olur.",
+            "Mirasçılardan birinin taşınmazı tek başına kullanması durumunda ecrimisil talebinin zamanında ileri sürülmemesi, geçmiş dönem alacağını sınırlar.",
+            "Banka hesaplarının ölüm tarihinden sonra kullanılması, tereke bakımından sorumluluk doğurabilir.",
+            "Vasiyetnamenin usulüne uygun düzenlenmemesi, iptal talebiyle karşılaşılmasına yol açar.",
+        ]),
+    ],
+    sss=[
+        ("Veraset ilamı nereden alınır?",
+         "Mirasçılık belgesi, kural olarak noterlerden alınabilir. Mirasçılık ilişkisinin çekişmeli olduğu, yabancı unsur bulunduğu veya nüfus kayıtlarının yetersiz kaldığı hâllerde sulh hukuk mahkemesine başvurulması gerekir."),
+        ("Mirasçılardan biri paylaşıma yanaşmazsa ne yapılır?",
+         "Anlaşma sağlanamadığında mirasın paylaştırılması davası açılabilir. Mahkeme, terekedeki malların aynen bölünmesinin mümkün olup olmadığını inceler; mümkün değilse satış yoluyla paylaştırmaya karar verir."),
+        ("Muris muvazaası nedir?",
+         "Mirasbırakanın, mirasçılarından mal kaçırmak amacıyla gerçekte bağışladığı taşınmazı satış gibi göstererek devretmesidir. Saklı payı bulunsun bulunmasın mirasçılar, bu devrin geçersizliğini ileri sürerek tapu iptali ve tescil davası açabilir."),
+        ("Mirasın reddi süresi kaçırılırsa ne olur?",
+         "Süre içinde ret yapılmazsa miras kayıtsız şartsız kabul edilmiş sayılır ve mirasçı, terekenin borçlarından kişisel malvarlığıyla da sorumlu hâle gelir. Ancak borca batıklık açıkça belliyse hükmen ret imkânı değerlendirilebilir."),
+        ("Eşin miras payı ne kadardır?",
+         "Sağ kalan eşin payı, birlikte mirasçı olduğu zümreye göre değişir. Altsoyla birlikte mirasçı olduğunda pay oranı, mirasbırakanın anne babası veya büyük ana babasıyla birlikte mirasçı olduğu hâllerden farklıdır."),
+        ("Yurt dışındaki mirasçı süreci nasıl yürütür?",
+         "Vekâletname düzenlenerek süreç Türkiye'den takip edilebilir. Yurt dışında düzenlenen vekâletnamelerin apostil şerhi taşıması veya konsolosluk aracılığıyla düzenlenmesi gerekir."),
+    ],
+    ilgili=[
+        ("/antalya-gayrimenkul-ve-kira-avukati/", "Gayrimenkul ve Kira"),
+        ("/antalya-bosanma-avukati/", "Antalya Boşanma Avukatı"),
+        ("/konyaalti-avukat/", "Konyaaltı Avukat"),
+    ],
+)
+
+ALANLAR["antalya-ticaret-hukuku-avukati"] = dict(
+    title="Antalya Ticaret Hukuku Avukatı | Alper Germen",
+    desc="Antalya'da şirket kuruluşu, ticari sözleşmeler, ortaklık uyuşmazlıkları ve ticari alacak takibinde hukuki danışmanlık ve dava takibi yapılır. Randevu alın.",
+    h1="Antalya Ticaret Hukuku Avukatı",
+    kicker="Ticaret Hukuku",
+    lead="Ticari uyuşmazlıkların önemli bir bölümü, sözleşme kurulurken atlanan ayrıntılardan doğar. Sözleşmenin hazırlanış biçimi, uyuşmazlık çıktığında hangi tarafın hangi delile dayanacağını belirler. Antalya'da şirketlere ve tacirlere, 6102 sayılı Türk Ticaret Kanunu çerçevesinde danışmanlık ve dava takibi hizmeti verilmektedir.",
+    bolumler=[
+        ("Hizmetin kapsamı", [
+            "Şirket kuruluşu, ana sözleşme hazırlanması, sermaye artırımı ve azaltımı, tür değiştirme, birleşme ve bölünme işlemlerinde hukuki destek sağlanır.",
+            "Ticari sözleşmelerin hazırlanması ve incelenmesi; satım, distribütörlük, franchise, hizmet ve tedarik sözleşmeleri ile cezai şart ve teminat düzenlemeleri bu kapsamdadır.",
+            "Ortaklar arası uyuşmazlıklar, genel kurul kararlarının iptali, haklı sebeple fesih talepleri ile yönetici sorumluluğuna ilişkin davalar takip edilir. Ticari alacakların tahsili için icra takibi ve dava süreçleri yürütülür.",
+        ]),
+        ("Şirketler ve ortaklık ilişkileri", [
+            "Limited ve anonim şirketlerde ortakların hak ve yükümlülükleri, pay devri usulü ve genel kurul işleyişi farklılık gösterir. Şirket türü seçilirken sorumluluk rejimi ve devir kolaylığı birlikte değerlendirilir.",
+            "Genel kurul kararlarına karşı iptal davası, kanunda öngörülen süre içinde ve belirli kişilerce açılabilir. Toplantı çağrısının usulüne uygun yapılıp yapılmadığı, kararın geçerliliği bakımından incelenir.",
+            "Ortaklar arasındaki güven ilişkisinin bozulduğu hâllerde, koşulları varsa haklı sebeple fesih talep edilebilir. Mahkeme fesih yerine, davacı ortağın payının gerçek değerinin ödenmesine de karar verebilir.",
+        ]),
+        ("Ticari sözleşmelerde dikkat edilenler", [
+            "Sözleşmede tarafların edimleri, teslim ve ödeme koşulları, gecikme hâlinde uygulanacak yaptırımlar ve sözleşmenin sona erme sebepleri açıkça düzenlenmelidir.",
+            "Cezai şart, teminat ve temerrüt faizi hükümleri, uyuşmazlık çıktığında ispat yükünü doğrudan etkiler. Tacirler arasındaki ilişkilerde cezai şartın indirilmesi talebi bakımından farklı kurallar uygulanır.",
+            "Yetkili mahkeme ve uygulanacak hukuk maddeleri ile varsa tahkim şartı, uyuşmazlığın nerede ve nasıl çözüleceğini belirler. Bu maddelerin sonradan değiştirilmesi çoğu zaman mümkün olmaz.",
+        ]),
+        ("Ticari defterler ve ispat", [
+            "Tacirler arasındaki uyuşmazlıklarda ticari defterler önemli bir ispat aracıdır. Usulüne uygun tutulmuş, açılış ve kapanış onayları yapılmış defterler, sahibi lehine de delil oluşturabilir.",
+            "Defterlerin birbirini doğrulaması ve kayıtların dayanak belgelerle uyumlu olması aranır. Karşı tarafın defterleri kendi aleyhine kayıt içeriyorsa bu kayıtlar aleyhe delil sayılır.",
+            "Elektronik ortamda tutulan defterler ile e-fatura ve e-irsaliye kayıtları da delil olarak değerlendirilir. Bu kayıtların bütünlüğünün korunması, sonradan doğacak uyuşmazlıklarda önem taşır.",
+        ]),
+        ("Süreç adımları", [
+            "Ticari ilişkinin belgeleri incelenir; sözleşme, sipariş formları, irsaliye, fatura ve yazışmalar bir araya getirilir.",
+            "Alacak uyuşmazlıklarında dava öncesi arabuluculuk zorunluluğu bulunduğundan başvuru yapılır ve görüşmeler yürütülür.",
+            "Anlaşma sağlanamazsa asliye ticaret mahkemesinde dava açılır veya icra takibi başlatılır.",
+            "Bilirkişi incelemesi, ticari defterlerin incelenmesi ve keşif talepleri sunulur.",
+            "Karara karşı kanun yolları değerlendirilir; kesinleşen alacağın tahsili takip edilir.",
+        ]),
+        ("Gereken belgeler", [
+            "Sözleşme ve ekleri, teklif ve sipariş yazışmaları ile varsa çerçeve anlaşma metni.",
+            "Fatura, irsaliye, teslim tutanakları ve cari hesap ekstreleri.",
+            "Ticaret sicil kayıtları, imza sirküleri ve şirket ana sözleşmesi.",
+            "Ticari defterler; usulüne uygun tutulmuş defterler sahibi lehine de delil oluşturabilir.",
+            "İhtarname ve tebliğ şerhleri ile temerrüde ilişkin yazışmalar.",
+        ]),
+        ("Süreler", [
+            "Ticari alacaklarda zamanaşımı süresi, sözleşmenin türüne göre değişir; genel süre ile bazı sözleşme tiplerine özgü kısa süreler farklıdır.",
+            "Ayıplı mal teslimlerinde muayene ve ihbar külfeti bulunur. Tacirler arasında açık ayıpların teslimden hemen sonra, gizli ayıpların ise ortaya çıkmasının ardından gecikmeksizin bildirilmesi gerekir.",
+            "Genel kurul kararlarının iptali davası, kanunda öngörülen süre içinde açılmalıdır; sürenin geçmesi dava hakkını düşürür.",
+            "Kambiyo senetlerinde başvuru hakları ve zamanaşımı süreleri ayrıca düzenlenmiştir; bu süreler diğer alacaklara göre daha kısadır.",
+        ]),
+        ("Sık yapılan hatalar", [
+            "Sözleşmenin yazılı yapılmaması veya sipariş yazışmalarının saklanmaması, edimin kapsamının ispatını güçleştirir.",
+            "Ayıp ihbarının süresinde ve yazılı biçimde yapılmaması, ayıba dayalı taleplerin ileri sürülememesine yol açar.",
+            "Ticari defterlerin usulüne uygun tutulmaması, defterlerin sahibi lehine delil olma niteliğini ortadan kaldırır.",
+            "Yetki ve tahkim maddelerinin okunmadan kabul edilmesi, uyuşmazlığın beklenmedik bir yerde görülmesine neden olabilir.",
+            "Arabuluculuk dava şartının atlanması, davanın usulden reddiyle sonuçlanır.",
+        ]),
+    ],
+    sss=[
+        ("Ticari davalarda arabuluculuk zorunlu mu?",
+         "Konusu bir miktar paranın ödenmesi olan alacak ve tazminat talepleri bakımından dava açılmadan önce arabulucuya başvurulması dava şartıdır. Bu aşama tamamlanmadan açılan dava usulden reddedilir."),
+        ("Limited şirket mi anonim şirket mi kurulmalı?",
+         "Seçim; ortak sayısı, sermaye yapısı, pay devrinin ne sıklıkta yapılacağı ve sorumluluk rejimi birlikte değerlendirilerek yapılır. İki şirket türünde pay devri usulü ve kamu borçlarından sorumluluk farklıdır."),
+        ("Şirket ortağı payını nasıl devredebilir?",
+         "Limited şirkette pay devri yazılı şekilde yapılır, imzaların noterce onaylanması ve kural olarak genel kurul onayı aranır. Anonim şirkette ise devir usulü payın türüne göre farklılık gösterir."),
+        ("Genel kurul kararına itiraz edilebilir mi?",
+         "Kanuna, ana sözleşmeye veya dürüstlük kuralına aykırı kararlar için iptal davası açılabilir. Dava, kanunda öngörülen süre içinde ve kararın alınmasında olumsuz oy kullanıp muhalefetini tutanağa geçiren ortaklar başta olmak üzere belirli kişilerce açılabilir."),
+        ("Ticari alacak nasıl tahsil edilir?",
+         "Elde bulunan belgenin niteliğine göre icra takibi başlatılır veya dava açılır. Çek ve bonoya dayalı alacaklarda kambiyo senetlerine özgü takip yolu kullanılabilir; bu yolda süreler daha kısadır."),
+        ("Şirketler için sürekli danışmanlık ne kapsar?",
+         "Sözleşmelerin incelenmesi, genel kurul ve yönetim kurulu süreçlerinin mevzuata uygun yürütülmesi, ticari yazışmaların hukuki açıdan değerlendirilmesi ve uyuşmazlık çıkmadan önce risklerin tespiti bu kapsamdadır."),
+    ],
+    ilgili=[
+        ("/antalya-icra-avukati/", "Antalya İcra Avukatı"),
+        ("/antalya-is-hukuku-avukati/", "Antalya İş Hukuku Avukatı"),
+        ("/antalya-gayrimenkul-ve-kira-avukati/", "Gayrimenkul ve Kira"),
+    ],
+)
+
+ALANLAR["konyaalti-avukat"] = dict(
+    title="Konyaaltı Avukat | Av. Alper Germen Hukuk Bürosu",
+    desc="Konyaaltı Toros Mahallesi'nde avukatlık ve hukuki danışmanlık. Aile, ceza, iş, gayrimenkul, icra, miras ve ticaret hukukunda dava takibi. Randevu alın.",
+    h1="Konyaaltı Avukat",
+    kicker="Konyaaltı / Antalya",
+    lead="Büro, Konyaaltı Toros Mahallesi'nde Atatürk Bulvarı üzerinde bulunmaktadır. Konyaaltı, Liman, Hurma, Uncalı, Sarısu ve Arapsuyu çevresinden gelen müvekkillere yüz yüze; şehir dışında bulunanlara ise telefon ve çevrim içi görüşme seçenekleriyle hizmet verilmektedir.",
+    bolumler=[
+        ("Büronun konumu ve ulaşım", [
+            "Ofis, Toros Mahallesi Atatürk Bulvarı No:52 adresinde yer alır. Konyaaltı Belediyesi ve çevresindeki kamu kurumlarına yakınlığı nedeniyle Konyaaltı ilçesinde ikamet eden müvekkiller için ulaşım kolaylığı sağlar.",
+            "Antalya Adliyesi'ne ve Antalya Bölge Adliye Mahkemesi'ne ulaşım, bulvar üzerindeki toplu taşıma hatlarıyla mümkündür. Görüşmeler randevu ile yapılır; böylece dosyaya önceden hazırlık yapılabilir.",
+            "Şehir dışında veya yurt dışında bulunan müvekkiller bakımından süreç, düzenlenecek vekâletname ile Antalya'dan yürütülebilir. Bu durumda bilgilendirme telefon, e-posta veya çevrim içi görüşme yoluyla yapılır.",
+        ]),
+        ("Konyaaltı'nda öne çıkan uyuşmazlıklar", [
+            "İlçede konut ve turizm yatırımlarının yoğun olması nedeniyle kira ilişkilerinden doğan uyuşmazlıklar ile taşınmaz alım satımına ilişkin sorunlar sık gündeme gelir. Tapu devri öncesi inceleme, sonradan doğabilecek uyuşmazlıkların önüne geçilmesi bakımından önem taşır.",
+            "Turizm ve hizmet sektörünün ağırlığı, iş sözleşmelerinden doğan uyuşmazlıkları da yaygın hâle getirir. Mevsimlik çalışma, fazla mesai ve hizmet süresinin tespiti bu dosyalarda öne çıkan başlıklardır.",
+            "Yabancı uyruklu kişilerin taşınmaz edinimi, ikamet izni ve vatandaşlık başvuruları ile yabancı mahkeme kararlarının tanınması da bölgede sık karşılaşılan konular arasındadır.",
+        ]),
+        ("Çalışma alanları", [
+            "Aile hukukunda boşanma, velayet, nafaka ve mal rejiminin tasfiyesi; ceza hukukunda soruşturma ve kovuşturma aşamasında savunma ile mağdur vekilliği yürütülür.",
+            "İş hukukunda kıdem ve ihbar tazminatı, işe iade ve işçilik alacakları; gayrimenkul hukukunda tahliye, kira tespiti ve tapu iptali ile tescil davaları takip edilir.",
+            "İcra ve iflas hukukunda takip ve itiraz süreçleri, miras hukukunda paylaşım ve tenkis davaları, ticaret hukukunda şirket işlemleri ve ticari alacak takibi bu kapsamdadır.",
+        ]),
+        ("Antalya'da yargı süreçleri", [
+            "Antalya'da açılan davalar, uyuşmazlığın türüne göre aile, asliye hukuk, sulh hukuk, asliye ticaret, iş, icra ve ceza mahkemelerinde görülür. Konyaaltı'nda ikamet edenler bakımından yetkili mahkeme çoğu dosyada Antalya mahkemeleridir.",
+            "İlk derece mahkemesi kararlarına karşı istinaf başvuruları Antalya Bölge Adliye Mahkemesi'nde incelenir. Kanun yolu süreleri kesin olduğundan kararın tebliğ tarihi dosyada kayıt altına alınır.",
+            "Duruşmalara katılım, koşulları bulunan dosyalarda ses ve görüntü nakli yoluyla da mümkün olabilmektedir. Bu imkânın kullanılıp kullanılamayacağı dosya bazında değerlendirilir.",
+        ]),
+        ("Görüşme süreci", [
+            "Randevu telefon veya e-posta ile alınır; görüşme öncesinde dosyaya ilişkin belgelerin iletilmesi istenir.",
+            "İlk görüşmede olayın geçmişi, talepler ve elde bulunan belgeler değerlendirilir; hangi hukuki yolun uygun olduğu birlikte belirlenir.",
+            "Süreç için gereken belgeler listelenir ve varsa süreye bağlı adımlar öncelikli olarak planlanır.",
+            "Ücretlendirme, Avukatlık Asgari Ücret Tarifesi esas alınarak işin kapsamına göre belirlenir ve yazılı sözleşmeyle netleştirilir.",
+            "Dosyadaki gelişmeler düzenli olarak bildirilir; duruşma ve başvuru tarihleri önceden paylaşılır.",
+        ]),
+        ("İlk görüşmeye getirilecek belgeler", [
+            "Kimlik belgesi ve varsa vekâletname bilgileri.",
+            "Uyuşmazlığa ilişkin sözleşme, tapu kaydı, fatura, bordro veya banka kayıtları gibi yazılı belgeler.",
+            "Tebliğ edilmiş dava dilekçesi, ödeme emri, ihtarname veya karar örneği varsa tebliğ zarfıyla birlikte.",
+            "Yazışma, mesaj ve fotoğraf gibi dijital kayıtların çıktısı ya da dijital kopyası.",
+            "Daha önce başka bir dosya açılmışsa esas numarası ve mahkeme bilgisi.",
+        ]),
+        ("Vekâletname nasıl düzenlenir?", [
+            "Vekâletname, herhangi bir noterden düzenlenebilir. Dosyanın türüne göre genel vekâletname yeterli olabileceği gibi, boşanma davaları bakımından fotoğraflı vekâletname aranır.",
+            "Yurt dışında bulunan müvekkiller vekâletnameyi Türk konsolosluklarından düzenletebilir. Yabancı noterlerde düzenlenen belgelerde apostil şerhi gerekir.",
+            "Vekâletname düzenlenmeden önce hangi işlemler için yetki verileceğinin netleştirilmesi, sonradan ek vekâletname ihtiyacını ortadan kaldırır. Vekâletnamede müvekkilin güncel adres ve iletişim bilgilerinin doğru yer alması, tebligatların ulaşması bakımından önem taşır.",
+        ]),
+        ("Sık yapılan hatalar", [
+            "Tebligat alındıktan sonra beklenmesi, süreye bağlı hakların kaybedilmesinin en sık nedenidir.",
+            "Belgelerin bir araya getirilmeden görüşmeye gelinmesi, değerlendirmenin eksik yapılmasına yol açar.",
+            "Sözleşme imzalanmadan önce hukuki inceleme yapılmaması, sonradan telafisi güç sonuçlar doğurabilir.",
+            "Uyuşmazlık büyüdükten sonra başvurulması, uzlaşma ihtimalini azaltır ve süreci uzatır.",
+        ]),
+    ],
+    sss=[
+        ("Büro nerede bulunuyor?",
+         "Toros Mahallesi Atatürk Bulvarı No:52, 07070 Konyaaltı / Antalya adresindedir. Görüşmeler randevu ile yapılmaktadır."),
+        ("Randevu nasıl alınır?",
+         "0553 772 76 01 numaralı telefondan veya avalpergermen@gmail.com adresine e-posta göndererek randevu alınabilir. Görüşme öncesinde dosyaya ilişkin belgelerin iletilmesi, değerlendirmenin daha isabetli yapılmasını sağlar."),
+        ("Şehir dışındayım, süreç nasıl yürütülür?",
+         "Vekâletname düzenlenmesi hâlinde dosya Antalya'dan takip edilebilir. Bilgilendirme telefon, e-posta veya çevrim içi görüşme yoluyla yapılır; duruşmalara katılım için müvekkilin Antalya'da bulunması çoğu dosyada gerekmez."),
+        ("Avukatlık ücreti nasıl belirlenir?",
+         "Ücret; işin kapsamı, harcanacak emek ve süre ile Avukatlık Asgari Ücret Tarifesi dikkate alınarak belirlenir ve yazılı avukatlık sözleşmesiyle netleştirilir. Görüşme öncesinde ücretlendirme hakkında bilgi verilir."),
+        ("Hangi dillerde görüşme yapılabiliyor?",
+         "Görüşmeler Türkçe ve İngilizce yürütülebilmektedir. Yabancı uyruklu müvekkiller için gerekli hâllerde yeminli tercüman desteğiyle çalışılır."),
+        ("İlk görüşmede ne yapılır?",
+         "Olayın geçmişi ve talepler dinlenir, mevcut belgeler incelenir. Uyuşmazlığın hukuki niteliği ile izlenebilecek yollar açıklanır; süreye bağlı bir adım varsa öncelikli olarak planlanır."),
+    ],
+    ilgili=[
+        ("/antalya-bosanma-avukati/", "Antalya Boşanma Avukatı"),
+        ("/antalya-is-hukuku-avukati/", "Antalya İş Hukuku Avukatı"),
+        ("/antalya-gayrimenkul-ve-kira-avukati/", "Gayrimenkul ve Kira"),
+    ],
+)

@@ -159,14 +159,21 @@ const FAQS=[
         <span class="qa-ico"></span>
       </button>
       <div class="qa-a"><div class="qa-a-inner"><p>${f.a}</p></div></div>`;
-    el.querySelector('.qa-q').addEventListener('click',()=>{
-      const open=el.classList.contains('open');
-      document.querySelectorAll('.qa.open').forEach(o=>o.classList.remove('open'));
-      if(!open)el.classList.add('open');
-    });
     faqEl.appendChild(el);
   });
 })();
+
+/* Aç/kapa tek bir delege ile yönetilir: ana sayfadaki dinamik liste de,
+   alan sayfalarındaki statik SSS blokları da aynı davranışı alsın. */
+document.addEventListener('click',e=>{
+  const q=e.target.closest('.qa-q');
+  if(!q)return;
+  const el=q.closest('.qa');
+  const kap=el.parentElement;
+  const open=el.classList.contains('open');
+  kap.querySelectorAll('.qa.open').forEach(o=>o.classList.remove('open'));
+  if(!open)el.classList.add('open');
+});
 
 /* ───────────── google reviews ─────────────
    Yorumlar main.js ile aynı listeden beslenir; buradaki dizi onun İngilizce
