@@ -16,9 +16,10 @@ ARTICLE_SECTION = "Ceza Hukuku"
 TARIH = "2026-08-25T09:00:00+03:00"
 RG_LINK = "https://www.resmigazete.gov.tr/eskiler/2026/07/20260731.htm"
 
-OZET = ("Article 158/4 of the Turkish Penal Code entered into force on 31 July 2026 through Law "
-        "No. 7589. Where a person's part in fraud was limited to letting someone else use their "
-        "bank account or card, the sentence is halved. This is not an amnesty but a narrow reduction.")
+OZET = ("Article 158/4 was added to the Turkish Penal Code by Law No. 7589 and entered into force "
+        "on 31 July 2026. Where a person's part in fraud was limited to giving someone else their "
+        "bank account, card or the details enabling its use, the sentence is halved. It is not an "
+        "amnesty but a narrow reduction.")
 
 GIRIS = [
  ("The provision arrived with Law No. 7589, publicly known as the 12th Judicial Package. Adopted "
@@ -40,7 +41,7 @@ BOLUMLER = [
    "person a payment instrument, or the mandatory information enabling use of an account held with "
    "a bank, intermediary institution, payment service provider or crypto-asset service provider, "
    "to secure an unjust benefit, the sentence is reduced by half.",
-   "Notably, the scope expressly includes crypto-asset service providers.",
+   "The scope expressly includes crypto-asset service providers.",
    "The rate is fixed; the court assesses whether the act falls within the paragraph. What the "
    "12th Judicial Package changed for Article 158 is that such conduct now sits in its own "
    "paragraph rather than under the general rules on participation.",
@@ -51,8 +52,8 @@ BOLUMLER = [
  ("Which conduct falls within the reduction: the \"limited to that act\" condition", [
    "The contribution must go no further than handing over the account or card. The key phrase is "
    "\"limited to that act\".",
-   "It is tested with one question: after delivering the card or account details, did the person "
-   "remain involved? If not, the act falls within the paragraph.",
+   "It is tested with one question: after delivering the card or details, did the person remain "
+   "involved? If not, the act qualifies.",
    "The account need not belong to the person: the text covers instruments belonging to oneself "
    "or to another.",
    "Where several people are responsible for lending the same account or card, a payment by one "

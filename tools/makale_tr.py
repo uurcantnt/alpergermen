@@ -16,10 +16,11 @@ ARTICLE_SECTION = "Ceza Hukuku"
 TARIH = "2026-08-25T09:00:00+03:00"
 RG_LINK = "https://www.resmigazete.gov.tr/eskiler/2026/07/20260731.htm"
 
-OZET = ("TCK 158/4, 31 Temmuz 2026'da yürürlüğe giren 7589 sayılı Kanunla getirildi. "
-        "Dolandırıcılığa katılımı yalnızca banka hesabını veya kartını başkasına "
-        "kullandırmakla sınırlı kalan kişilerin cezası yarı oranında indirilir. "
-        "Bu bir af değil, kapsamı dar çizilmiş bir ceza indirimidir.")
+OZET = ("TCK 158/4, 31 Temmuz 2026'da yürürlüğe giren 7589 sayılı Kanunla Türk Ceza "
+        "Kanunu'nun 158. maddesine eklendi. Dolandırıcılığa katılımı yalnızca banka hesabını, "
+        "kartını veya hesabın kullanılmasını sağlayan bilgileri başkasına vermekle sınırlı "
+        "kalan kişilerin cezası, bu fıkra uyarınca yarı oranında indirilir. Düzenleme bir af "
+        "değil, kapsamı dar çizilmiş bir ceza indirimidir.")
 
 GIRIS = [
  ("Düzenleme, kamuoyunda 12. Yargı Paketi olarak anılan 7589 sayılı \"Yargının Etkin ve "
