@@ -90,6 +90,9 @@ body::after{
 .brand-name{font-family:var(--serif);font-size:19px;font-weight:500;letter-spacing:-.01em;line-height:1;color:var(--cream);}
 .brand-sub{font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-top:4px;}
 .nav{display:flex;gap:34px;margin-left:auto;}
+/* bulten sonrasi menu sigdirma: 7 baslik + CTA, masaustu alt sinirina kadar tek satir */
+@media(max-width:1250px){.nav{gap:22px}.nav a{white-space:nowrap}}
+@media(max-width:1120px){.nav{gap:14px}.nav a{font-size:12.5px}.cta-btn{padding:12px 16px}}
 .nav a{
   font-size:13px;font-weight:500;letter-spacing:.01em;
   position:relative;padding:4px 0;color:var(--cream-soft);

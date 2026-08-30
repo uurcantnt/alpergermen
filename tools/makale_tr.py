@@ -37,6 +37,8 @@ GIRIS = [
   "yargılanıyordu. TCK 158/4 bu kişilerin durumunu ayrı bir fıkrada düzenliyor."),
 ]
 
+TABLO_BOLUM = 5   # tablo 6. bölümün sonuna eklenir
+
 BOLUMLER = [
  ("TCK 158/4 nedir, ne zaman yürürlüğe girdi?", [
    "TCK 158/4, nitelikli dolandırıcılık suçuna katılımı yalnızca hesap veya ödeme aracı "

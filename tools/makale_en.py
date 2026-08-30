@@ -33,6 +33,8 @@ GIRIS = [
   "(nitelikli dolandırıcılık) carried out through it. Article 158/4 now governs their position."),
 ]
 
+TABLO_BOLUM = 5   # tablo 6. bölümün sonuna eklenir
+
 BOLUMLER = [
  ("What is Article 158/4 and when did it enter into force?", [
    "Article 158/4 halves the sentence where participation in qualified fraud was limited to "

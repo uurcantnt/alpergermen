@@ -19,6 +19,18 @@ def en_parca(hangi):
     return re.sub(r'\s*<script src="/main(-en)?\.js" defer></script>\s*$', '\n', p)
 
 
+AY_TR = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran",
+          "Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"]
+AY_EN = ["January","February","March","April","May","June",
+         "July","August","September","October","November","December"]
+
+
+def tarih_yaz(iso, tr):
+    """2026-08-30T09:00:00+03:00 -> '30 Ağustos 2026' / '30 August 2026'"""
+    y, a, g = int(iso[0:4]), int(iso[5:7]), int(iso[8:10])
+    return f"{g} {(AY_TR if tr else AY_EN)[a-1]} {y}"
+
+
 def kacis(t):
     """Metin kaçışı — içerideki <a> etiketleri korunur."""
     korunan = re.findall(r'<a href="[^"]*">.*?</a>', t)
@@ -59,11 +71,13 @@ TABLO_EN = """
       </div>"""
 
 
-def sayfa(m, tr):
+def sayfa(m, tr, es):
+    """m: üretilecek modül, es: diğer dildeki eşi (hreflang çifti onun SLUG'undan kurulur)."""
     yol = "/" + m.SLUG + "/"
-    tr_url = f"{SITE}/{m.SLUG}/" if tr else f"{SITE}/" + m.SLUG.replace("en/yazilar/tck-158-4-account-lending-sentence-reduction", "yazilar/tck-158-4-iban-kullandirma-ceza-indirimi") + "/"
-    en_url = f"{SITE}/en/yazilar/tck-158-4-account-lending-sentence-reduction/"
-    tr_url = f"{SITE}/yazilar/tck-158-4-iban-kullandirma-ceza-indirimi/"
+    tr_slug = (m if tr else es).SLUG
+    en_slug = (es if tr else m).SLUG
+    tr_url = f"{SITE}/{tr_slug}/"
+    en_url = f"{SITE}/{en_slug}/"
     kanonik = tr_url if tr else en_url
     ust = (UST if tr else en_parca("ust")).replace('<a href="/yazilar">', '<a href="/yazilar" class="on">', 1) \
         if tr else en_parca("ust").replace('<a href="/en/yazilar">', '<a href="/en/yazilar" class="on">', 1)
@@ -79,9 +93,9 @@ def sayfa(m, tr):
                        + "</ol>")
             else:
                 ic += f"\n      <p>{kacis(p)}</p>"
-        # tabloyu 6. bölümün (kesinleşmiş dosyalar) sonuna koy
-        if i == 5:
-            ic += (TABLO_TR if tr else TABLO_EN)
+        # tablo: modül TABLO_BOLUM tanımlamışsa o bölümün sonuna eklenir
+        if i == getattr(m, "TABLO_BOLUM", -1):
+            ic += getattr(m, "TABLO", TABLO_TR if tr else TABLO_EN)
         govde.append(f'\n  <section class="section tight lp-blok">\n    <div class="wrap lp-wrap">'
                      f'\n      <h2>{kacis(h2)}</h2>{ic}\n    </div>\n  </section>')
 
@@ -124,7 +138,7 @@ def sayfa(m, tr):
       {"@type": "BlogPosting", "@id": kanonik + "#article",
        "headline": m.H1, "description": m.DESC, "url": kanonik,
        "inLanguage": "tr-TR" if tr else "en",
-       "image": SITE + GORSEL,
+       "image": SITE + getattr(m, "GORSEL", GORSEL),
        "datePublished": m.TARIH, "dateModified": m.TARIH,
        "articleSection": m.ARTICLE_SECTION,
        "mainEntityOfPage": {"@type": "WebPage", "@id": kanonik},
@@ -147,7 +161,8 @@ def sayfa(m, tr):
     ]}
 
     ana = "Ana Sayfa" if tr else "Home"
-    tarih_gorunen = "25 Ağustos 2026" if tr else "25 August 2026"
+    tarih_gorunen = tarih_yaz(m.TARIH, tr)
+    gorsel = getattr(m, "GORSEL", GORSEL)
     rg_metin = ("Kanunun Resmî Gazete'de yayımlanan metni" if tr
                 else "the text as published in the Official Gazette")
     kaynak_cumle = (f'Düzenlemenin resmî metni için '
@@ -173,11 +188,11 @@ def sayfa(m, tr):
 <meta property="og:title" content="{kacis(m.H1)}" />
 <meta property="og:description" content="{kacis(m.DESC)}" />
 <meta property="og:url" content="{kanonik}" />
-<meta property="og:image" content="{SITE}{GORSEL}" />
+<meta property="og:image" content="{SITE}{gorsel}" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{kacis(m.H1)}" />
 <meta name="twitter:description" content="{kacis(m.DESC)}" />
-<meta name="twitter:image" content="{SITE}{GORSEL}" />
+<meta name="twitter:image" content="{SITE}{gorsel}" />
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -218,13 +233,21 @@ def sayfa(m, tr):
 """
 
 
+# (türkçe modül, ingilizce modül) çiftleri — yeni makale buraya eklenir
+CIFTLER = [("makale_tr", "makale_en"),
+           ("makale_cocuk_tr", "makale_cocuk_en"),
+           ("makale_icra_tr", "makale_icra_en")]
+
+
 def uret():
-    import makale_tr, makale_en
-    for m, tr in ((makale_tr, True), (makale_en, False)):
-        d = PUB / m.SLUG
-        d.mkdir(parents=True, exist_ok=True)
-        (d / "index.html").write_text(sayfa(m, tr))
-        print("yazildi:", m.SLUG + "/index.html")
+    import importlib
+    for tr_ad, en_ad in CIFTLER:
+        mt, me = importlib.import_module(tr_ad), importlib.import_module(en_ad)
+        for m, tr, es in ((mt, True, me), (me, False, mt)):
+            d = PUB / m.SLUG
+            d.mkdir(parents=True, exist_ok=True)
+            (d / "index.html").write_text(sayfa(m, tr, es))
+            print("yazildi:", m.SLUG + "/index.html")
 
 
 if __name__ == "__main__":
