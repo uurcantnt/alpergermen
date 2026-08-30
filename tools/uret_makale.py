@@ -86,8 +86,10 @@ def sayfa(m, tr, es):
     tr_url = f"{SITE}/{tr_slug}/"
     en_url = f"{SITE}/{en_slug}/"
     kanonik = tr_url if tr else en_url
-    ust = (UST if tr else en_parca("ust")).replace('<a href="/yazilar">', '<a href="/yazilar" class="on">', 1) \
-        if tr else en_parca("ust").replace('<a href="/en/yazilar">', '<a href="/en/yazilar" class="on">', 1)
+    # count sınırı YOK: _ust.html hem masaüstü menüsünü (.nav) hem mobil menüyü
+    # (.mmenu) içeriyor; yalnızca ilkini işaretlemek mobilde vurguyu düşürüyordu.
+    ust = (UST.replace('<a href="/yazilar">', '<a href="/yazilar" class="on">') if tr
+           else en_parca("ust").replace('<a href="/en/yazilar">', '<a href="/en/yazilar" class="on">'))
     alt = ALT if tr else en_parca("alt")
     ust = alanlar_isaretini_kaldir(ust, tr)
 
