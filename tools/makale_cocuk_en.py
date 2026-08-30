@@ -36,53 +36,53 @@ BOLUMLER = [
  ("What article 31 provides, and the age thresholds", [
    "Article 31 of the Turkish Penal Code is headed \"minority of age\" and divides the criminal "
    "responsibility of children into three bands.",
-   "Under the first paragraph, children who have <strong>not completed the age of twelve</strong> at "
+   "Under the first paragraph, children who have not completed the age of twelve at "
    "the time of the act bear no criminal responsibility. No prosecution may be brought against them, "
    "although security measures specific to children may be applied. This paragraph was not amended "
    "by law no. 7593.",
-   "The second paragraph governs the <strong>twelve to fifteen</strong> band. Where the child cannot "
+   "The second paragraph governs the twelve to fifteen band. Where the child cannot "
    "perceive the legal meaning and consequences of the act, or the ability to direct their conduct is "
    "insufficiently developed, there is no criminal responsibility and security measures specific to "
    "children are ordered instead. Where that capacity exists, a sentence is imposed but reduced.",
-   "The third paragraph governs the <strong>fifteen to eighteen</strong> band. Criminal responsibility "
+   "The third paragraph governs the fifteen to eighteen band. Criminal responsibility "
    "exists as a rule, with a reduction in sentence. It is the post-reduction ranges in the second and "
    "third paragraphs that law no. 7593 altered."]),
 
  ("New ranges for the twelve to fifteen band", [
-   "Three figures changed in the second paragraph. Where the offence carries <strong>aggravated life "
-   "imprisonment</strong>, the sentence was previously twelve to fifteen years; it is now "
-   "<strong>thirteen to eighteen years</strong>.",
-   "Where the offence carries <strong>life imprisonment</strong>, the former range of nine to eleven "
-   "years became <strong>ten to twelve years</strong>.",
-   "For other sentences the rate of reduction is unchanged: the sentence is reduced by <strong>one "
-   "half</strong>. The ceiling, however, has risen: the term of imprisonment for each act, previously "
-   "capped at seven years, may now <strong>not exceed nine years</strong>.",
+   "Three figures changed in the second paragraph. Where the offence carries aggravated life "
+   "imprisonment, the sentence was previously twelve to fifteen years; it is now "
+   "thirteen to eighteen years.",
+   "Where the offence carries life imprisonment, the former range of nine to eleven "
+   "years became ten to twelve years.",
+   "For other sentences the rate of reduction is unchanged: the sentence is reduced by one "
+   "half. The ceiling, however, has risen: the term of imprisonment for each act, previously "
+   "capped at seven years, may now not exceed nine years.",
    "That last change has the widest practical effect. Offences carrying aggravated life or life "
    "imprisonment account for a small share of files, whereas the category of \"other sentences\" covers "
    "the great majority of files in this age band."]),
 
  ("New ranges for the fifteen to eighteen band", [
    "Three figures changed in the third paragraph as well. For offences carrying aggravated life "
-   "imprisonment, the former range of eighteen to twenty-four years was raised to <strong>nineteen to "
-   "twenty-seven years</strong>.",
+   "imprisonment, the former range of eighteen to twenty-four years was raised to nineteen to "
+   "twenty-seven years.",
    "For offences carrying life imprisonment, the range of twelve to fifteen years became "
-   "<strong>fifteen to eighteen years</strong>.",
+   "fifteen to eighteen years.",
    "For other sentences the rate of reduction is again unchanged: the sentence is reduced by "
-   "<strong>one third</strong>. The ceiling rose from twelve years to <strong>fifteen years</strong>; "
+   "one third. The ceiling rose from twelve years to fifteen years; "
    "the term of imprisonment for each act may not exceed fifteen years.",
    "Read together, the two paragraphs preserve the existing structure, under which the reduction "
    "narrows as the age band rises, while raising the floor in both bands."]),
 
  ("The new fourth paragraph: disapplying the age reduction", [
-   "The <strong>fourth paragraph</strong>, added by article 2 of the law, changes the character of "
+   "The fourth paragraph, added by article 2 of the law, changes the character of "
    "article 31. It allows a court to withhold the age reduction in specified offences.",
    "The paragraph permits the court to have regard to one or more of the following on the facts: the "
-   "<strong>gravity of intentional fault</strong>, the <strong>aim and motive pursued</strong>, the "
-   "<strong>manner in which the offence was committed</strong>, and <strong>a previous sentence of "
-   "imprisonment for an intentional offence</strong>.",
-   "On that assessment, the third paragraph <strong>may be disapplied</strong> in respect of persons "
-   "who have completed fifteen but not eighteen years of age and who commit <strong>intentional "
-   "killing</strong> (arts. 81, 82) or <strong>injury aggravated by result</strong> (art. 87, "
+   "gravity of intentional fault, the aim and motive pursued, the "
+   "manner in which the offence was committed, and a previous sentence of "
+   "imprisonment for an intentional offence.",
+   "On that assessment, the third paragraph may be disapplied in respect of persons "
+   "who have completed fifteen but not eighteen years of age and who commit intentional "
+   "killing (arts. 81, 82) or injury aggravated by result (art. 87, "
    "paragraphs 2 and 4). A child in that band may therefore be sentenced as an adult would be.",
    "The scope is limited in two respects: it applies only to the offences listed and only to children "
    "who have completed fifteen. The provision also confers a discretion rather than imposing a duty; "
@@ -91,9 +91,9 @@ BOLUMLER = [
 
  ("The converse: applying the third paragraph to younger children", [
    "The second sentence of the fourth paragraph provides a further possibility. In respect of persons "
-   "who had <strong>completed twelve but not fifteen</strong> years of age at the time of the act and "
-   "who bear criminal responsibility, the <strong>third paragraph may be applied in place of the "
-   "second</strong>.",
+   "who had completed twelve but not fifteen years of age at the time of the act and "
+   "who bear criminal responsibility, the third paragraph may be applied in place of the "
+   "second.",
    "The effect is that a younger child is subject to the narrower reductions of the higher band: a "
    "reduction of one third rather than one half, and a ceiling of fifteen years rather than nine.",
    "The same four criteria and the same two offence types govern this sentence too. In practice it is "
@@ -102,47 +102,47 @@ BOLUMLER = [
 
  ("Execution: education houses and conditional release", [
    "Law no. 7593 also changed the execution regime. Under the paragraph added by article 6 of the law "
-   "to article 15 of law no. 5275, sentences of child convicts sentenced to <strong>a total of three "
-   "years or less for intentional offences</strong> and <strong>a total of five years or less for "
-   "negligent offences</strong> are carried out <strong>directly in children's education houses</strong>.",
+   "to article 15 of law no. 5275, sentences of child convicts sentenced to a total of three "
+   "years or less for intentional offences and a total of five years or less for "
+   "negligent offences are carried out directly in children's education houses.",
    "A decision to transfer a child convict from a closed penal institution for children to a "
    "children's education house is taken by the administration and observation board following an "
-   "assessment carried out <strong>at least every three months</strong>, with the participation of at "
+   "assessment carried out at least every three months, with the participation of at "
    "least one specialist, who may be a psychologist, educationalist, social worker or a lawyer "
    "assigned by the children's rights commission of the Union of Turkish Bar Associations.",
    "Child convicts who abscond, in respect of whom a detention order is issued, or whose disciplinary "
    "penalty of return to a closed institution or confinement to a cell has become final, are sent to "
    "closed penal institutions for children by decision of that board.",
    "The fifth paragraph of article 107 of law no. 5275, on conditional release, was also rewritten. "
-   "Under the provision now in force, and <strong>excluding</strong> intentional killing (arts. 81, 82 "
+   "Under the provision now in force, and excluding intentional killing (arts. 81, 82 "
    "and 83), offences against sexual inviolability (arts. 102 and 103), the manufacture and trafficking "
    "of narcotics (art. 188) and the establishment of an organisation for the purpose of committing "
-   "offences (art. 220), each day spent by the convict in a penal institution <strong>until completing "
-   "the age of fifteen</strong> counts as two days in calculating the conditional release period."]),
+   "offences (art. 220), each day spent by the convict in a penal institution until completing "
+   "the age of fifteen counts as two days in calculating the conditional release period."]),
 
  ("Does the change apply to pending files?", [
    "The answer lies not in the transitional provisions of law no. 7593 but in the general provisions "
    "of the Turkish Penal Code. Under article 7, where the law in force at the time of the offence "
-   "differs from a law that enters into force subsequently, the law <strong>more favourable to the "
-   "offender</strong> is applied and executed.",
-   "The changes to article 31 <strong>raise</strong> the sentence ranges, and the new fourth paragraph "
+   "differs from a law that enters into force subsequently, the law more favourable to the "
+   "offender is applied and executed.",
+   "The changes to article 31 raise the sentence ranges, and the new fourth paragraph "
    "allows the reduction to be withheld. Both are unfavourable to the defendant.",
-   "They therefore do <strong>not</strong> apply to acts committed <strong>before 18 August 2026</strong>; "
+   "They therefore do not apply to acts committed before 18 August 2026; "
    "the earlier version of the article continues to govern those acts. The new provisions apply to acts "
    "committed on or after that date.",
    "The date on which the investigation or prosecution began is not decisive; the governing criterion is "
-   "the <strong>date of the act</strong>. Which text applies in a pending file therefore turns on how the "
+   "the date of the act. Which text applies in a pending file therefore turns on how the "
    "date of the act is established in the indictment and in the judgment."]),
 
  ("Points that come to the fore in the defence", [
    "The amendment shifts the centre of gravity in children's files. Where the fourth paragraph may "
    "apply, the issue is no longer only whether the act is established, but whether the four criteria "
    "are made out on the facts.",
-   "The <strong>date of the act</strong> is the first matter to check; the new provisions are not engaged "
-   "for acts before 18 August 2026. <strong>Determination of age</strong> comes second: where the civil "
+   "The date of the act is the first matter to check; the new provisions are not engaged "
+   "for acts before 18 August 2026. Determination of age comes second: where the civil "
    "register leaves room for doubt, age determination is a separate enquiry and fixes the boundary "
    "between the two paragraphs.",
-   "The <strong>social investigation report</strong> is the third element. The same law amended article "
+   "The social investigation report is the third element. The same law amended article "
    "35 of the Child Protection Law to make a social investigation mandatory for children under fifteen, "
    "and the subparagraph added to article 174 of the Criminal Procedure Code provides for the return of "
    "an indictment drawn up without one.",

@@ -46,15 +46,15 @@ BOLUMLER = [
    "bedelini yatırmayan alıcıya ilişkin yaptırımlar ele alınmaktadır."]),
 
  ("Birinci artırma yalnızca malik mirasçılar arasında", [
-   "İkinci fıkraya eklenen cümleye göre, <strong>tüm maliklerin miras yoluyla edindikleri</strong> ve "
-   "<strong>mirasçılar dışında üçüncü kişilerin mülkiyet hakkının bulunmadığı</strong> taşınmazlar "
+   "İkinci fıkraya eklenen cümleye göre, tüm maliklerin miras yoluyla edindikleri ve "
+   "mirasçılar dışında üçüncü kişilerin mülkiyet hakkının bulunmadığı taşınmazlar "
    "bakımından ortaklığın satış suretiyle giderilmesine karar verilmesi hâlinde yapılacak açık "
-   "artırmalarda, <strong>birinci artırma sadece malik olan mirasçılar arasında</strong> yapılır.",
-   "Kuralın iki şartı birlikte aranır. Taşınmazın <strong>tüm</strong> maliklerinin payını miras "
+   "artırmalarda, birinci artırma sadece malik olan mirasçılar arasında yapılır.",
+   "Kuralın iki şartı birlikte aranır. Taşınmazın tüm maliklerinin payını miras "
    "yoluyla edinmiş olması gerekir; paydaşlardan biri payını satın almışsa şart gerçekleşmez. Ayrıca "
    "mirasçılar dışında üçüncü kişilerin mülkiyet hakkı bulunmamalıdır; paylardan biri üçüncü kişiye "
    "devredilmişse kural uygulanmaz.",
-   "Madde, bu artırma usulünün <strong>bir defaya mahsus olmak üzere</strong> uygulanacağını açıkça "
+   "Madde, bu artırma usulünün bir defaya mahsus olmak üzere uygulanacağını açıkça "
    "belirtmiştir. Birinci artırmada satış gerçekleşmezse, ikinci artırma genel kurallara göre ve "
    "üçüncü kişilere de açık olarak yapılır.",
    "Pratik sonuç, mirasçılara taşınmazı üçüncü kişilerle rekabet etmeden alma imkânı tanınmasıdır. "
@@ -65,44 +65,44 @@ BOLUMLER = [
    "Yedinci fıkranın (8) numaralı bendi, elektronik satış portalında verilecek tekliflerin hangi "
    "eşiği geçmesi gerektiğini düzenler. Değişiklikle bu bende ortaklığın giderilmesine özgü bir eşik "
    "eklenmiştir.",
-   "Kural olarak teklifin, haczedilen malın <strong>muhammen kıymetinin yüzde ellisini</strong> "
+   "Kural olarak teklifin, haczedilen malın muhammen kıymetinin yüzde ellisini "
    "geçmesi gerekir. Buna karşılık ortaklığın satış suretiyle giderilmesinde birinci artırmanın "
-   "sadece malik olan mirasçılar arasında yapıldığı durumlarda teklifin <strong>muhammen kıymetin "
-   "yüzde yüzünü</strong> geçmesi aranır.",
-   "İkinci artırmada eşik yeniden <strong>yüzde elliye</strong> döner. Ancak bende göre teklif; "
-   "muhammen kıymetin yüzde ellisi ile <strong>o malla güvence altına alınan ve satış isteyenin "
-   "alacağına rüçhanı olan alacakların toplamından</strong> hangisi fazla ise bu miktarı ve ayrıca "
-   "bu miktara ilave olarak <strong>paraya çevirme ve paylaştırma masraflarını</strong> geçmelidir.",
+   "sadece malik olan mirasçılar arasında yapıldığı durumlarda teklifin muhammen kıymetin "
+   "yüzde yüzünü geçmesi aranır.",
+   "İkinci artırmada eşik yeniden yüzde elliye döner. Ancak bende göre teklif; "
+   "muhammen kıymetin yüzde ellisi ile o malla güvence altına alınan ve satış isteyenin "
+   "alacağına rüçhanı olan alacakların toplamından hangisi fazla ise bu miktarı ve ayrıca "
+   "bu miktara ilave olarak paraya çevirme ve paylaştırma masraflarını geçmelidir.",
    "Yüzde yüzlük eşik, mirasçılara tanınan önceliğin karşılığıdır: mirasçı, taşınmazı bilirkişi "
    "tarafından belirlenen değerin altında alamaz. Bu nedenle birinci artırma öncesinde kıymet takdirine "
    "itiraz süresinin kaçırılmaması, mirasçı bakımından belirleyici olmaktadır."]),
 
  ("Teminat: alacaklı ve Hazine bakımından muafiyet", [
-   "Yedinci fıkranın (6) numaralı bendi teminata ilişkindir. Yeni metne göre, <strong>satış talep eden "
-   "ve artırmaya katılmak isteyen alacaklının</strong>, en geç artırma süresinin bitiminden önceki iş "
-   "günü mesai bitimine kadar satışı yapan icra dairesine müracaat etmesi hâlinde, <strong>alacağın "
-   "teminatı karşıladığı miktar kadar kendisinden teminat alınmaz</strong>.",
+   "Yedinci fıkranın (6) numaralı bendi teminata ilişkindir. Yeni metne göre, satış talep eden "
+   "ve artırmaya katılmak isteyen alacaklının, en geç artırma süresinin bitiminden önceki iş "
+   "günü mesai bitimine kadar satışı yapan icra dairesine müracaat etmesi hâlinde, alacağın "
+   "teminatı karşıladığı miktar kadar kendisinden teminat alınmaz.",
    "Bu, alacaklının kendi alacağı kadar nakit teminat yatırmadan artırmaya katılabilmesi anlamına "
-   "gelir. Ancak muafiyet kendiliğinden işlemez: bende göre <strong>süresi içinde icra dairesine "
-   "müracaat</strong> edilmiş olması gerekir. Müracaat edilmezse genel teminat kuralları uygulanır.",
-   "Aynı bent, açık artırmalarda <strong>Hazinenin teminat göstermekten muaf</strong> olduğunu da "
+   "gelir. Ancak muafiyet kendiliğinden işlemez: bende göre süresi içinde icra dairesine "
+   "müracaat edilmiş olması gerekir. Müracaat edilmezse genel teminat kuralları uygulanır.",
+   "Aynı bent, açık artırmalarda Hazinenin teminat göstermekten muaf olduğunu da "
    "düzenlemektedir."]),
 
  ("İhale bedelini yatırmayan alıcı", [
    "Yedinci fıkranın (9) numaralı bendi, en yüksek teklifi verip de süresi içinde ihale bedelini "
    "yatırmayan alıcıya ilişkin sonuçları ayrıntılı biçimde düzenlemektedir.",
-   "Genel kural, alınan <strong>teminatın iade edilmemesi</strong>dir. Teminat öncelikle satış "
+   "Genel kural, alınan teminatın iade edilmemesidir. Teminat öncelikle satış "
    "masraflarından mahsup edilir; kalan miktar, icra dosyaları bakımından alacaklarına mahsuben hak "
    "sahiplerine ödenir.",
-   "İhale bedelini yatırmayan kişi <strong>satış isteyen alacaklı</strong> ise, muhammen bedelin "
-   "<strong>yüzde onu</strong> kendi alacağından mahsup edilir; bu satış için yapılan masraf kendisi "
+   "İhale bedelini yatırmayan kişi satış isteyen alacaklı ise, muhammen bedelin "
+   "yüzde onu kendi alacağından mahsup edilir; bu satış için yapılan masraf kendisi "
    "üzerinde bırakılır ve borçluya yüklenmez.",
-   "<strong>Ortaklığın giderilmesinde</strong> ise farklı bir dağıtım öngörülmüştür: alınan teminat, "
-   "satış masrafları mahsup edildikten sonra <strong>paydaşlara payları oranında</strong> ödenir. "
-   "Bedeli yatırmayan kişinin kendisi paydaş ise, alınan teminatın <strong>tamamı diğer pay "
-   "sahiplerine</strong> payları oranında ödenir.",
+   "Ortaklığın giderilmesinde ise farklı bir dağıtım öngörülmüştür: alınan teminat, "
+   "satış masrafları mahsup edildikten sonra paydaşlara payları oranında ödenir. "
+   "Bedeli yatırmayan kişinin kendisi paydaş ise, alınan teminatın tamamı diğer pay "
+   "sahiplerine payları oranında ödenir.",
    "Bunlara ek olarak, en yüksek teklifi verip de süresi içinde ihale bedelini yatırmayan ihale "
-   "alıcısına, teklif ettiği bedelin <strong>yüzde beşi oranında idari para cezası</strong> verilir. "
+   "alıcısına, teklif ettiği bedelin yüzde beşi oranında idari para cezası verilir. "
    "Cezayı satışı yapan icra dairesi veya satış memuru verir; ceza, 6183 sayılı Kanun hükümleri "
    "uyarınca tahsil edilmek üzere tahsil dairesine bildirilir."]),
 
@@ -110,19 +110,19 @@ BOLUMLER = [
    "Aynı Kanunun 11. ve 12. maddeleri, Türk Medenî Kanunu'nun vesayete ilişkin 440 ve 444. "
    "maddelerini değiştirmiştir. Bu değişiklikler ortaklığın giderilmesi dosyalarında, paydaşlardan "
    "birinin vesayet altında bulunduğu hâllerde gündeme gelir.",
-   "Değişiklikle, vesayet altındaki kişiye ait taşınmazın satışının <strong>Ulusal Yargı Ağı Bilişim "
-   "Sistemine entegre elektronik satış portalında</strong> açık artırmayla yapılacağı açıkça "
-   "düzenlenmiştir. İhale, <strong>vesayet makamının onamasıyla</strong> tamam olur ve onamaya ilişkin "
-   "kararın <strong>ihale gününden başlayarak on gün içinde</strong> verilmesi gerekir.",
+   "Değişiklikle, vesayet altındaki kişiye ait taşınmazın satışının Ulusal Yargı Ağı Bilişim "
+   "Sistemine entegre elektronik satış portalında açık artırmayla yapılacağı açıkça "
+   "düzenlenmiştir. İhale, vesayet makamının onamasıyla tamam olur ve onamaya ilişkin "
+   "kararın ihale gününden başlayarak on gün içinde verilmesi gerekir.",
    "Bu iki maddenin yürürlüğü diğerlerinden farklıdır. Kanunun yürürlük maddesi uyarınca 11 ve 12. "
-   "maddeler, <strong>yayımı tarihinden itibaren üç ay sonra</strong> yürürlüğe girmiştir."]),
+   "maddeler, yayımı tarihinden itibaren üç ay sonra yürürlüğe girmiştir."]),
 
  ("Geçiş hükmü: hangi ihalelere uygulanır?", [
    "Kanunun geçiş hükmü açıktır: İcra ve İflâs Kanunu'nun 114. maddesinde yapılan değişiklikler, "
-   "bu değişikliklerin yürürlüğe girdiği tarihten önce <strong>ilanı yapılmış açık artırmalar</strong> "
+   "bu değişikliklerin yürürlüğe girdiği tarihten önce ilanı yapılmış açık artırmalar "
    "hakkında uygulanmaz. Bu artırmalar bakımından değişiklikten önceki hükümlerin uygulanmasına devam "
    "olunur.",
-   "Belirleyici ölçüt, davanın veya takibin tarihi değil, <strong>artırma ilanının tarihidir</strong>. "
+   "Belirleyici ölçüt, davanın veya takibin tarihi değil, artırma ilanının tarihidir. "
    "Ortaklığın giderilmesi kararı yürürlükten önce verilmiş olsa bile, ilan 31 Temmuz 2026'dan sonra "
    "yapılmışsa yeni kurallar uygulanır.",
    "Bu ayrım, hâlen satış aşamasında bulunan dosyalarda ilan tarihinin dosyadan kontrol edilmesini "
@@ -132,13 +132,13 @@ BOLUMLER = [
  ("Paydaşlar için pratik adımlar", [
    "Miras yoluyla intikal etmiş bir taşınmazda ortaklığın giderilmesi davası görülüyorsa, sürecin "
    "üç noktası öne çıkmaktadır.",
-   "Birincisi <strong>kıymet takdiri</strong>dir. Birinci artırmada eşik muhammen kıymetin yüzde yüzü "
+   "Birincisi kıymet takdiridir. Birinci artırmada eşik muhammen kıymetin yüzde yüzü "
    "olduğundan, bilirkişi tarafından belirlenen değer doğrudan mirasçının ödeyeceği asgari bedeli "
    "belirler. Kıymet takdirine itiraz süresi bu nedenle kritiktir.",
-   "İkincisi <strong>mülkiyet durumunun tespiti</strong>dir. Kuralın uygulanabilmesi için tüm payların "
+   "İkincisi mülkiyet durumunun tespitidir. Kuralın uygulanabilmesi için tüm payların "
    "miras yoluyla edinilmiş olması ve mirasçılar dışında üçüncü kişinin mülkiyet hakkının bulunmaması "
    "gerekir. Tapu kaydındaki tek bir devir, kuralın uygulanmasını engelleyebilir.",
-   "Üçüncüsü <strong>ilan tarihi</strong>dir; geçiş hükmü nedeniyle hangi metnin uygulanacağını bu "
+   "Üçüncüsü ilan tarihidir; geçiş hükmü nedeniyle hangi metnin uygulanacağını bu "
    "tarih belirler. Antalya'daki taşınmazlara ilişkin ortaklığın giderilmesi dosyaları Antalya Adalet "
    "Sarayı'ndaki sulh hukuk mahkemelerinde görülür; satış işlemleri satış memurluğu veya icra "
    "dairesi aracılığıyla yürütülür. Gayrimenkul uyuşmazlıklarında izlenen genel yol için "
