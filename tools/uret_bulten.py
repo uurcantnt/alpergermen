@@ -7,7 +7,7 @@ görünmeye devam eder; bülten ikinci bir giriş noktasıdır.
 """
 import json, pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from uret_makale import PUB, SITE, UST, ALT, en_parca
+from uret_makale import PUB, SITE, UST, ALT, en_parca, alanlar_isaretini_kaldir
 
 # (yol, künye, başlık, özet, alan) — yeniden eskiye
 KAYIT_TR = [
@@ -76,7 +76,7 @@ METIN = {
           "taşımaz; bir düzenlemenin somut dosyaya etkisi dosyanın tarihi ve bulunduğu aşama "
           "birlikte değerlendirilerek belirlenir."],
    oku="Yazıyı oku →", alan="İlgili alan:", ad="Mevzuat Bülteni", lang="tr", locale="tr_TR",
-   nav_es=('<a href="/yazilar">Yazılar</a>', '<a href="/yazilar">Yazılar</a><a href="/bulten/" class="on">Bülten</a>')),
+   nav_es=('<a href="/bulten/">Bülten</a>', '<a href="/bulten/" class="on">Bülten</a>')),
  False: dict(
    url="https://alpergermen.av.tr/en/legal-updates/", no="05",
    title="Legal Updates | Av. Alper Germen, Antalya",
@@ -102,8 +102,8 @@ METIN = {
           "date of the file together with the stage it has reached."],
    oku="Read the article →", alan="Related area:", ad="Legislative Bulletin", lang="en",
    locale="en_US",
-   nav_es=('<a href="/en/yazilar">Articles</a>',
-           '<a href="/en/yazilar">Articles</a><a href="/en/legal-updates/" class="on">Legal Updates</a>')),
+   nav_es=('<a href="/en/legal-updates/">Legal Updates</a>',
+           '<a href="/en/legal-updates/" class="on">Legal Updates</a>')),
 }
 
 TR_URL = "https://alpergermen.av.tr/bulten/"
@@ -113,12 +113,12 @@ EN_URL = "https://alpergermen.av.tr/en/legal-updates/"
 def sayfa(tr):
     M = METIN[tr]
     kayitlar = KAYIT_TR if tr else KAYIT_EN
-    ust = (UST if tr else en_parca("ust"))
+    ust = alanlar_isaretini_kaldir(UST if tr else en_parca("ust"), tr)
     alt = (ALT if tr else en_parca("alt"))
-    # menüde Yazılar'ı bırak, yanına Bülten ekle ve işaretle
+    # Bülten bağlantısı ortak şablonda (_ust.html) zaten var; burada yalnızca
+    # 'aktif' işaretlenir. Ekleme yapılırsa menüde iki kez görünür.
     eski_nav, yeni_nav = M["nav_es"]
-    ust = ust.replace(eski_nav, yeni_nav).replace(
-        eski_nav.replace('<a href', '<a class="" href'), yeni_nav)
+    ust = ust.replace(eski_nav, yeni_nav)
     kartlar = "".join(
         f'\n      <a class="art makale-kart" href="{yol}">'
         f'<span class="art-tag">{kunye}</span>'

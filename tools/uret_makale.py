@@ -71,6 +71,13 @@ TABLO_EN = """
       </div>"""
 
 
+def alanlar_isaretini_kaldir(ust, tr):
+    """Ortak şablon 'Çalışma Alanları'nı aktif işaretli tutuyor (alan sayfaları için).
+    Alt kırılım sayfalarında iki başlık birden aktif görünmesin."""
+    kok = "/alanlar" if tr else "/en/alanlar"
+    return ust.replace(f'<a href="{kok}" class="on">', f'<a href="{kok}">')
+
+
 def sayfa(m, tr, es):
     """m: üretilecek modül, es: diğer dildeki eşi (hreflang çifti onun SLUG'undan kurulur)."""
     yol = "/" + m.SLUG + "/"
@@ -82,6 +89,7 @@ def sayfa(m, tr, es):
     ust = (UST if tr else en_parca("ust")).replace('<a href="/yazilar">', '<a href="/yazilar" class="on">', 1) \
         if tr else en_parca("ust").replace('<a href="/en/yazilar">', '<a href="/en/yazilar" class="on">', 1)
     alt = ALT if tr else en_parca("alt")
+    ust = alanlar_isaretini_kaldir(ust, tr)
 
     govde = []
     for i, (h2, paragraflar) in enumerate(m.BOLUMLER):
