@@ -2,19 +2,19 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://alpergermen.av.tr/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/alanlar</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/kurumsal</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -26,13 +26,13 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/sss</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/iletisim</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -44,13 +44,13 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/alanlar</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/kurumsal</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -62,13 +62,13 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/sss</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/iletisim</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
