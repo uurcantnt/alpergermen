@@ -550,6 +550,7 @@ body::after{
 }
 .lp-wrap p{font-size:15px;line-height:1.78;color:var(--cream-soft);margin:0 0 17px;}
 .lp-wrap p:last-child{margin-bottom:0;}
+.son-yazilar{margin-bottom:30px;}
 /* metin içi iç linkler görünür olsun */
 .lp-wrap p a,.lp-wrap li a,.about-p a,.qa-a-inner a,.ph-lead a,.ad-desc a,.ad-nedir-p a{
   color:var(--gold);
