@@ -550,6 +550,19 @@ body::after{
 }
 .lp-wrap p{font-size:15px;line-height:1.78;color:var(--cream-soft);margin:0 0 17px;}
 .lp-wrap p:last-child{margin-bottom:0;}
+/* metin içi iç linkler görünür olsun */
+.lp-wrap p a,.lp-wrap li a,.about-p a,.qa-a-inner a,.ph-lead a,.ad-desc a,.ad-nedir-p a{
+  color:var(--gold);
+  text-decoration:underline;
+  text-underline-offset:3px;
+  text-decoration-thickness:1px;
+  text-decoration-color:rgba(199,144,98,.45);
+  transition:color .2s,text-decoration-color .2s;
+}
+.lp-wrap p a:hover,.lp-wrap li a:hover,.about-p a:hover,.qa-a-inner a:hover,.ph-lead a:hover,.ad-desc a:hover,.ad-nedir-p a:hover{
+  color:var(--gold-bright);
+  text-decoration-color:var(--gold-bright);
+}
 .lp-sss{border-top:1px solid var(--line);}
 .lp-ilgili{grid-template-columns:repeat(3,1fr);}
 .lp-ilgili .ta{padding:26px 24px;}
