@@ -11,6 +11,16 @@ from uret_makale import PUB, SITE, UST, ALT, en_parca, alanlar_isaretini_kaldir
 
 # (yol, künye, başlık, özet, alan) — yeniden eskiye
 KAYIT_TR = [
+ ("/yazilar/hagb-yeni-duzenleme-ve-istinaf-yolu/",
+  "7589 sayılı Kanun — Resmî Gazete, 31 Temmuz 2026 (S. 33326)", "2026-08-31", "31 Ağustos 2026",
+  "HAGB: 7589 Sayılı Kanunla Gelen Yeni Düzenleme",
+  "CMK 231'in beşinci ilâ on dördüncü fıkraları yeniden yazıldı: karara karşı istinaf yolu, denetim "
+  "süresi ihlalinde mahkemeye yeni bir hüküm kurma imkânı ve maddenin hiç uygulanmayacağı suçlar.", "Ceza Hukuku"),
+ ("/yazilar/durusma-takvimi-ve-istinaf-sonrasi-temyiz/",
+  "7589 sayılı Kanun — Resmî Gazete, 31 Temmuz 2026 (S. 33326)", "2026-08-31", "31 Ağustos 2026",
+  "Duruşma Takvimi, E-Duruşma ve İstinaf Sonrası Temyiz",
+  "Duruşmalar arasındaki süre üç ayla sınırlandı, e-duruşmada imza kuralı yumuşatıldı, "
+  "birleştirme-ayırma kararlarına karşı kanun yolu ve istinaf sonrası temyizin sınırları yeniden çizildi.", "Usul Hukuku"),
  ("/yazilar/tck-31-cocuklarin-ceza-sorumlulugu/",
   "7593 sayılı Kanun — Resmî Gazete, 18 Ağustos 2026 (S. 33344)", "2026-08-30", "30 Ağustos 2026",
   "TCK 31: Çocukların Ceza Sorumluluğunda 2026 Değişikliği",
@@ -32,6 +42,16 @@ KAYIT_TR = [
 ]
 
 KAYIT_EN = [
+ ("/en/yazilar/deferred-judgment-hagb-new-rules/",
+  "Law no. 7589 — Official Gazette, 31 July 2026 (issue 33326)", "2026-08-31", "31 August 2026",
+  "Deferral of the Announcement of the Judgment: The New Rules",
+  "Paragraphs five to fourteen of article 231 were rewritten: the route of appeal, the court's power "
+  "to construct a fresh judgment on breach, and the offences excluded from the article.", "Criminal Law"),
+ ("/en/yazilar/hearing-intervals-and-appeal-after-istinaf/",
+  "Law no. 7589 — Official Gazette, 31 July 2026 (issue 33326)", "2026-08-31", "31 August 2026",
+  "Hearing Intervals, Remote Hearings and Appeal Limits",
+  "The interval between hearings was capped at three months, the signature rule was relaxed for those "
+  "attending by video link, and the limits of appeal after the regional court were redrawn.", "Civil Procedure"),
  ("/en/yazilar/criminal-responsibility-of-minors-turkey/",
   "Law no. 7593 — Official Gazette, 18 August 2026 (issue 33344)", "2026-08-30", "30 August 2026",
   "Article 31 TPC: The 2026 Change to the Criminal Responsibility of Minors",
