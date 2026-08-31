@@ -51,7 +51,7 @@ const AREAS=[
 (function(){
   const areasEl=document.getElementById('areas');
   if(!areasEl)return;
-  AREAS.forEach((a,i)=>{
+  if(!areasEl.children.length)AREAS.forEach((a,i)=>{
     const el=document.createElement('div');
     el.className='area';
     el.id='alan-'+(i+1);
@@ -78,13 +78,17 @@ const AREAS=[
           </div>
         </div>
       </div></div>`;
-    el.querySelector('.area-top').addEventListener('click',()=>{
+    areasEl.appendChild(el);
+  });
+  /* Hem JS ile basılan hem sayfada statik duran alanlara aynı davranış bağlanır. */
+  areasEl.querySelectorAll('.area').forEach(el=>{
+    const top=el.querySelector('.area-top');
+    if(top)top.addEventListener('click',()=>{
       const open=el.classList.contains('open');
       document.querySelectorAll('.area.open').forEach(o=>o.classList.remove('open'));
       if(!open)el.classList.add('open');
     });
     el.querySelectorAll('.ad-main a').forEach(x=>x.addEventListener('click',e=>e.stopPropagation()));
-    areasEl.appendChild(el);
   });
   const h=location.hash;
   if(h&&/^#alan-[1-9]$/.test(h)){
@@ -149,12 +153,13 @@ const FAQS=[
 (function(){
   const faqEl=document.getElementById('faq');
   if(!faqEl)return;
+  if(faqEl.children.length)return; /* sayfada statik SSS varsa üzerine basma */
   FAQS.forEach((f,i)=>{
     const el=document.createElement('div');
     el.className='qa';
     el.innerHTML=`
       <button class="qa-q">
-        <span class="qa-mark">0${i+1}</span>
+        <span class="qa-mark">${String(i+1).padStart(2,"0")}</span>
         <span>${f.q}</span>
         <span class="qa-ico"></span>
       </button>
