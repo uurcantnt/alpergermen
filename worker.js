@@ -38,7 +38,7 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -56,7 +56,7 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/yazilar</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -74,133 +74,133 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/antalya-bosanma-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/antalya-ceza-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/antalya-is-hukuku-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/antalya-gayrimenkul-ve-kira-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/antalya-icra-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/antalya-miras-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/antalya-ticaret-hukuku-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/konyaalti-avukat/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/antalya-bosanma-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/antalya-ceza-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/antalya-is-hukuku-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/antalya-gayrimenkul-ve-kira-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/antalya-icra-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/antalya-miras-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/antalya-ticaret-hukuku-avukati/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/konyaalti-avukat/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/yazilar/tck-158-4-iban-kullandirma-ceza-indirimi/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/yazilar/tck-158-4-account-lending-sentence-reduction/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/yazilar/tck-31-cocuklarin-ceza-sorumlulugu/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/yazilar/criminal-responsibility-of-minors-turkey/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/yazilar/ortakligin-giderilmesi-ihalesinde-yeni-kurallar/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/yazilar/partition-auctions-new-rules/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -212,7 +212,7 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/en/legal-updates/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

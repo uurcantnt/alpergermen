@@ -1,0 +1,11 @@
+#!/bin/sh
+# public/ altında değişen bir şey varsa sitemap lastmod değerlerini tazeler
+# ve worker.js'i aynı commit'e dahil eder.
+#
+# Etkinleştirmek için depoda bir kez:
+#   git config core.hooksPath .githooks
+
+if git diff --cached --name-only | grep -q '^public/'; then
+  node scripts/build-sitemap.mjs || exit 1
+  git add worker.js
+fi
