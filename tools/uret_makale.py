@@ -248,7 +248,9 @@ CIFTLER = [("makale_tr", "makale_en"),
            ("makale_cocuk_tr", "makale_cocuk_en"),
            ("makale_icra_tr", "makale_icra_en"),
            ("makale_hagb_tr", "makale_hagb_en"),
-           ("makale_usul_tr", "makale_usul_en")]
+           ("makale_usul_tr", "makale_usul_en"),
+           ("makale_arac_tr", "makale_arac_en"),
+           ("makale_miras_tr", "makale_miras_en")]
 
 
 def uret():

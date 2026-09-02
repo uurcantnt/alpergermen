@@ -20,7 +20,7 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/yazilar</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -206,7 +206,7 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://alpergermen.av.tr/bulten/</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -237,6 +237,30 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
   <url>
     <loc>https://alpergermen.av.tr/en/yazilar/hearing-intervals-and-appeal-after-istinaf/</loc>
     <lastmod>2026-08-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alpergermen.av.tr/yazilar/arac-kiralama-yonetmeligi-yeni-kurallar/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpergermen.av.tr/en/yazilar/vehicle-rental-regulation-new-rules/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alpergermen.av.tr/yazilar/sakli-pay-ve-tenkis-davasi/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpergermen.av.tr/en/yazilar/reserved-shares-and-abatement-claims/</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

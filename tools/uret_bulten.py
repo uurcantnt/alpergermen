@@ -11,6 +11,12 @@ from uret_makale import PUB, SITE, UST, ALT, en_parca, alanlar_isaretini_kaldir
 
 # (yol, künye, başlık, özet, alan) — yeniden eskiye
 KAYIT_TR = [
+ ("/yazilar/arac-kiralama-yonetmeligi-yeni-kurallar/",
+  "Araç kiralama yönetmeliği — Resmî Gazete, 15 Ağustos 2026 (S. 33341)", "2026-09-02", "2 Eylül 2026",
+  "Motorlu Kara Taşıtı Kiralama Yönetmeliği: Yeni Kurallar",
+  "Araç kiralama yetki belgesine bağlandı; sözleşmenin teslimden önce verilmesi, rezervasyon ve segment "
+  "kuralları, kilometre alt sınırları ve aracı platformların müşterek sorumluluğu düzenlendi. "
+  "Yürürlük 1 Ocak 2027.", "Ticaret Hukuku"),
  ("/yazilar/hagb-yeni-duzenleme-ve-istinaf-yolu/",
   "7589 sayılı Kanun — Resmî Gazete, 31 Temmuz 2026 (S. 33326)", "2026-08-31", "31 Ağustos 2026",
   "HAGB: 7589 Sayılı Kanunla Gelen Yeni Düzenleme",
@@ -42,6 +48,12 @@ KAYIT_TR = [
 ]
 
 KAYIT_EN = [
+ ("/en/yazilar/vehicle-rental-regulation-new-rules/",
+  "Vehicle rental regulation — Official Gazette, 15 August 2026 (issue 33341)", "2026-09-02", "2 September 2026",
+  "The Motor Vehicle Rental Regulation: New Rules",
+  "Vehicle rental becomes subject to an authorisation certificate; delivery of the contract before "
+  "handover, reservation and segment rules, minimum mileage limits and the joint responsibility of "
+  "intermediary platforms. In force from 1 January 2027.", "Commercial Law"),
  ("/en/yazilar/deferred-judgment-hagb-new-rules/",
   "Law no. 7589 — Official Gazette, 31 July 2026 (issue 33326)", "2026-08-31", "31 August 2026",
   "Deferral of the Announcement of the Judgment: The New Rules",
