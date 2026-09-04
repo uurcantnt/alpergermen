@@ -78,6 +78,16 @@ def alanlar_isaretini_kaldir(ust, tr):
     return ust.replace(f'<a href="{kok}" class="on">', f'<a href="{kok}">')
 
 
+TR_HARF = {"ç":"c","ğ":"g","ı":"i","ö":"o","ş":"s","ü":"u","İ":"i","Â":"a","â":"a","î":"i","û":"u"}
+
+
+def h2_id(metin, sira):
+    """Bölüm başlığından çapa kimliği; içindekiler listesi buna bağlanır."""
+    s = "".join(TR_HARF.get(k, k) for k in metin.lower())
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return ("bolum-%d-%s" % (sira, s))[:60].rstrip("-")
+
+
 def sayfa(m, tr, es):
     """m: üretilecek modül, es: diğer dildeki eşi (hreflang çifti onun SLUG'undan kurulur)."""
     yol = "/" + m.SLUG + "/"
@@ -94,6 +104,7 @@ def sayfa(m, tr, es):
     ust = alanlar_isaretini_kaldir(ust, tr)
 
     govde = []
+    basliklar = []
     for i, (h2, paragraflar) in enumerate(m.BOLUMLER):
         ic = ""
         for p in paragraflar:
@@ -106,8 +117,10 @@ def sayfa(m, tr, es):
         # tablo: modül TABLO_BOLUM tanımlamışsa o bölümün sonuna eklenir
         if i == getattr(m, "TABLO_BOLUM", -1):
             ic += getattr(m, "TABLO", TABLO_TR if tr else TABLO_EN)
-        govde.append(f'\n  <section class="section tight lp-blok">\n    <div class="wrap lp-wrap">'
-                     f'\n      <h2>{kacis(h2)}</h2>{ic}\n    </div>\n  </section>')
+        hid = h2_id(h2, len(basliklar) + 1)
+        basliklar.append((hid, h2))
+        govde.append(f'\n  <section class="lp-blok">\n    <div class="lp-wrap">'
+                     f'\n      <h2 id="{hid}">{kacis(h2)}</h2>{ic}\n    </div>\n  </section>')
 
     sss_bas = "Sık sorulan sorular" if tr else "Frequently asked questions"
     sss_giris = ('Aşağıdaki sorular bu düzenlemeye özgüdür; büroya sıkça yöneltilen genel sorular '
@@ -121,10 +134,12 @@ def sayfa(m, tr, es):
         f'<span class="qa-ico"></span></button>'
         f'\n        <div class="qa-a"><div class="qa-a-inner"><p>{kacis(a)}</p></div></div>\n      </div>'
         for i, (q, a) in enumerate(m.SSS))
+    sss_id = h2_id(sss_bas, len(basliklar) + 1)
+    basliklar.append((sss_id, sss_bas))
     govde.append(f'''
-  <section class="section tight lp-blok">
-    <div class="wrap lp-wrap">
-      <h2>{sss_bas}</h2>
+  <section class="lp-blok">
+    <div class="lp-wrap">
+      <h2 id="{sss_id}">{sss_bas}</h2>
       <p>{sss_giris}</p>
       <div class="lp-sss">{sss_html}
       </div>
@@ -134,14 +149,40 @@ def sayfa(m, tr, es):
     kapanis = "".join(f"\n      <p>{kacis(p)}</p>" for p in m.KAPANIS)
     uyari_bas = "Yasal uyarı" if tr else "Legal notice"
     govde.append(f'''
-  <section class="section tight lp-blok">
-    <div class="wrap lp-wrap">{kapanis}
+  <section class="lp-blok">
+    <div class="lp-wrap">{kapanis}
       <aside class="yasal-uyari" aria-label="{uyari_bas}">
         <b>{uyari_bas}</b>
         <p>{kacis(m.UYARI)}</p>
       </aside>
     </div>
   </section>''')
+
+    ic_bas = "İçindekiler" if tr else "Contents"
+    kart_bas = ("Dosyanız için değerlendirme" if tr else "An assessment for your file")
+    kart_p = ("Yazıdaki kurallar genel çerçevedir; sonuç dosyanın kendi verilerine göre değişir. "
+              "Kısa bir görüşmeyle durumunuzu değerlendirebiliriz."
+              if tr else
+              "The rules above are a general framework; the outcome depends on the facts of the "
+              "file. A short call is usually enough for a first assessment.")
+    ic_liste = "".join(
+        '\n        <li><a href="#%s">%s</a></li>' % (hid, kacis(bas)) for hid, bas in basliklar)
+    yan = '''    <aside class="makale-yan" aria-label="%s">
+      <nav class="mk-icindekiler" aria-label="%s">
+        <b>%s</b>
+        <ol>%s
+        </ol>
+      </nav>
+      <div class="mk-kart">
+        <b>%s</b>
+        <p>%s</p>
+        <a class="mk-tel" href="tel:+905537727601">+90 553 772 76 01</a>
+        <a href="https://wa.me/905537727601" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="%s">%s</a>
+      </div>
+    </aside>''' % (ic_bas, ic_bas, ic_bas, ic_liste, kart_bas, kart_p,
+                   "/iletisim" if tr else "/en/iletisim",
+                   "İletişim sayfası" if tr else "Contact page")
 
     kirilim2 = "Hukuki Makaleler" if tr else "Legal Articles"
     graf = {"@context": "https://schema.org", "@graph": [
@@ -229,12 +270,19 @@ def sayfa(m, tr, es):
   </div>
 </section>
 
-  <section class="section tight lp-blok">
-    <div class="wrap lp-wrap">{"".join(f'{chr(10)}      <p>{kacis(p)}</p>' for p in m.GIRIS)}
+<div class="makale-govde">
+  <div class="wrap makale-wrap">
+    <div class="makale-ana">
+  <section class="lp-blok">
+    <div class="lp-wrap">{"".join(f'{chr(10)}      <p>{kacis(p)}</p>' for p in m.GIRIS)}
       <p>{kaynak_cumle}</p>
     </div>
   </section>
 {"".join(govde)}
+    </div>
+{yan}
+  </div>
+</div>
 
 {alt}
 <script src="/{'main.js' if tr else 'main-en.js'}" defer></script>

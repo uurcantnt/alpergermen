@@ -541,8 +541,11 @@ body::after{
 }
 .lp-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;}
 .lp-blok+.lp-blok{padding-top:0;}
-/* başlıkla aynı eksende kalsın diye sola yaslı; .wrap'ın auto marjını ezer */
-.lp-wrap{max-width:820px;margin-left:0;margin-right:auto;}
+/* Kutu .wrap gibi ortalanır, ölçü çocuklarda sınırlanır.
+   Eski margin-left:0 kuralı 1464px üstünde metni görünüm alanının soluna
+   yapıştırıyor, başlıkla arasında 300px'e varan kayma bırakıyordu. */
+.lp-wrap{max-width:1320px;margin-left:auto;margin-right:auto;}
+.lp-wrap>*{max-width:676px;}
 .lp-wrap h2{
   font-family:var(--serif);font-size:clamp(22px,2.6vw,31px);font-weight:400;
   letter-spacing:-.01em;color:var(--cream);margin:0 0 20px;
@@ -611,3 +614,68 @@ body::after{
 .makale-kart h3{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.22;letter-spacing:-.01em;color:var(--cream);margin:10px 0 0;}
 .art-tarih{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--cream-faint);margin:8px 0 2px;}
 @media(max-width:880px){.makale-liste{grid-template-columns:1fr;}}
+
+
+/* ───────────── makale sayfası: masaüstü iki sütun ─────────────
+   Bölümler tek tek .section idi; aralarında 96px boşluk kalıyor ve
+   metin sütunu geniş ekranda sağ yarıyı boş bırakıyordu. Burada gövde
+   tek bir ızgaraya alınır, sağ tarafa yapışkan içindekiler yerleşir.
+   1180px altında ızgara kapanır; mobil görünüm değişmez. */
+.makale-govde{padding:clamp(44px,5vw,72px) 0 clamp(56px,7vw,96px);}
+.makale-ana{max-width:70ch;}
+.makale-ana .lp-blok{padding:0 0 clamp(26px,2.8vw,38px);}
+.makale-ana .lp-blok:last-child{padding-bottom:0;}
+.makale-ana .lp-wrap{max-width:none;padding:0;margin:0;}
+.makale-ana .lp-wrap>*{max-width:none;}
+.makale-ana .lp-wrap p{font-size:15.5px;line-height:1.82;}
+.makale-ana .lp-wrap h2{scroll-margin-top:104px;}
+.makale-yan{display:none;}
+
+@media(min-width:1180px){
+  .makale-wrap{
+    display:grid;
+    grid-template-columns:minmax(0,70ch) minmax(272px,316px);
+    justify-content:start;
+    gap:clamp(48px,4.5vw,84px);
+    align-items:start;
+  }
+  .makale-yan{display:block;position:sticky;top:104px;}
+}
+
+.mk-icindekiler{border-top:1px solid var(--gold);padding-top:18px;}
+.mk-icindekiler b{
+  display:block;font-size:11.5px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:14px;
+}
+.mk-icindekiler ol{list-style:none;margin:0;padding:0;counter-reset:mk;}
+.mk-icindekiler li{counter-increment:mk;margin-bottom:2px;}
+.mk-icindekiler a{
+  display:flex;gap:10px;padding:7px 0;
+  font-size:13px;line-height:1.5;color:var(--cream-soft);
+  border-bottom:1px solid var(--line-soft);
+  transition:color .18s ease;
+}
+.mk-icindekiler li:last-child a{border-bottom:0;}
+.mk-icindekiler a::before{
+  content:counter(mk,decimal-leading-zero);
+  font-family:var(--serif);font-style:italic;color:var(--cream-faint);
+  flex:0 0 auto;transition:color .18s ease;
+}
+.mk-icindekiler a:hover{color:var(--cream);}
+.mk-icindekiler a:hover::before{color:var(--gold);}
+
+.mk-kart{
+  margin-top:26px;padding:20px 22px;border-radius:2px;
+  background:var(--bg-2);border:1px solid var(--line);border-left:2px solid var(--gold);
+}
+.mk-kart b{
+  display:block;font-family:var(--serif);font-weight:400;font-size:19px;
+  line-height:1.25;color:var(--cream);margin-bottom:9px;
+}
+.mk-kart p{font-size:13px;line-height:1.65;color:var(--cream-soft);margin:0 0 14px;}
+.mk-kart a{
+  display:block;font-size:13px;line-height:1.5;padding:6px 0;color:var(--cream-soft);
+  transition:color .18s ease;
+}
+.mk-kart a:hover{color:var(--gold);}
+.mk-kart .mk-tel{font-size:15px;color:var(--gold);font-weight:600;}
