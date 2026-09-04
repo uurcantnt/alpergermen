@@ -264,6 +264,30 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://alpergermen.av.tr/yazilar/planli-alanlar-imar-yonetmeligi-degisikligi/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpergermen.av.tr/yazilar/ise-iade-davasi-sartlari-ve-sureleri/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpergermen.av.tr/en/yazilar/planned-areas-zoning-regulation-amendment/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpergermen.av.tr/en/yazilar/reinstatement-claims-conditions-and-time-limits/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>`;
 
 const ROBOTS = `User-agent: *

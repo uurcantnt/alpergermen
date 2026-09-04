@@ -11,6 +11,12 @@ from uret_makale import PUB, SITE, UST, ALT, en_parca, alanlar_isaretini_kaldir
 
 # (yol, künye, başlık, özet, alan) — yeniden eskiye
 KAYIT_TR = [
+ ("/yazilar/planli-alanlar-imar-yonetmeligi-degisikligi/",
+  "Planlı Alanlar İmar Yönetmeliği — Resmî Gazete, 1 Temmuz 2026 (S. 33297)", "2026-09-03", "3 Eylül 2026",
+  "Planlı Alanlar İmar Yönetmeliğinde 2026 Değişikliği",
+  "Geçici 7. madde ile ofis/büro bağımsız bölümler bir yıl içinde konuta çevrilebiliyor; parselin "
+  "tamamında konut oranı %60'ı aşamıyor. Ayrıca süs havuzu ve pergolada emsal muafiyeti, asansör "
+  "zorunluluğunda bodrum kat ve yeniden ruhsatta iki yıl kuralı düzenlendi.", "Gayrimenkul Hukuku"),
  ("/yazilar/arac-kiralama-yonetmeligi-yeni-kurallar/",
   "Araç kiralama yönetmeliği — Resmî Gazete, 15 Ağustos 2026 (S. 33341)", "2026-09-02", "2 Eylül 2026",
   "Motorlu Kara Taşıtı Kiralama Yönetmeliği: Yeni Kurallar",
@@ -48,6 +54,13 @@ KAYIT_TR = [
 ]
 
 KAYIT_EN = [
+ ("/en/yazilar/planned-areas-zoning-regulation-amendment/",
+  "Planned Areas Zoning Regulation — Official Gazette, 1 July 2026 (issue 33297)", "2026-09-03", "3 September 2026",
+  "The 2026 Amendment to the Planned Areas Zoning Regulation",
+  "Provisional article 7 allows office units to be converted to residential use within one year, "
+  "provided the residential ratio across the plot stays at or below 60%. Floor area exemptions for "
+  "pergolas and pools, basements counting towards lift rules and a two-year re-permit rule were also "
+  "introduced.", "Real Estate Law"),
  ("/en/yazilar/vehicle-rental-regulation-new-rules/",
   "Vehicle rental regulation — Official Gazette, 15 August 2026 (issue 33341)", "2026-09-02", "2 September 2026",
   "The Motor Vehicle Rental Regulation: New Rules",
